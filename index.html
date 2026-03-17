@@ -238,9 +238,9 @@
     /* INGESTRO */
     .card-ingestro{background:var(--card);border-bottom:1px solid var(--border)}
     .card-ingestro .exp-vis{background:#0d1117}
-    .card-ingestro .exp-co{color:var(--neon)}
+    .card-ingestro .exp-co{color:var(--#162338)}
     .card-ingestro .exp-ul li::before{color:var(--neon)}
-    .card-ingestro .exp-chip{background:rgba(184,255,87,.12);border:1px solid rgba(184,255,87,.35);color:#d8ffb0}
+    .card-ingestro .exp-chip{background:rgba(93, 147, 17, 0.12);border:1px solid rgba(184,255,87,.35);color:#162338}
 
     /* INKITIN */
     .card-inkitin{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.05)}
@@ -432,24 +432,83 @@
     .reveal.on{opacity:1;transform:translateY(0)}
     .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 
+
     /* RESPONSIVE */
-    @media(max-width:1100px){.comp-grid{grid-template-columns:1fr 1fr}.cert-grid{grid-template-columns:1fr 1fr}.cs-panel.active{grid-template-columns:1fr}}
-    @media(max-width:900px){
-      nav{padding:1rem 1.5rem}.nav-links{display:none}
-      #hero,.yt-inner,.fcta,.about-grid{grid-template-columns:1fr;gap:2rem}
-      .hero-right{display:none}
-      .exp-card{grid-template-columns:1fr}
-      .card-inkitin .exp-meta,.card-inkitin .exp-vis{order:unset}
-      .exp-vis{min-height:280px}
-      .edu-grid,.proj-grid,.cert-grid{grid-template-columns:1fr}
-      .comp-grid{grid-template-columns:1fr}
+    /* ── LARGE SCREENS ── */
+    @media(min-width:1400px){
+      #hero{max-width:1400px}
+      .sec{max-width:1400px}
+      .yt-inner,.fcta,.exp-header{max-width:1400px}
+    }
+
+    /* ── TABLET ── */
+    @media(max-width:1100px){
+      .comp-grid{grid-template-columns:1fr 1fr}
+      .cert-grid{grid-template-columns:1fr 1fr}
+      .cs-panel.active{grid-template-columns:1fr}
+      .proj-grid{grid-template-columns:1fr 1fr}
       .stats-strip{grid-template-columns:1fr 1fr}
-      .github-card{grid-template-columns:1fr}
-      .sec{padding:4rem 1.5rem}
-      #youtube,#final-cta,.testimonial-wrap,.resume-cta{padding:4rem 1.5rem}
-      .cta-strip{padding:2rem 1.5rem}
-      #experience{padding:4rem 0 0}
-      footer{flex-direction:column;gap:.5rem;text-align:center;padding:1.5rem}
+      .edu-grid{grid-template-columns:1fr 1fr}
+      h1{font-size:clamp(2.6rem,5vw,4.5rem)}
+    }
+
+    /* ── MOBILE ── */
+    @media(max-width:768px){
+      nav{padding:.9rem 1.2rem}
+      .nav-links{display:none}
+      .nav-cta{padding:.45rem 1rem;font-size:12px}
+      #hero{grid-template-columns:1fr;min-height:auto;padding-top:60px}
+      .hero-left{padding:3rem 1.2rem 2rem}
+      .hero-right{display:none}
+      h1{font-size:clamp(2.4rem,10vw,3.5rem)}
+      .hero-sub{font-size:14px}
+      .hero-roles{gap:.4rem}
+      .role-chip{font-size:11px;padding:.25rem .7rem}
+      .sec{padding:3rem 1.2rem}
+      #youtube{padding:3rem 1.2rem}
+      #final-cta{padding:3.5rem 1.2rem}
+      .testimonial-wrap{padding:3.5rem 1.2rem}
+      .resume-cta{padding:3.5rem 1.2rem}
+      .cta-strip{padding:1.8rem 1.2rem;flex-direction:column;text-align:center;gap:1.2rem}
+      .cta-strip p{font-size:.95rem}
+      #experience{padding:3rem 0 0}
+      h2{font-size:clamp(1.6rem,7vw,2.2rem);margin-bottom:1.8rem}
+      .section-eyebrow{font-size:10px}
+      .comp-grid{grid-template-columns:1fr}
+      .about-grid{grid-template-columns:1fr;gap:2rem}
+      .yt-inner{grid-template-columns:1fr;gap:2.5rem}
+      .fcta{grid-template-columns:1fr;gap:2.5rem}
+      .edu-grid{grid-template-columns:1fr}
+      .proj-grid{grid-template-columns:1fr}
+      .cert-grid{grid-template-columns:1fr}
+      .github-card{grid-template-columns:1fr;gap:2rem;padding:1.8rem}
+      .cs-panel.active{grid-template-columns:1fr;gap:2rem}
+      .stats-strip{grid-template-columns:1fr 1fr}
+      .s-num{font-size:2.2rem}
+      .s-cell{padding:1.8rem 1rem}
+      .exp-card{grid-template-columns:1fr}
+      .exp-meta{padding:2rem 1.2rem}
+      .card-inkitin .exp-meta,.card-inkitin .exp-vis{order:unset}
+      .exp-vis{min-height:260px}
+      .exp-role{font-size:1.1rem}
+      .cs-tabs{gap:.4rem}
+      .cs-tab{font-size:11px;padding:.5rem .9rem}
+      .cs-title{font-size:1.15rem}
+      .t-quote{font-size:1rem}
+      .t-quote-mark{font-size:3.5rem}
+      .fcta-photo{display:none}
+      footer{flex-direction:column;gap:.5rem;text-align:center;padding:1.2rem}
+    }
+
+    /* ── SMALL MOBILE ── */
+    @media(max-width:400px){
+      h1{font-size:2.2rem}
+      .hero-left{padding:2.5rem 1rem 2rem}
+      .sec{padding:2.5rem 1rem}
+      .stats-strip{grid-template-columns:1fr}
+      .s-cell{border-right:none;border-bottom:1px solid rgba(255,255,255,.06)}
+      .cs-tab{font-size:10px;padding:.4rem .7rem}
+      nav{padding:.8rem 1rem}
     }
   </style>
 </head>
@@ -487,7 +546,9 @@
   <div class="hero-right">
     <!-- ✏️ Replace with: <img src="photo.jpg" alt="Akshun Dogra"> -->
     <div class="photo-wrap">
-      <div class="photo-ph"><strong>📸 Your portrait photo</strong>Replace with &lt;img&gt; tag<br>Recommended: 4:5 ratio</div>
+      <div class="photo-ph">
+        <img src="IMG_0812.jpeg" alt="Akshun Dogra">
+      </div>
     </div>
     <div class="flag-row">
       <div class="flag-chip">🇮🇳 Born in India</div>
@@ -715,7 +776,7 @@
         <div class="cs-block-label">The Solution</div>
         <ul class="cs-steps">
           <li>Built a <strong>dynamic schema generator</strong> per page — structured for Google's 2MB crawl limit and LLM readability</li>
-          <li>Used <strong>Pack AI + Bing Webmaster</strong> to track which prompts ranked — on-page fixes, FAQs, and schema for weak prompts</li>
+          <li>Used <strong>Peec AI + Bing Webmaster</strong> to track which prompts ranked — on-page fixes, FAQs, and schema for weak prompts</li>
           <li>Identified relevant <strong>LinkedIn and Reddit communities</strong> — answered queries to build LLM citation signals</li>
           <li>Optimized <strong>G2 and Crunchbase profiles</strong> as trusted LLM reference sources (high-authority third-party signals)</li>
         </ul>
@@ -753,25 +814,31 @@
     </div>
     <div class="reveal">
       <div class="yt-card">
-        <div class="yt-thumb">
-          <!-- ✏️ Add: <img src="thumbnail.jpg" alt="Video title"> -->
-          <div class="yt-play">▶</div>
-          <div class="yt-ph">📸 Add your video thumbnail here</div>
+        <div class="yt-tag" style="padding:.9rem 1.2rem .3rem;display:block;font-size:10px">Featured Video</div>
+        <div style="position:relative;width:100%;aspect-ratio:16/9;max-height:220px;overflow:hidden">
+          <iframe src="https://www.youtube.com/embed/7xzibzpsITM" title="Cultural Shock" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;display:block"></iframe>
         </div>
-        <div class="yt-meta">
-          <div class="yt-tag">Featured Video</div>
-          <div class="yt-title">✏️ Replace with your most-watched video title</div>
+        <div class="yt-meta" style="padding:.8rem 1.1rem">
+          <div class="yt-title" style="font-size:.85rem">Cultural Shock: My Experience Studying in Germany | Indian Culture Vs German Culture</div>
           <div class="yt-sub">youtube.com/@akshundogra</div>
         </div>
       </div>
-      <div class="yt-list">
-        <div class="yt-li"><div class="yt-li-icon">🛂</div><div><div class="yt-li-t">✏️ Replace with real video title</div><div class="yt-li-s">Add your actual content</div></div></div>
-        <div class="yt-li"><div class="yt-li-icon">🗣️</div><div><div class="yt-li-t">✏️ Replace with real video title</div><div class="yt-li-s">Add your actual content</div></div></div>
-        <div class="yt-li"><div class="yt-li-icon">🏠</div><div><div class="yt-li-t">✏️ Replace with real video title</div><div class="yt-li-s">Add your actual content</div></div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:.7rem">
+        <div style="background:#161a20;border:1px solid rgba(255,255,255,.06);border-radius:8px;overflow:hidden">
+          <div style="position:relative;width:100%;aspect-ratio:16/9">
+            <iframe src="https://www.youtube.com/embed/I5U5lafWlzo" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;display:block"></iframe>
+          </div>
+        </div>
+        <div style="background:#161a20;border:1px solid rgba(255,255,255,.06);border-radius:8px;overflow:hidden">
+          <div style="position:relative;width:100%;aspect-ratio:16/9">
+            <iframe src="https://www.youtube.com/embed/TogadBhlOMo" title="Video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;display:block"></iframe>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+ 
 
 <!-- EXPERIENCE -->
 <section id="experience">
@@ -975,23 +1042,23 @@
   <h2 class="reveal">Certifi<span class="serif">cations</span></h2>
   <div class="cert-grid reveal">
     <div class="cert-card">
-      <div class="cert-badge badge-ibm">🔵</div>
+      <div class="cert-badge badge-ibm"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" style="width:24px;filter:brightness(0) invert(1)"></div>
       <div><div class="cert-name">Big Data Engineer — Mastery Award</div><div class="cert-issuer">IBM</div><div class="cert-year">2018</div><a class="cert-link" href="https://www.youracclaim.com/badges/a178ca0e-37ca-46fe-a6f8-a71163b38247/public_url" target="_blank">View credential ↗</a></div>
     </div>
     <div class="cert-card">
-      <div class="cert-badge badge-ibm">🔵</div>
+      <div class="cert-badge badge-ibm"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" style="width:24px;filter:brightness(0) invert(1)"></div>
       <div><div class="cert-name">Business Intelligence Analyst — Explorer Award</div><div class="cert-issuer">IBM</div><div class="cert-year">2018</div><a class="cert-link" href="https://www.youracclaim.com/badges/4f940317-d7e7-41ad-909d-0d260930e501/public_url" target="_blank">View credential ↗</a></div>
     </div>
     <div class="cert-card">
-      <div class="cert-badge badge-ibm">🔵</div>
+      <div class="cert-badge badge-ibm"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" style="width:24px;filter:brightness(0) invert(1)"></div>
       <div><div class="cert-name">Big Data &amp; Analytics in collaboration with IBM</div><div class="cert-issuer">IBM</div><div class="cert-year">2016 – 2020</div><div class="cert-year" style="margin-top:.2rem">Reg: 8ISUS2/BDA/60</div></div>
     </div>
     <div class="cert-card">
-      <div class="cert-badge badge-google">G</div>
+      <div class="cert-badge badge-google"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" style="width:28px"></div>
       <div><div class="cert-name">Fundamentals of Digital Marketing</div><div class="cert-issuer">Google</div><div class="cert-year">2021 · ID: 4778EW497</div><a class="cert-link" href="https://learndigital.withgoogle.com/digitalunlocked/validate-certificate-code" target="_blank">View credential ↗</a></div>
     </div>
     <div class="cert-card">
-      <div class="cert-badge badge-google">G</div>
+      <div class="cert-badge badge-google"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" style="width:28px"></div>
       <div><div class="cert-name">Advanced Google Analytics</div><div class="cert-issuer">Google</div><div class="cert-year">2022</div><a class="cert-link" href="https://analytics.google.com/analytics/academy/certificate/Yqp9dVSfR9qkFZgycWagsQ" target="_blank">View credential ↗</a></div>
     </div>
   </div>
@@ -1059,7 +1126,7 @@
       <div class="doc-icon">📄</div>
       <div><div class="doc-name">Akshun Dogra — CV.pdf</div><div class="doc-meta">Performance Marketing · Automation · Analytics · 6+ years</div></div>
     </div>
-    <!-- ✏️ Update href to point to your PDF file -->
+    
     <a href="Akshun-EN.pdf" download class="btn-primary">⬇ Download Resume</a>
   </div>
 </div>
@@ -1100,9 +1167,10 @@
       </div>
     </div>
     <div class="reveal">
-      <!-- ✏️ Add: <img src="casual-photo.jpg" alt="Akshun"> inside .fcta-photo -->
+
       <div class="fcta-photo">
-        <div class="fcta-ph"><strong>📸 Casual photo here</strong>A travel shot, coffee moment — something real, not a headshot</div>
+        <div class="fcta-ph"></div>
+        <img src="IMG_2044.jpeg" alt="Akshun" >
       </div>
     </div>
   </div>
