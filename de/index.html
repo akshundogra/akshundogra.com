@@ -159,32 +159,165 @@
     .s-num .hi{color:var(--neon)}
     .s-lbl{font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.04em}
 
-    /* CASE STUDIES */
-    .cs-tabs{display:flex;gap:.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
-    .cs-tab{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;padding:.6rem 1.4rem;border:1.5px solid var(--border);border-radius:100px;cursor:pointer;color:var(--muted);background:transparent;transition:all .2s}
-    .cs-tab.active{background:var(--ink);color:#fff;border-color:var(--ink)}
-    .cs-panel{display:none}
-    .cs-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-    .cs-left{}
-    .cs-cat{display:inline-flex;align-items:center;gap:.4rem;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .8rem;border-radius:100px;margin-bottom:1.2rem}
-    .cat-auto{background:rgba(184,255,87,.12);color:#4a7c20;border:1px solid rgba(184,255,87,.3)}
-    .cat-web{background:rgba(43,91,168,.1);color:#1e4d9e;border:1px solid rgba(43,91,168,.2)}
-    .cat-seo{background:rgba(200,56,32,.1);color:var(--accent);border:1px solid rgba(200,56,32,.2)}
-    .cs-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;line-height:1.2;margin-bottom:1.5rem;letter-spacing:-.02em}
-    .cs-block{margin-bottom:1.5rem}
-    .cs-block-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.6rem}
-    .cs-block-text{font-size:14px;color:var(--ink2);line-height:1.75;font-weight:300}
-    .cs-steps{list-style:none;display:flex;flex-direction:column;gap:.6rem}
-    .cs-steps li{font-size:13.5px;color:var(--ink2);padding-left:1.4rem;position:relative;line-height:1.65}
-    .cs-steps li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:3px}
-    .cs-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.5rem}
-    .cs-tag{font-size:11px;background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:.2rem .65rem;color:var(--ink2)}
-    .cs-right{}
-    .cs-visual{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden}
-    .cs-vis-label{font-size:10px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;padding:1rem 1.5rem .5rem;border-bottom:1px solid var(--border)}
-    .cs-insight{background:linear-gradient(135deg,rgba(200,56,32,.05),rgba(200,56,32,.02));border:1px solid rgba(200,56,32,.15);border-radius:8px;padding:1.2rem 1.5rem;margin-top:1.5rem}
-    .cs-insight-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
-    .cs-insight-text{font-size:13px;color:var(--ink2);line-height:1.65;font-style:italic}
+    /* ── CASE STUDIES ── */
+    .cs-section {
+      font-family:'DM Sans',sans-serif;
+      color:#1a1612;
+      padding:80px 0 100px;
+      box-sizing:border-box;
+    }
+    .cs-section *,.cs-section *::before,.cs-section *::after{box-sizing:border-box;margin:0;padding:0;}
+    
+    /* ── Layout ── */
+    .cs-section .cs-top{max-width:1160px;margin:0 auto 48px;padding:0 40px;}
+    .cs-section .cs-eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem;font-weight:600;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-h1{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;line-height:1.1;margin-bottom:2.5rem;letter-spacing:-.025em;color:#1a1612;}
+    .cs-section .cs-h1 em{font-family:'Lora',serif;font-weight:400;font-style:italic;color:var(--accent);}
+    
+    /* ── Tabs ── */
+    .cs-section .cs-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:48px;}
+    .cs-section .cs-tab{padding:10px 22px;border-radius:100px;border:1.5px solid rgba(26,22,18,0.12);background:transparent;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;color:#9b8f82;cursor:pointer;transition:all .22s ease;white-space:nowrap;line-height:1.4;letter-spacing:0;}
+    .cs-section .cs-tab:hover{color:#1a1612;border-color:#3d352c;}
+    .cs-section .cs-tab.cs-active{background:#1a1612;color:#fff;border-color:#1a1612;}
+    
+    /* ── 2-col layout ── */
+    .cs-section .cs-layout{max-width:1160px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:start;}
+    
+    /* ── Left text ── */
+    .cs-section .cs-tag{display:inline-flex;align-items:center;gap:.4rem;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.25rem .8rem;border-radius:100px;margin-bottom:1.2rem;font-family:'DM Sans',sans-serif;}
+    .cs-section .cat-auto{background:rgba(184,255,87,.12);color:#4a7c20;border:1px solid rgba(184,255,87,.3)}
+    .cs-section .cat-web{background:rgba(43,91,168,.1);color:#1e4d9e;border:1px solid rgba(43,91,168,.2)}
+    .cs-section .cat-seo{background:rgba(200,56,32,.1);color:var(--accent);border:1px solid rgba(200,56,32,.2)}
+    .cs-section .cs-h2{font-family:'Syne',sans-serif;font-size:clamp(20px,2.8vw,28px);font-weight:800;line-height:1.2;margin-bottom:1.5rem;letter-spacing:-.02em;color:#1a1612;}
+    .cs-section .cs-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:.6rem;margin-top:1.5rem;display:block;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-prob{font-size:14px;color:var(--ink2);line-height:1.75;font-weight:300;}
+    .cs-section .cs-list{list-style:none;margin-top:4px;display:flex;flex-direction:column;gap:.6rem;}
+    .cs-section .cs-list li{font-size:13.5px;color:var(--ink2);padding-left:1.4rem;position:relative;line-height:1.65;font-weight:300;}
+    .cs-section .cs-list li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:3px;font-weight:500;}
+    .cs-section .cs-list li strong{font-weight:500;color:#1a1612;}
+    .cs-section .cs-insight{margin-top:1.5rem;background:linear-gradient(135deg,rgba(200,56,32,.05),rgba(200,56,32,.02));border:1px solid rgba(200,56,32,.15);border-radius:8px;padding:1.2rem 1.5rem;}
+    .cs-section .cs-insight-lbl{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:.4rem;display:block;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-insight-txt{font-size:13px;color:var(--ink2);line-height:1.65;font-style:italic;}
+    .cs-section .cs-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.5rem;}
+    .cs-section .cs-chip{font-size:11px;background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:.2rem .65rem;color:var(--ink2);font-family:'DM Sans',sans-serif;font-weight:400;}
+    .cs-section .cs-tp{display:none;}.cs-section .cs-tp.cs-active{display:block;}
+    
+    /* ── Visual panel ── */
+    .cs-section .cs-visual{position:sticky;top:40px;}
+    .cs-section .cs-vp{background:#f5f0e8;border:1.5px solid rgba(26,22,18,0.1);border-radius:20px;overflow:hidden;}
+    .cs-section .cs-vbar{display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1px solid rgba(26,22,18,0.1);background:rgba(255,255,255,0.55);}
+    .cs-section .cs-vbar-title{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9b8f82;font-weight:500;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-live{display:flex;align-items:center;gap:5px;font-size:11px;color:#2d8a4e;font-weight:500;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-live-dot{width:6px;height:6px;border-radius:50%;background:#2d8a4e;animation:cs-blink 1.4s ease-in-out infinite;}
+    @keyframes cs-blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+    .cs-section .cs-vbody{padding:24px 20px 22px;}
+    
+    /* ── Activity log ── */
+    .cs-section .cs-log{border-top:1px solid rgba(26,22,18,0.1);background:rgba(255,255,255,0.4);padding:13px 18px;}
+    .cs-section .cs-log-lbl{font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:#9b8f82;margin-bottom:9px;display:block;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-log-list{display:flex;flex-direction:column;gap:6px;}
+    .cs-section .cs-log-row{display:flex;align-items:center;gap:8px;font-size:11.5px;color:#3d352c;animation:cs-fadeup .3s ease;font-family:'DM Sans',sans-serif;font-weight:300;}
+    @keyframes cs-fadeup{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:none;}}
+    .cs-section .cs-ltag{font-size:9.5px;font-weight:600;padding:2px 8px;border-radius:100px;flex-shrink:0;font-family:'DM Mono',monospace;letter-spacing:.04em;}
+    .cs-section .cs-ltag.g{background:#e8f5e1;color:#2d8a4e;}
+    .cs-section .cs-ltag.o{background:#fff3e0;color:#d4631a;}
+    .cs-section .cs-ltag.r{background:#fce8e8;color:#c0392b;}
+    .cs-section .cs-ltag.b{background:#e8f0ff;color:#2563b8;}
+    .cs-section .cs-lmsg{flex:1;}
+    .cs-section .cs-lago{font-size:10px;color:#9b8f82;flex-shrink:0;font-family:'DM Mono',monospace;}
+    
+    /* ── SVG node styles ── */
+    .cs-section .cs-n-rect{fill:#fff;stroke:rgba(26,22,18,0.1);stroke-width:1.5;}
+    .cs-section .cs-n-lbl{font-family:'DM Sans',sans-serif;font-weight:500;fill:#1a1612;}
+    .cs-section .cs-n-sub{font-family:'DM Sans',sans-serif;fill:#9b8f82;}
+    .cs-section .cs-svg-lbl{font-family:'DM Sans',sans-serif;fill:#9b8f82;letter-spacing:1.5px;}
+    .cs-section .cs-dot{opacity:0;}
+    
+    /* ── ABM browser ── */
+    .cs-section .cs-browser{border-radius:12px;overflow:hidden;border:1.5px solid rgba(26,22,18,0.12);background:#fff;margin-bottom:12px;}
+    .cs-section .cs-chrome{background:#1e1e1e;padding:10px 14px;display:flex;align-items:center;gap:10px;}
+    .cs-section .cs-bdots{display:flex;gap:5px;}
+    .cs-section .cs-bdot{width:11px;height:11px;border-radius:50%;}
+    .cs-section .cs-bdot.r{background:#ff5f57;}.cs-section .cs-bdot.y{background:#febc2e;}.cs-section .cs-bdot.g{background:#27c840;}
+    .cs-section .cs-url{flex:1;background:#2d2d2d;border-radius:5px;padding:5px 12px;font-family:'DM Mono',monospace;font-size:10.5px;color:#777;}
+    .cs-section .cs-url-static{color:#888;}
+    .cs-section .cs-url-slug{color:#b6d9a0;transition:opacity .25s;}
+    .cs-section .cs-bpage{padding:22px 24px 18px;background:#f8f9ff;}
+    .cs-section .cs-plogo{width:36px;height:12px;background:#dde;border-radius:3px;margin:0 auto 20px;}
+    .cs-section .cs-phero{text-align:center;font-size:15px;color:#2a2a2a;font-weight:400;line-height:2;margin-bottom:10px;font-family:'DM Sans',sans-serif;letter-spacing:0;}
+    .cs-section .cs-var{display:inline-flex;align-items:center;background:#fce8e8;border:1.5px solid #f0a0a0;color:#c0392b;font-family:'DM Mono',monospace;font-size:12px;font-weight:500;padding:2px 9px;border-radius:5px;margin:0 2px;transition:opacity .25s,transform .25s;}
+    .cs-section .cs-var.cs-fading{opacity:0;transform:translateY(-4px);}
+    .cs-section .cs-var-sm{display:inline-flex;background:#fce8e8;border:1px solid #f0a0a0;color:#c0392b;font-family:'DM Mono',monospace;font-size:11px;padding:1px 7px;border-radius:4px;margin:0 2px;transition:opacity .25s,transform .25s;}
+    .cs-section .cs-var-sm.cs-fading{opacity:0;transform:translateY(-4px);}
+    .cs-section .cs-psub{text-align:center;font-size:12px;color:#888;margin-bottom:18px;line-height:1.8;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-pb-rows{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+    .cs-section .cs-pb-row{display:flex;gap:5px;align-items:center;}
+    .cs-section .cs-pb{height:9px;border-radius:3px;background:#e0ddd8;}
+    .cs-section .cs-pb.dyn{background:#f5c5c5;animation:cs-dynb 2.2s ease-in-out infinite;}
+    @keyframes cs-dynb{0%,100%{opacity:1;}50%{opacity:.5;}}
+    .cs-section .w15{width:15%;}.cs-section .w20{width:20%;}.cs-section .w25{width:25%;}.cs-section .w30{width:30%;}.cs-section .w35{width:35%;}.cs-section .w40{width:40%;}.cs-section .w45{width:45%;}
+    .cs-section .cs-pleg{display:flex;gap:14px;font-size:10px;color:#888;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-leg{display:flex;align-items:center;gap:5px;}
+    .cs-section .cs-leg-dot{width:9px;height:9px;border-radius:2px;}
+    .cs-section .cs-leg-dot.st{background:#e0ddd8;}.cs-section .cs-leg-dot.dy{background:#f5c5c5;}
+    .cs-section .cs-abm-dist{background:rgba(255,255,255,0.6);border:1px solid rgba(26,22,18,0.1);border-radius:10px;padding:11px 14px;font-size:12px;color:#3d352c;font-family:'DM Sans',sans-serif;font-weight:300;}
+    
+    /* ── LLM pillars ── */
+    .cs-section .cs-llm-mon{background:#fff;border:1.5px solid rgba(26,22,18,0.1);border-radius:14px;padding:16px 18px;margin-bottom:12px;}
+    .cs-section .cs-llm-mon-title{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#9b8f82;margin-bottom:12px;display:block;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-llm-plats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
+    .cs-section .cs-llm-plat{border:1.5px solid rgba(26,22,18,0.1);border-radius:10px;padding:10px 8px;text-align:center;background:#f5f0e8;}
+    .cs-section .cs-llm-plat.cited{border-color:rgba(45,138,78,0.3);background:#f0faf4;}
+    .cs-section .cs-llm-icon{font-size:20px;margin-bottom:4px;}
+    .cs-section .cs-llm-name{font-size:10px;font-weight:500;color:#1a1612;margin-bottom:5px;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-llm-status{display:flex;align-items:center;justify-content:center;gap:4px;font-size:9.5px;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-llm-status.yes{color:#2d8a4e;}.cs-section .cs-llm-status.no{color:#9b8f82;}
+    .cs-section .cs-sdot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+    .cs-section .cs-sdot.on{background:#2d8a4e;animation:cs-blink 1.6s ease-in-out infinite;}
+    .cs-section .cs-sdot.off{background:#ccc;}
+    .cs-section .cs-cite-wrap{background:#fff;border:1.5px solid rgba(26,22,18,0.1);border-radius:12px;padding:15px 18px;margin-bottom:12px;}
+    .cs-section .cs-cite-hd{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;}
+    .cs-section .cs-cite-lbl{font-size:11px;color:#9b8f82;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-cite-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:#c0392b;}
+    .cs-section .cs-cite-track{background:rgba(26,22,18,0.08);border-radius:100px;height:8px;overflow:hidden;}
+    .cs-section .cs-cite-fill{height:100%;border-radius:100px;background:linear-gradient(90deg,#2d8a4e,#4caf50);width:0%;transition:width 1.4s cubic-bezier(.22,1,.36,1);}
+    .cs-section .cs-cite-labs{display:flex;justify-content:space-between;font-size:10px;color:#9b8f82;margin-top:5px;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-pillars{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
+    .cs-section .cs-pillar{background:#fff;border:1.5px solid rgba(26,22,18,0.1);border-radius:12px;padding:15px 16px;transition:border-color .2s,transform .2s;}
+    .cs-section .cs-pillar:hover{border-color:rgba(26,22,18,0.22);transform:translateY(-2px);}
+    .cs-section .cs-pillar.schema{border-color:rgba(192,57,43,0.22);background:#fffaf9;}
+    .cs-section .cs-p-icon{font-size:20px;margin-bottom:8px;}
+    .cs-section .cs-p-name{font-size:12.5px;font-weight:600;margin-bottom:4px;color:#1a1612;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-pillar.schema .cs-p-name{color:#c0392b;}
+    .cs-section .cs-p-desc{font-size:11px;color:#9b8f82;line-height:1.55;font-weight:300;font-family:'DM Sans',sans-serif;}
+    
+    /* ── Performance funnel ── */
+    .cs-section .cs-perf-lbl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9b8f82;margin-bottom:14px;display:block;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px;}
+    .cs-section .cs-pm{background:#fff;border:1.5px solid rgba(26,22,18,0.1);border-radius:10px;padding:12px;text-align:center;}
+    .cs-section .cs-pm-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;line-height:1;margin-bottom:3px;}
+    .cs-section .cs-pm-num.green{color:#2d8a4e;}.cs-section .cs-pm-num.red{color:#c0392b;}.cs-section .cs-pm-num.blue{color:#2563b8;}
+    .cs-section .cs-pm-lbl{font-size:10px;color:#9b8f82;line-height:1.3;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-fc{background:#fff;border:1.5px solid rgba(26,22,18,0.1);border-radius:14px;padding:16px 18px;position:relative;}
+    .cs-section .cs-fc.booked{background:#fef5f4;border-color:rgba(192,57,43,0.22);}
+    .cs-section .cs-fc-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+    .cs-section .cs-flogo{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .cs-section .cs-flogo.li{background:#0a66c2;color:#fff;font-size:14px;font-weight:700;font-family:'DM Sans',sans-serif;letter-spacing:0;}
+    .cs-section .cs-flogo.gg{background:#fff;border:1.5px solid rgba(26,22,18,0.1);font-size:19px;}
+    .cs-section .cs-flogo.tg{background:#fce8e8;font-size:20px;}
+    .cs-section .cs-fc-name{font-size:14px;font-weight:600;color:#1a1612;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-fc-name.red{font-family:'Playfair Display',serif;font-style:italic;color:#c0392b;font-size:18px;}
+    .cs-section .cs-fc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;}
+    .cs-section .cs-fc-tag{font-size:11px;color:#2563b8;border:1px solid rgba(37,99,184,0.2);background:rgba(37,99,184,0.06);padding:3px 10px;border-radius:100px;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-fc-meta{font-size:12px;color:#9b8f82;font-weight:300;font-family:'DM Sans',sans-serif;}
+    .cs-section .cs-farrow{text-align:center;padding:8px 0;color:rgba(26,22,18,0.2);font-size:20px;display:flex;align-items:center;justify-content:center;position:relative;}
+    .cs-section .cs-farrow::before,.cs-section .cs-farrow::after{content:'';position:absolute;top:50%;width:calc(50% - 18px);height:1px;background:rgba(26,22,18,0.08);}
+    .cs-section .cs-farrow::before{left:0;}.cs-section .cs-farrow::after{right:0;}
+    .cs-section .cs-killed{background:rgba(255,255,255,0.5);border:1px solid rgba(26,22,18,0.1);border-radius:10px;padding:10px 14px;font-size:12px;color:#9b8f82;margin-top:10px;font-family:'DM Sans',sans-serif;font-weight:300;}
+    .cs-section .cs-killed strong{color:#1a1612;font-weight:500;}
+    
+    @media(max-width:860px){.cs-section .cs-layout{grid-template-columns:1fr;}.cs-section .cs-visual{position:static;}}
+    @media(max-width:560px){.cs-section .cs-top,.cs-section .cs-layout{padding:0 20px;}.cs-section .cs-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;}}
 
     /* FLOW DIAGRAMS */
     .flow-wrap{padding:1.5rem}
@@ -753,184 +886,343 @@
 </div>
 
 <!-- CASE STUDIES -->
-<section id="case-studies" class="sec sec-border">
-  <div class="section-eyebrow reveal">Echte Arbeit, echte Ergebnisse</div>
-  <h2 class="reveal">Fall<span class="serif">studien</span></h2>
-  <div class="cs-tabs reveal">
-    <button class="cs-tab active" onclick="showCS(0)">01 · Intent Signal Automation</button>
-    <button class="cs-tab" onclick="showCS(1)">02 · ABM Page Automation</button>
-    <button class="cs-tab" onclick="showCS(2)">03 · LLM / GEO Sichtbarkeit</button>
-    <button class="cs-tab" onclick="showCS(3)">04 · Performance Marketing </button>
+<section class="cs-section" id="case-studies">
+ 
+  <div class="cs-top" data-aos="fade-up" data-aos-duration="600">
+    <p class="cs-eyebrow">Echte Arbeit, echte Ergebnisse</p>
+    <h2 class="cs-h1">Fall<em>studien</em></h2>
+    <div class="cs-tabs" id="csTabs">
+      <button class="cs-tab cs-active" data-cstab="0">01 · Intent Signal Automation</button>
+      <button class="cs-tab" data-cstab="1">02 · ABM Page Automation</button>
+      <button class="cs-tab" data-cstab="2">03 · LLM / GEO Sichtbarkeit</button>
+      <button class="cs-tab" data-cstab="3">04 · Performance Marketing</button>
+    </div>
   </div>
-
-  <!-- CS 1 -->
-  <div class="cs-panel active" id="cs-0">
-    <div class="cs-left">
-      <div class="cs-cat cat-auto">⚡ Marketing Automation</div>
-      <div class="cs-title">Turning Anonymous Website Visitors into Qualified Pipeline</div>
-      <div class="cs-block"><div class="cs-block-label">Das Problem</div><p class="cs-block-text">Besucher kommen auf MOFU/BOFU-Seiten — Preise, Lösungen, Fallstudien — und verschwinden spurlos. Keine Kontaktdaten, kein Formular ausgefüllt, kein Signal zum Handeln. High-Intent-Prospects verschwanden lautlos.</p></div>
-      <div class="cs-block">
-        <div class="cs-block-label">Die Lösung</div>
-        <ul class="cs-steps">
+ 
+  <div class="cs-layout">
+ 
+    <!-- ══ LEFT TEXT ══ -->
+    <div data-aos="fade-up" data-aos-duration="600" data-aos-delay="60">
+ 
+      <div class="cs-tp cs-active" data-cspanel="0">
+        <div class="cs-tag cat-auto">⚡ Marketing Automation</div>
+        <h3 class="cs-h2">Turning Anonymous Website Visitors into Qualified Pipeline</h3>
+        <span class="cs-label">Das Problem</span>
+        <p class="cs-prob">Besucher kommen auf MOFU/BOFU-Seiten — Preise, Lösungen, Fallstudien — und verschwinden spurlos. Keine Kontaktdaten, kein Formular ausgefüllt, kein Signal zum Handeln. High-Intent-Prospects verschwanden lautlos.</p>
+        <span class="cs-label">Die Lösung</span>
+        <ul class="cs-list">
           <li>Verwendung von <strong>RB2B + Apollo</strong> zur De-Anonymisierung von Website-Besuchern und Extraktion von Kontaktdaten</li>
           <li>Daten per <strong>API-Webhook über Make</strong> an Clay für ICP-Scoring gesendet</li>
           <li>Clay segmentierte Leads: High Value → direkt zu Lemlist Outreach, Low Value → verworfen</li>
           <li>Mid-Value-Leads lösten eine <strong>Slack-Bestätigung</strong> aus — SDR prüft und akzeptiert/lehnt manuell ab</li>
           <li>Entscheidung zurück an Clay → Lemlist oder verworfen, Human-in-the-Loop geschlossen</li>
         </ul>
-      </div>
-      <div class="cs-insight"><div class="cs-insight-label">Wichtigste Erkenntnis</div><p class="cs-insight-text">„KI kann halluzinieren und schlechte Entscheidungen im großen Maßstab treffen. Einen menschlichen Checkpoint für Sonderfälle einzubauen ist keine Schwäche — es hält das System vertrauenswürdig und verhindert, dass SDRs gute Leads verbrennen."</p></div>
-      <div class="cs-tags"><span class="cs-tag">RB2B</span><span class="cs-tag">Apollo</span><span class="cs-tag">Make</span><span class="cs-tag">Clay</span><span class="cs-tag">Lemlist</span><span class="cs-tag">Slack</span><span class="cs-tag">Webhooks</span></div>
-    </div>
-    <div class="cs-right">
-      <div class="cs-visual">
-        <div class="cs-vis-label">Pipeline flow · Intent Signal Automation</div>
-        <div class="flow-wrap">
-          <div class="wf-section-title" style="font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem">Visitor Detection<span style="flex:1;height:1px;background:var(--border)"></span></div>
-          <div class="flow-row">
-            <div class="flow-node"><div class="flow-box">🌐</div><div class="flow-nl">RB2B</div></div>
-            <div class="flow-arr">→</div>
-            <div class="flow-node"><div class="flow-box">🔗</div><div class="flow-nl">Apollo</div></div>
-            <div class="flow-arr">→</div>
-            <div class="flow-node"><div class="flow-box"><img src="https://cdn.simpleicons.org/make/000000" onerror="this.outerHTML='⚙️'"></div><div class="flow-nl">Make</div></div>
-            <div class="flow-arr">→</div>
-            <div class="flow-node"><div class="flow-box">🧱</div><div class="flow-nl">Clay ICP</div></div>
-          </div>
-          <hr style="border:none;border-top:1px dashed var(--border);margin:1rem 0">
-          <div class="wf-section-title" style="font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem">Lead Scoring &amp; Routing<span style="flex:1;height:1px;background:var(--border)"></span></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.6rem;text-align:center">
-            <div style="display:flex;flex-direction:column;align-items:center;gap:.4rem">
-              <div style="font-size:9px;font-weight:700;color:#2d6a4f;background:rgba(45,106,79,.1);border:1px solid rgba(45,106,79,.2);border-radius:4px;padding:.2rem .5rem;letter-spacing:.05em">HIGH VALUE</div>
-              <div class="flow-arr" style="transform:rotate(90deg)">→</div>
-              <div class="flow-node"><div class="flow-box">📧</div><div class="flow-nl">Lemlist</div></div>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:.4rem">
-              <div style="font-size:9px;font-weight:700;color:#b45309;background:rgba(217,119,6,.1);border:1px solid rgba(217,119,6,.2);border-radius:4px;padding:.2rem .5rem;letter-spacing:.05em">MID VALUE</div>
-              <div class="flow-arr" style="transform:rotate(90deg)">→</div>
-              <div class="flow-node"><div class="flow-box">💬</div><div class="flow-nl">Slack SDR</div></div>
-            </div>
-            <div style="display:flex;flex-direction:column;align-items:center;gap:.4rem">
-              <div style="font-size:9px;font-weight:700;color:var(--accent);background:rgba(200,56,32,.1);border:1px solid rgba(200,56,32,.2);border-radius:4px;padding:.2rem .5rem;letter-spacing:.05em">LOW VALUE</div>
-              <div class="flow-arr" style="transform:rotate(90deg)">→</div>
-              <div class="flow-node"><div class="flow-box" style="opacity:.4">🗑️</div><div class="flow-nl" style="opacity:.4">Discard</div></div>
-            </div>
-          </div>
-          <div class="flow-outcome" style="margin-top:1.2rem;background:rgba(24,24,26,.04);border:1px solid var(--border);border-radius:6px;padding:.8rem 1rem;font-size:12px;color:var(--muted)">
-            🤝 SDR accept/reject → Clay → Lemlist or Discard
-          </div>
+        <div class="cs-insight">
+          <span class="cs-insight-lbl">Wichtigste Erkenntnis</span>
+          <p class="cs-insight-txt">„KI kann halluzinieren und schlechte Entscheidungen im großen Maßstab treffen. Einen menschlichen Checkpoint für Sonderfälle einzubauen ist keine Schwäche — es hält das System vertrauenswürdig und verhindert, dass SDRs gute Leads verbrennen."</p>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-chip">RB2B</span><span class="cs-chip">Apollo</span><span class="cs-chip">Make</span>
+          <span class="cs-chip">Clay</span><span class="cs-chip">Lemlist</span><span class="cs-chip">Slack</span><span class="cs-chip">Webhooks</span>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- CS 2 -->
-  <div class="cs-panel" id="cs-1">
-    <div class="cs-left">
-      <div class="cs-cat cat-web">🌐 Web Dev + KI-Automatisierung</div>
-      <div class="cs-title">Personalisierte ABM Landing Pages im großen Maßstab mit KI</div>
-      <div class="cs-block"><div class="cs-block-label">Das Problem</div><p class="cs-block-text">Kalte ABM-Ziele und „Jetzt nicht"-Leads lagen stagnierend im CRM. Manuelle Personalisierung dauerte zu lange — individuellen Content pro Account zu erstellen war für ein kleines Team nicht skalierbar.</p></div>
-      <div class="cs-block">
-        <div class="cs-block-label">Die Lösung</div>
-        <ul class="cs-steps">
+      <div class="cs-tp" data-cspanel="1">
+        <div class="cs-tag cat-web">🌐 Web Dev + KI-Automatisierung</div>
+        <h3 class="cs-h2">Personalisierte ABM Landing Pages im großen Maßstab mit KI</h3>
+        <span class="cs-label">Das Problem</span>
+        <p class="cs-prob">Kalte ABM-Ziele und „Jetzt nicht"-Leads lagen stagnierend im CRM. Manuelle Personalisierung dauerte zu lange — individuellen Content pro Account zu erstellen war für ein kleines Team nicht skalierbar.</p>
+        <span class="cs-label">Die Lösung</span>
+        <ul class="cs-list">
           <li>Kalte/stagnierende Leads aus dem CRM gezogen → <strong>Make → Clay</strong> zur Anreicherung</li>
           <li>Clay + ChatGPT generierten personalisierten Content pro Account (Firmenlogo, individuelle Nachricht, personalisierter Hero, branchenspezifischer Text)</li>
           <li>Ein <strong>dynamisches Webflow-Template</strong> gebaut — 60% statisch, 40% automatisch befüllte Felder</li>
           <li>SDRs fügten individuelle Sandbox-Demos oder Videos hinzu (via Tools wie NanoBanana)</li>
           <li>Seiten verteilt über Outreach-Kampagnen, LinkedIn Thought Leadership (CEO/CTO) und unternehmensbasiertes Remarketing</li>
         </ul>
-      </div>
-      <div class="cs-insight"><div class="cs-insight-label">Wichtigste Erkenntnis</div><p class="cs-insight-text">„ABM bedeutete früher wochenlange manuelle Arbeit pro Account. Mit der richtigen Pipeline kann man in Minuten wirklich personalisierte Erlebnisse schaffen — ohne Qualitätseinbußen."</p></div>
-      <div class="cs-tags"><span class="cs-tag">Webflow</span><span class="cs-tag">Make</span><span class="cs-tag">Clay</span><span class="cs-tag">ChatGPT</span><span class="cs-tag">CRM</span><span class="cs-tag">LinkedIn</span><span class="cs-tag">ABM</span></div>
-    </div>
-    <div class="cs-right">
-      <div class="cs-visual">
-        <div class="cs-vis-label">Dynamic ABM page structure</div>
-        <div class="abm-page">
-          <div class="abm-nav"><div class="abm-dot" style="background:#ff5f56"></div><div class="abm-dot" style="background:#ffbd2e"></div><div class="abm-dot" style="background:#27c93f"></div></div>
-          <div class="abm-hero">
-            <span class="abm-logo-ph"></span>
-            <div class="abm-h">Hi <span class="abm-dyn">{{First Name}}</span>, we built this for <span class="abm-dyn">{{Company}}</span></div>
-            <div style="margin-top:.5rem;font-size:.65rem;color:var(--muted)">Custom hero image · <span class="abm-dyn">{{Industry}}</span> use case</div>
-          </div>
-          <div class="abm-body">
-            <div class="abm-row"><div class="abm-static"></div><div class="abm-dynamic"></div><div class="abm-static" style="flex:.4"></div></div>
-            <div class="abm-row"><div class="abm-dynamic" style="flex:.5"></div><div class="abm-static"></div></div>
-            <div class="abm-row"><div class="abm-static"></div><div class="abm-static"></div><div class="abm-dynamic" style="flex:.3"></div></div>
-            <div class="abm-legend">
-              <div class="abm-leg"><div class="abm-dot-s"></div>Static (60%)</div>
-              <div class="abm-leg"><div class="abm-dot-d"></div>Dynamic / AI-generated (40%)</div>
-            </div>
-          </div>
+        <div class="cs-insight">
+          <span class="cs-insight-lbl">Wichtigste Erkenntnis</span>
+          <p class="cs-insight-txt">„ABM bedeutete früher wochenlange manuelle Arbeit pro Account. Mit der richtigen Pipeline kann man in Minuten wirklich personalisierte Erlebnisse schaffen — ohne Qualitätseinbußen."</p>
         </div>
-        <div style="margin-top:1rem;padding:1rem;background:rgba(43,91,168,.05);border:1px solid rgba(43,91,168,.15);border-radius:6px;font-size:12px;color:var(--ink2);line-height:1.6">
-          📤 Distributed via: outreach campaigns · LinkedIn (CEO/CTO) · company-based remarketing
+        <div class="cs-tags">
+          <span class="cs-chip">Webflow</span><span class="cs-chip">Make</span><span class="cs-chip">Clay</span><span class="cs-chip">ChatGPT</span><span class="cs-chip">CRM</span><span class="cs-chip">LinkedIn</span><span class="cs-chip">ABM</span>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- CS 3 -->
-  <div class="cs-panel" id="cs-2">
-    <div class="cs-left">
-      <div class="cs-cat cat-seo">🔍 SEO + LLM-Sichtbarkeit</div>
-      <div class="cs-title">Ein kleines SaaS im Zeitalter der KI-Suche sichtbar machen</div>
-      <div class="cs-block"><div class="cs-block-label">Das Problem</div><p class="cs-block-text">Ein kleines SaaS mit begrenzter Domain-Autorität — unsichtbar bei LLM-basierter Suche (ChatGPT, Perplexity, Bing AI). Traditionelles SEO reichte nicht. Eine GEO-First-Strategie war nötig, bevor Wettbewerber aufholten.</p></div>
-      <div class="cs-block">
-        <div class="cs-block-label">Die Lösung</div>
-        <ul class="cs-steps">
+ 
+      <div class="cs-tp" data-cspanel="2">
+        <div class="cs-tag cat-seo">🔍 SEO + LLM-Sichtbarkeit</div>
+        <h3 class="cs-h2">Ein kleines SaaS im Zeitalter der KI-Suche sichtbar machen</h3>
+        <span class="cs-label">Das Problem</span>
+        <p class="cs-prob">Ein kleines SaaS mit begrenzter Domain-Autorität — unsichtbar bei LLM-basierter Suche (ChatGPT, Perplexity, Bing AI). Traditionelles SEO reichte nicht. Eine GEO-First-Strategie war nötig, bevor Wettbewerber aufholten.</p>
+        <span class="cs-label">Die Lösung</span>
+        <ul class="cs-list">
           <li>Einen <strong>dynamischen Schema-Generator</strong> pro Seite gebaut — strukturiert für Googles 2MB Crawl-Limit und LLM-Lesbarkeit</li>
           <li><strong>Peec AI + Bing Webmaster</strong> verwendet, um zu tracken, welche Prompts rankten — On-Page-Fixes, FAQs und Schema für schwache Prompts</li>
           <li>Relevante <strong>LinkedIn- und Reddit-Communities</strong> identifiziert — Fragen beantwortet, um LLM-Zitations-Signale aufzubauen</li>
           <li><strong>G2- und Crunchbase-Profile</strong> als vertrauenswürdige LLM-Referenzquellen optimiert (hochautoritative Third-Party-Signale)</li>
         </ul>
-      </div>
-      <div class="cs-insight"><div class="cs-insight-label">Wichtigste Erkenntnis</div><p class="cs-insight-text">„LLMs zitieren strukturierten, meinungsstarken, community-validierten Content. Ihr G2-Profil und eine Reddit-Antwort können Ihren Blogpost in ChatGPT übertreffen — wenn Sie sie als Teil Ihrer SEO-Strategie behandeln."</p></div>
-      <div class="cs-tags"><span class="cs-tag">GEO</span><span class="cs-tag">Schema</span><span class="cs-tag">Pack AI</span><span class="cs-tag">Bing Webmaster</span><span class="cs-tag">Reddit</span><span class="cs-tag">G2</span><span class="cs-tag">Crunchbase</span></div>
-    </div>
-    <div class="cs-right">
-      <div class="cs-visual">
-        <div class="cs-vis-label">LLM visibility strategy · 4 pillars</div>
-        <div class="llm-wrap">
-          <div class="llm-row">
-            <div class="llm-card"><div class="llm-icon">📐</div><div class="llm-title">Dynamic Schema</div><div class="llm-desc">Per-page schema, optimised for 2MB crawl limit. Structured for LLM readability.</div></div>
-            <div class="llm-card"><div class="llm-icon">🔎</div><div class="llm-title">Prompt Tracking</div><div class="llm-desc">Pack AI + Bing Webmaster to find ranking gaps. On-page fixes + FAQ schema per weak prompt.</div></div>
-          </div>
-          <div class="llm-row">
-            <div class="llm-card"><div class="llm-icon">💬</div><div class="llm-title">Community Signals</div><div class="llm-desc">LinkedIn + Reddit answers on relevant queries. LLMs use these as citation sources.</div></div>
-            <div class="llm-card"><div class="llm-icon">⭐</div><div class="llm-title">Authority Profiles</div><div class="llm-desc">G2 + Crunchbase optimised as trusted third-party LLM reference sources.</div></div>
-          </div>
-          <div class="llm-result"><div class="llm-result-n">400%</div><div class="llm-result-l">organic traffic growth achieved alongside this strategy</div></div>
+        <div class="cs-insight">
+          <span class="cs-insight-lbl">Wichtigste Erkenntnis</span>
+          <p class="cs-insight-txt">„LLMs zitieren strukturierten, meinungsstarken, community-validierten Content. Ihr G2-Profil und eine Reddit-Antwort können Ihren Blogpost in ChatGPT übertreffen — wenn Sie sie als Teil Ihrer SEO-Strategie behandeln."</p>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-chip">GEO</span><span class="cs-chip">Schema</span><span class="cs-chip">Pack AI</span><span class="cs-chip">Bing Webmaster</span><span class="cs-chip">Reddit</span><span class="cs-chip">G2</span><span class="cs-chip">Crunchbase</span>
         </div>
       </div>
-    </div>
-  </div>
-
- <!-- CS 4 — PERFORMANCE MARKETING -->
- <div class="cs-panel" id="cs-3">
-  <div class="cs-left">
-    <div class="cs-cat" style="background:rgba(200,56,32,.1);color:#c83820;border:1px solid rgba(200,56,32,.2)">📈 Performance Marketing</div>
-    <div class="cs-title">Aufbau einer Full-Funnel B2B Paid Media Engine</div>
-    <div class="cs-block"><div class="cs-block-label">Das Problem</div><p class="cs-block-text">Paid Media war völlig unstrukturiert — Google-Ausgaben verstreut über generische Keywords mit nahezu null Pipeline, LinkedIn sporadisch getestet ohne ICP-Targeting, und kein KPI-Framework, das Ausgaben mit Demos oder Umsatz verknüpfte.</p></div>
-    <div class="cs-block"><div class="cs-block-label">LinkedIn — Nachfrage-Kreation</div><ul class="cs-steps"><li><strong>Founder-led Thought Leadership</strong> direkt an kuratierte ICP-Listen gepusht — 6x Branchen-Benchmark CTR erreicht</li><li>Custom Company- und Persona-Listen erstellt, um natives Targeting zu ersetzen — <strong>35% CTR-Steigerung</strong></li><li>Gated Content und Lead Gen Forms eliminiert — schwache Qualität, keine Pipeline</li><li>Zu <strong>1:1 ABM-Kampagnen</strong> für über 50 benannte Accounts weiterentwickelt</li></ul></div>
-    <div class="cs-block"><div class="cs-block-label">Google Ads — Nachfrage-Capture</div><ul class="cs-steps"><li>Von breiten Keyword-Clustern zu <strong>nur Competitor-Search</strong> geschwenkt — Nutzer bereits im Kaufmodus</li><li>Generische Kampagnen auf Exact-Match mit strikten Ausgabenlimits und Kill-Rules reduziert</li><li><strong>Display Retargeting</strong> als zweite Conversion-Ebene hinzugefügt</li><li>Kill-Kriterien vor Launch etabliert — underperformende Kanäle schnell beendet</li></ul></div>
-    <div class="cs-insight"><div class="cs-insight-label">Wichtigste Erkenntnis</div><p class="cs-insight-text">„Paid Media in B2B ist kein Volume-Play. LinkedIn kreiert qualifizierte Nachfrage innerhalb des exakten ICP, Google Search erntet sie, und Retargeting konvertiert sie. Jeder Euro muss zur Pipeline verlinkt sein."</p></div>
-    <div class="cs-tags"><span class="cs-tag">LinkedIn Ads</span><span class="cs-tag">Google Ads</span><span class="cs-tag">ABM</span><span class="cs-tag">ICP Targeting</span><span class="cs-tag">Demand Generation</span><span class="cs-tag">Retargeting</span></div>
-  </div>
-  <div class="cs-right">
-    <div class="cs-visual">
-      <div class="cs-vis-label">Full-funnel paid media architecture</div>
-      <div style="padding:1.5rem">
-        <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem;margin-bottom:.8rem"><div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem"><div style="width:28px;height:28px;background:#0a66c2;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#fff;font-weight:700;flex-shrink:0">in</div><div style="font-family:Syne,sans-serif;font-size:.85rem;font-weight:700">LinkedIn · Demand Creation</div></div><div style="display:flex;gap:.4rem;flex-wrap:wrap"><span style="font-size:10px;background:rgba(10,102,194,.1);border:1px solid rgba(10,102,194,.2);color:#0a66c2;padding:.2rem .5rem;border-radius:4px">Thought Leadership</span><span style="font-size:10px;background:rgba(10,102,194,.1);border:1px solid rgba(10,102,194,.2);color:#0a66c2;padding:.2rem .5rem;border-radius:4px">ICP Lists</span><span style="font-size:10px;background:rgba(10,102,194,.1);border:1px solid rgba(10,102,194,.2);color:#0a66c2;padding:.2rem .5rem;border-radius:4px">ABM 1:1</span></div><div style="margin-top:.6rem;font-size:11px;color:var(--muted)">6x industry CTR benchmark achieved</div></div>
-        <div style="text-align:center;color:var(--muted);font-size:1.2rem;margin:.3rem 0">↓</div>
-        <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:1rem;margin-bottom:.8rem"><div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem"><div style="width:28px;height:28px;background:#fff;border:1px solid #e2e8f0;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;color:#4285f4;flex-shrink:0">G</div><div style="font-family:Syne,sans-serif;font-size:.85rem;font-weight:700">Google Ads · Demand Capture</div></div><div style="display:flex;gap:.4rem;flex-wrap:wrap"><span style="font-size:10px;background:rgba(66,133,244,.1);border:1px solid rgba(66,133,244,.2);color:#4285f4;padding:.2rem .5rem;border-radius:4px">Competitor Search</span><span style="font-size:10px;background:rgba(66,133,244,.1);border:1px solid rgba(66,133,244,.2);color:#4285f4;padding:.2rem .5rem;border-radius:4px">Exact Match</span><span style="font-size:10px;background:rgba(66,133,244,.1);border:1px solid rgba(66,133,244,.2);color:#4285f4;padding:.2rem .5rem;border-radius:4px">Display Retargeting</span></div><div style="margin-top:.6rem;font-size:11px;color:var(--muted)">Primary demo driver · Lowest CPA across all channels</div></div>
-        <div style="text-align:center;color:var(--muted);font-size:1.2rem;margin:.3rem 0">↓</div>
-        <div style="background:linear-gradient(135deg,rgba(200,56,32,.06),transparent);border:1px solid rgba(200,56,32,.15);border-radius:8px;padding:1rem;display:flex;justify-content:space-between;align-items:center"><div><div style="font-family:Syne,sans-serif;font-size:1.1rem;font-weight:800;color:#c83820">Demo Booked</div><div style="font-size:11px;color:var(--muted);margin-top:.2rem">Qualified pipeline · Linked to revenue</div></div><div style="font-size:1.8rem">🎯</div></div>
-        <div style="margin-top:1rem;padding:.8rem 1rem;background:rgba(24,24,26,.04);border:1px solid var(--border);border-radius:6px;font-size:11px;color:var(--muted);line-height:1.7"><strong style="color:var(--ink2);font-size:11px">Killed fast:</strong> Generic search · Gated content · Auto-targeting · Lead Gen Forms</div>
+ 
+      <div class="cs-tp" data-cspanel="3">
+        <div class="cs-tag cat-seo">📈 Performance Marketing</div>
+        <h3 class="cs-h2">Aufbau einer Full-Funnel B2B Paid Media Engine</h3>
+        <span class="cs-label">Das Problem</span>
+        <p class="cs-prob">Paid Media war völlig unstrukturiert — Google-Ausgaben verstreut über generische Keywords mit nahezu null Pipeline, LinkedIn sporadisch getestet ohne ICP-Targeting, und kein KPI-Framework, das Ausgaben mit Demos oder Umsatz verknüpfte.</p>
+        <span class="cs-label">LinkedIn — Nachfrage-Kreation</span>
+        <ul class="cs-list">
+          <li><strong>Founder-led Thought Leadership</strong> direkt an kuratierte ICP-Listen gepusht — 6x Branchen-Benchmark CTR erreicht</li>
+          <li>Custom Company- und Persona-Listen erstellt, um natives Targeting zu ersetzen — <strong>35% CTR-Steigerung</strong></li>
+          <li>Gated Content und Lead Gen Forms eliminiert — schwache Qualität, keine Pipeline</li>
+          <li>Zu <strong>1:1 ABM-Kampagnen</strong> für über 50 benannte Accounts weiterentwickelt</li>
+        </ul>
+        <span class="cs-label">Google Ads — Nachfrage-Capture</span>
+        <ul class="cs-list">
+          <li>Von breiten Keyword-Clustern zu <strong>nur Competitor-Search</strong> geschwenkt — Nutzer bereits im Kaufmodus</li>
+          <li>Generische Kampagnen auf Exact-Match mit strikten Ausgabenlimits und Kill-Rules reduziert</li>
+          <li><strong>Display Retargeting</strong> als zweite Conversion-Ebene hinzugefügt</li>
+          <li>Kill-Kriterien vor Launch etabliert — underperformende Kanäle schnell beendet</li>
+        </ul>
+        <div class="cs-insight">
+          <span class="cs-insight-lbl">Wichtigste Erkenntnis</span>
+          <p class="cs-insight-txt">„Paid Media in B2B ist kein Volume-Play. LinkedIn kreiert qualifizierte Nachfrage innerhalb des exakten ICP, Google Search erntet sie, und Retargeting konvertiert sie. Jeder Euro muss zur Pipeline verlinkt sein."</p>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-chip">LinkedIn Ads</span><span class="cs-chip">Google Ads</span><span class="cs-chip">ABM</span><span class="cs-chip">ICP Targeting</span><span class="cs-chip">Demand Generation</span><span class="cs-chip">Retargeting</span>
+        </div>
       </div>
+ 
     </div>
-  </div>
-</div>
+ 
+    <!-- ══ RIGHT VISUAL ══ -->
+    <div class="cs-visual" data-aos="fade-up" data-aos-duration="600" data-aos-delay="160">
+    <div class="cs-vp">
+ 
+      <div class="cs-vbar">
+        <span class="cs-vbar-title" id="csVpTitle">Pipeline Flow · Intent Signal Automation</span>
+        <span class="cs-live"><span class="cs-live-dot"></span>Live</span>
+      </div>
+ 
+      <!-- VIS 0: Intent Signal Flow -->
+      <div class="cs-tp cs-active cs-vbody" data-csvis="0">
+        <svg style="width:100%;overflow:visible;display:block;" viewBox="0 0 510 460" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="cs-ah"  markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0.5 L0,6.5 L6,3.5z" fill="rgba(26,22,18,0.2)"/></marker>
+            <marker id="cs-ahg" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0.5 L0,6.5 L6,3.5z" fill="#2d8a4e"/></marker>
+            <marker id="cs-aho" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0.5 L0,6.5 L6,3.5z" fill="#d4631a"/></marker>
+            <marker id="cs-ahr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0.5 L0,6.5 L6,3.5z" fill="#c0392b"/></marker>
+            <path id="cs-pm1" d="M110,70 L128,70"/>
+            <path id="cs-pm2" d="M238,70 L256,70"/>
+            <path id="cs-pm3" d="M366,70 L384,70"/>
+            <path id="cs-pb1" d="M447,120 C447,158 67,158 67,182"/>
+            <path id="cs-pb2" d="M447,120 C447,156 206,156 206,182"/>
+            <path id="cs-pb3" d="M447,120 L447,182"/>
+            <path id="cs-pv1" d="M67,218 L67,272"/>
+            <path id="cs-pv2" d="M206,218 L206,272"/>
+            <path id="cs-pv3" d="M443,218 L443,272"/>
+          </defs>
 
+          <text x="0" y="13" class="cs-svg-lbl" font-size="8.5">VISITOR DETECTION PIPELINE</text>
+
+          <!-- RB2B -->
+          <rect x="0" y="20" width="110" height="100" rx="12" class="cs-n-rect"/>
+          <rect x="37" y="28" width="36" height="36" rx="9" fill="#e8f5e1"/>
+          <text x="55" y="52" text-anchor="middle" font-size="20">🌐</text>
+          <text x="55" y="76" text-anchor="middle" class="cs-n-lbl" font-size="12">RB2B</text>
+          <text x="55" y="90" text-anchor="middle" class="cs-n-sub" font-size="10">Visitor detected</text>
+          <circle cx="36" cy="107" r="3.5" fill="#2d8a4e"/>
+          <text x="44" y="110.5" class="cs-n-sub" font-size="9.5">Detecting</text>
+          <line x1="110" y1="70" x2="128" y2="70" fill="none" stroke="rgba(26,22,18,0.18)" stroke-width="1.5" marker-end="url(#cs-ah)"/>
+          <circle class="cs-dot" r="3.5" fill="#2d8a4e"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0s"><mpath href="#cs-pm1"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="1.8s" repeatCount="indefinite" begin="0s"/></circle>
+
+          <!-- Apollo -->
+          <rect x="128" y="20" width="110" height="100" rx="12" class="cs-n-rect"/>
+          <rect x="165" y="28" width="36" height="36" rx="9" fill="#fff3e0"/>
+          <text x="183" y="52" text-anchor="middle" font-size="20">🔭</text>
+          <text x="183" y="76" text-anchor="middle" class="cs-n-lbl" font-size="12">Apollo</text>
+          <text x="183" y="90" text-anchor="middle" class="cs-n-sub" font-size="10">Contact enrichment</text>
+          <circle cx="164" cy="107" r="3.5" fill="#d4631a"/>
+          <text x="172" y="110.5" class="cs-n-sub" font-size="9.5">Enriching</text>
+          <line x1="238" y1="70" x2="256" y2="70" fill="none" stroke="rgba(26,22,18,0.18)" stroke-width="1.5" marker-end="url(#cs-ah)"/>
+          <circle class="cs-dot" r="3.5" fill="#d4631a"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.6s"><mpath href="#cs-pm2"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="1.8s" repeatCount="indefinite" begin="0.6s"/></circle>
+
+          <!-- Make -->
+          <rect x="256" y="20" width="110" height="100" rx="12" class="cs-n-rect"/>
+          <rect x="293" y="28" width="36" height="36" rx="9" fill="#e8f0ff"/>
+          <text x="311" y="52" text-anchor="middle" font-size="20">⚙️</text>
+          <text x="311" y="76" text-anchor="middle" class="cs-n-lbl" font-size="12">Make</text>
+          <text x="311" y="90" text-anchor="middle" class="cs-n-sub" font-size="10">Webhook trigger</text>
+          <circle cx="292" cy="107" r="3.5" fill="#2563b8"/>
+          <text x="300" y="110.5" class="cs-n-sub" font-size="9.5">Routing</text>
+          <line x1="366" y1="70" x2="384" y2="70" fill="none" stroke="rgba(26,22,18,0.18)" stroke-width="1.5" marker-end="url(#cs-ah)"/>
+          <circle class="cs-dot" r="3.5" fill="#2563b8"><animateMotion dur="1.8s" repeatCount="indefinite" begin="1.1s"><mpath href="#cs-pm3"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="1.8s" repeatCount="indefinite" begin="1.1s"/></circle>
+
+          <!-- Clay ICP -->
+          <rect x="384" y="20" width="126" height="100" rx="12" class="cs-n-rect" style="stroke:rgba(192,57,43,0.3)"/>
+          <rect x="429" y="28" width="36" height="36" rx="9" fill="#fce8e8"/>
+          <text x="447" y="52" text-anchor="middle" font-size="20">🧠</text>
+          <text x="447" y="76" text-anchor="middle" class="cs-n-lbl" font-size="12">Clay ICP</text>
+          <text x="447" y="90" text-anchor="middle" class="cs-n-sub" font-size="10">Lead scoring</text>
+          <circle cx="428" cy="107" r="3.5" fill="#c0392b"><animate attributeName="opacity" values="1;.3;1" dur="1.4s" repeatCount="indefinite"/></circle>
+          <text x="436" y="110.5" class="cs-n-sub" font-size="9.5">Scoring</text>
+
+          <!-- Score badges -->
+          <text x="0" y="164" class="cs-svg-lbl" font-size="8.5">ICP SCORING &amp; ROUTING</text>
+          <rect x="0"   y="182" width="134" height="36" rx="8" fill="#e8f5e1" stroke="#b6d9a0" stroke-width="1.5"/>
+          <text x="67"  y="204" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11.5" font-weight="600" fill="#2d8a4e">HIGH VALUE</text>
+          <rect x="140" y="182" width="132" height="36" rx="8" fill="#fff3e0" stroke="#ffc57a" stroke-width="1.5"/>
+          <text x="206" y="204" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11.5" font-weight="600" fill="#d4631a">MID VALUE</text>
+          <rect x="376" y="182" width="134" height="36" rx="8" fill="#fce8e8" stroke="#f0a0a0" stroke-width="1.5"/>
+          <text x="443" y="204" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11.5" font-weight="600" fill="#c0392b">LOW VALUE</text>
+
+          <!-- Branch curves -->
+          <path d="M447,120 C447,158 67,158 67,182"  fill="none" stroke="#2d8a4e" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#cs-ahg)"/>
+          <path d="M447,120 C447,156 206,156 206,182" fill="none" stroke="#d4631a" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#cs-aho)"/>
+          <path d="M447,120 L447,182"                  fill="none" stroke="#c0392b" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#cs-ahr)"/>
+          <circle class="cs-dot" r="3" fill="#2d8a4e"><animateMotion dur="2.2s" repeatCount="indefinite" begin="0.3s"><mpath href="#cs-pb1"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2.2s" repeatCount="indefinite" begin="0.3s"/></circle>
+          <circle class="cs-dot" r="3" fill="#d4631a"><animateMotion dur="2.2s" repeatCount="indefinite" begin="1.1s"><mpath href="#cs-pb2"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2.2s" repeatCount="indefinite" begin="1.1s"/></circle>
+          <circle class="cs-dot" r="3" fill="#c0392b"><animateMotion dur="2.2s" repeatCount="indefinite" begin="1.8s"><mpath href="#cs-pb3"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="2.2s" repeatCount="indefinite" begin="1.8s"/></circle>
+
+          <!-- Vertical drops -->
+          <line x1="67"  y1="218" x2="67"  y2="272" fill="none" stroke="#2d8a4e" stroke-width="1.5" marker-end="url(#cs-ahg)"/>
+          <line x1="206" y1="218" x2="206" y2="272" fill="none" stroke="#d4631a" stroke-width="1.5" marker-end="url(#cs-aho)"/>
+          <line x1="443" y1="218" x2="443" y2="272" fill="none" stroke="#c0392b" stroke-width="1.5" marker-end="url(#cs-ahr)"/>
+          <circle class="cs-dot" r="3" fill="#2d8a4e"><animateMotion dur="1s" repeatCount="indefinite" begin="0.9s"><mpath href="#cs-pv1"/></animateMotion><animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite" begin="0.9s"/></circle>
+          <circle class="cs-dot" r="3" fill="#d4631a"><animateMotion dur="1s" repeatCount="indefinite" begin="1.7s"><mpath href="#cs-pv2"/></animateMotion><animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite" begin="1.7s"/></circle>
+          <circle class="cs-dot" r="3" fill="#c0392b"><animateMotion dur="1s" repeatCount="indefinite" begin="2.4s"><mpath href="#cs-pv3"/></animateMotion><animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite" begin="2.4s"/></circle>
+
+          <!-- Destination nodes -->
+          <rect x="0" y="272" width="134" height="100" rx="12" class="cs-n-rect" style="stroke:rgba(45,138,78,0.22)"/>
+          <rect x="49" y="280" width="36" height="36" rx="9" fill="#e8f5e1"/>
+          <text x="67" y="304" text-anchor="middle" font-size="20">📧</text>
+          <text x="67" y="328" text-anchor="middle" class="cs-n-lbl" font-size="12">Lemlist</text>
+          <text x="67" y="342" text-anchor="middle" class="cs-n-sub" font-size="10">Email sequence</text>
+          <circle cx="48" cy="359" r="3.5" fill="#2d8a4e"><animate attributeName="opacity" values="1;.3;1" dur="1.3s" repeatCount="indefinite"/></circle>
+          <text x="56" y="362.5" class="cs-n-sub" font-size="9.5">Sending</text>
+
+          <rect x="140" y="272" width="132" height="100" rx="12" class="cs-n-rect" style="stroke:rgba(212,99,26,0.22)"/>
+          <rect x="188" y="280" width="36" height="36" rx="9" fill="#fff3e0"/>
+          <text x="206" y="304" text-anchor="middle" font-size="20">💬</text>
+          <text x="206" y="328" text-anchor="middle" class="cs-n-lbl" font-size="12">Slack SDR</text>
+          <text x="206" y="342" text-anchor="middle" class="cs-n-sub" font-size="10">SDR review queue</text>
+          <circle cx="187" cy="359" r="3.5" fill="#d4631a"/>
+          <text x="195" y="362.5" class="cs-n-sub" font-size="9.5">Waiting</text>
+
+          <rect x="276" y="288" width="96" height="72" rx="11" fill="rgba(255,255,255,0.85)" stroke="rgba(26,22,18,0.09)" stroke-width="1"/>
+          <text x="324" y="315" text-anchor="middle" font-size="22">🤝</text>
+          <text x="324" y="333" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="500" fill="#3d352c">Human</text>
+          <text x="324" y="347" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="500" fill="#3d352c">checkpoint</text>
+
+          <rect x="376" y="272" width="134" height="100" rx="12" class="cs-n-rect" style="opacity:.5"/>
+          <rect x="425" y="280" width="36" height="36" rx="9" fill="#f2eeee"/>
+          <text x="443" y="304" text-anchor="middle" font-size="20">🗑️</text>
+          <text x="443" y="328" text-anchor="middle" class="cs-n-lbl" font-size="12" style="fill:#9b8f82">Discard</text>
+          <text x="443" y="342" text-anchor="middle" class="cs-n-sub" font-size="10">Low value filtered</text>
+          <circle cx="424" cy="359" r="3.5" fill="#ccc"/>
+          <text x="432" y="362.5" class="cs-n-sub" font-size="9.5">Filtered</text>
+
+          <!-- Result footer -->
+          <rect x="0" y="402" width="510" height="50" rx="11" fill="rgba(255,255,255,0.72)" stroke="rgba(26,22,18,0.08)" stroke-width="1"/>
+          <text x="18" y="423" font-family="DM Sans,sans-serif" font-size="12" fill="#3d352c" font-weight="600">Result:</text>
+          <text x="72" y="423" font-family="DM Sans,sans-serif" font-size="11.5" fill="#3d352c" font-weight="400">3.2x more qualified pipeline from existing traffic</text>
+          <text x="18" y="441" font-family="DM Sans,sans-serif" font-size="11" fill="#9b8f82" font-weight="300">Zero extra ad spend · Human-in-the-loop keeps lead quality high</text>
+        </svg>
+      </div>
+ 
+      <!-- VIS 1: ABM -->
+      <div class="cs-tp cs-vbody" data-csvis="1">
+        <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9b8f82;margin-bottom:14px;font-family:'DM Sans',sans-serif;">Dynamic ABM Page Structure</div>
+        <div class="cs-browser">
+          <div class="cs-chrome">
+            <div class="cs-bdots"><div class="cs-bdot r"></div><div class="cs-bdot y"></div><div class="cs-bdot g"></div></div>
+            <div class="cs-url"><span class="cs-url-static">akshundogra.com/lp/</span><span class="cs-url-slug" id="csSlug">notion</span></div>
+          </div>
+          <div class="cs-bpage">
+            <div class="cs-plogo"></div>
+            <p class="cs-phero">Hi <span class="cs-var" id="csName">Sarah</span>,&nbsp;we built this for&nbsp;<span class="cs-var" id="csComp">Notion</span></p>
+            <p class="cs-psub">Custom hero image &middot; <span class="cs-var-sm" id="csInd">SaaS</span>&nbsp;use case</p>
+            <div class="cs-pb-rows">
+              <div class="cs-pb-row"><div class="cs-pb w40"></div><div class="cs-pb dyn w30"></div><div class="cs-pb w20"></div></div>
+              <div class="cs-pb-row"><div class="cs-pb dyn w25"></div><div class="cs-pb w45"></div><div class="cs-pb dyn w20"></div></div>
+              <div class="cs-pb-row"><div class="cs-pb w30"></div><div class="cs-pb w25"></div><div class="cs-pb dyn w30"></div></div>
+              <div class="cs-pb-row"><div class="cs-pb dyn w35"></div><div class="cs-pb w40"></div><div class="cs-pb w15"></div></div>
+            </div>
+            <div class="cs-pleg">
+              <div class="cs-leg"><div class="cs-leg-dot st"></div><span>Static (60%)</span></div>
+              <div class="cs-leg"><div class="cs-leg-dot dy"></div><span>Dynamic / AI-generated (40%)</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-abm-dist">🔗 Distributed via: outreach campaigns &middot; LinkedIn (CEO/CTO) &middot; company-based remarketing</div>
+      </div>
+ 
+      <!-- VIS 2: LLM -->
+      <div class="cs-tp cs-vbody" data-csvis="2">
+        <div class="cs-llm-mon">
+          <span class="cs-llm-mon-title">Live LLM Citation Monitor</span>
+          <div class="cs-llm-plats">
+            <div class="cs-llm-plat cited"><div class="cs-llm-icon">🤖</div><div class="cs-llm-name">ChatGPT</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Cited</div></div>
+            <div class="cs-llm-plat cited"><div class="cs-llm-icon">🔍</div><div class="cs-llm-name">Perplexity</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Cited</div></div>
+            <div class="cs-llm-plat"><div class="cs-llm-icon">💎</div><div class="cs-llm-name">Gemini</div><div class="cs-llm-status no"><span class="cs-sdot off"></span>Partial</div></div>
+            <div class="cs-llm-plat cited"><div class="cs-llm-icon">🟠</div><div class="cs-llm-name">Claude</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Cited</div></div>
+          </div>
+        </div>
+        <div class="cs-cite-wrap">
+          <div class="cs-cite-hd"><span class="cs-cite-lbl">Citation rate · 90-day result</span><span class="cs-cite-num" id="csCiteNum">0%</span></div>
+          <div class="cs-cite-track"><div class="cs-cite-fill" id="csCiteFill"></div></div>
+          <div class="cs-cite-labs"><span>0% (Day 0)</span><span>34% (Day 90)</span></div>
+        </div>
+        <div class="cs-pillars">
+          <div class="cs-pillar schema"><div class="cs-p-icon">📐</div><div class="cs-p-name">Dynamic Schema</div><div class="cs-p-desc">Per-page schema optimised for the 2MB LLM crawl limit. FAQ schema injected per weak prompt signal.</div></div>
+          <div class="cs-pillar"><div class="cs-p-icon">🔍</div><div class="cs-p-name">Prompt Tracking</div><div class="cs-p-desc">Pack AI + Bing Webmaster to find ranking gaps. On-page fixes deployed per weak prompt.</div></div>
+          <div class="cs-pillar"><div class="cs-p-icon">💬</div><div class="cs-p-name">Community Signals</div><div class="cs-p-desc">LinkedIn + Reddit answers on relevant buyer queries — LLMs treat these as citation sources.</div></div>
+          <div class="cs-pillar"><div class="cs-p-icon">⭐</div><div class="cs-p-name">Authority Profiles</div><div class="cs-p-desc">G2 + Crunchbase optimised as trusted third-party LLM reference sources.</div></div>
+        </div>
+      </div>
+ 
+      <!-- VIS 3: Performance -->
+      <div class="cs-tp cs-vbody" data-csvis="3">
+        <span class="cs-perf-lbl">Full-Funnel Paid Media Architecture</span>
+        <div class="cs-metrics">
+          <div class="cs-pm"><div class="cs-pm-num red" id="csCplNum">0%</div><div class="cs-pm-lbl">CPL reduction</div></div>
+          <div class="cs-pm"><div class="cs-pm-num blue" id="csSqlNum">0x</div><div class="cs-pm-lbl">SQL increase</div></div>
+          <div class="cs-pm"><div class="cs-pm-num green">6x</div><div class="cs-pm-lbl">LinkedIn CTR vs benchmark</div></div>
+        </div>
+        <div class="cs-fc">
+          <div class="cs-fc-head"><div class="cs-flogo li">in</div><div class="cs-fc-name">LinkedIn · Demand Creation</div></div>
+          <div class="cs-fc-tags"><span class="cs-fc-tag">Thought Leadership</span><span class="cs-fc-tag">ICP Lists</span><span class="cs-fc-tag">ABM 1:1</span></div>
+          <div class="cs-fc-meta">6x industry CTR benchmark achieved</div>
+        </div>
+        <div class="cs-farrow">↓</div>
+        <div class="cs-fc">
+          <div class="cs-fc-head"><div class="cs-flogo gg">G</div><div class="cs-fc-name">Google Ads · Demand Capture</div></div>
+          <div class="cs-fc-tags"><span class="cs-fc-tag">Competitor Search</span><span class="cs-fc-tag">Exact Match</span><span class="cs-fc-tag">Display Retargeting</span></div>
+          <div class="cs-fc-meta">Primary demo driver · Lowest CPA across all channels</div>
+        </div>
+        <div class="cs-farrow">↓</div>
+        <div class="cs-fc booked">
+          <div class="cs-fc-head"><div class="cs-flogo tg">🎯</div><div class="cs-fc-name red">Demo Booked</div></div>
+          <div class="cs-fc-meta" style="font-size:13px;color:#3d352c;">Qualified pipeline · Linked to revenue</div>
+        </div>
+        <div class="cs-killed"><strong>Killed fast:</strong> Generic search &middot; Gated content &middot; Auto-targeting &middot; Lead Gen Forms</div>
+      </div>
+ 
+      <div class="cs-log">
+        <span class="cs-log-lbl">Activity Log</span>
+        <div class="cs-log-list" id="csLogList"></div>
+      </div>
+ 
+    </div>
+    </div>
+ 
+  </div>
+ 
 </section>
 
 <!-- YOUTUBE -->
@@ -981,15 +1273,15 @@
   <!-- INGESTRO -->
   <div class="exp-card card-ingestro">
     <div class="exp-meta">
-      <div class="exp-date">Jun 2023 — Present</div>
-      <div class="exp-role">Online Marketing<br/>Working Student</div>
-      <div class="exp-co">Ingestro (fmr. nuvo) · Nürnberg, Germany</div>
+      <div class="exp-date">Jun 2023 — Heute</div>
+      <div class="exp-role">Online Marketing<br/>Werkstudent</div>
+      <div class="exp-co">Ingestro (ehem. nuvo) · Nürnberg, Deutschland</div>
       <ul class="exp-ul">
-        <li>Led B2B marketing across SEO, Google Ads, LinkedIn Ads, email, and social — consistent inbound growth.</li>
-        <li>Scaled paid media; boosted organic traffic 400%, raised CTR 30%, cut CPC 20% via A/B testing.</li>
-        <li>Built full automation stack (RB2B, Apollo, Make, Clay, Lemlist, Slack) — 80% reduction in manual SDR effort.</li>
-        <li>Advanced cohort tracking + GA4 custom analytics improved ROI measurement speed by 50%.</li>
-        <li>Built company website in Webflow; implemented GEO/LLM visibility strategy with dynamic schema.</li>
+        <li>B2B-Marketing über SEO, Google Ads, LinkedIn Ads, E-Mail und Social geleitet — konstantes Inbound-Wachstum.</li>
+        <li>Paid Media skaliert; organischen Traffic um 400% gesteigert, CTR um 30% erhöht, CPC um 20% durch A/B-Tests gesenkt.</li>
+        <li>Kompletten Automatisierungsstack aufgebaut (RB2B, Apollo, Make, Clay, Lemlist, Slack) — 80% weniger manueller SDR-Aufwand.</li>
+        <li>Fortgeschrittenes Kohortentracking + benutzerdefinierte GA4-Analytics verbesserte ROI-Messung um 50%.</li>
+        <li>Unternehmenswebsite in Webflow gebaut; GEO/LLM-Sichtbarkeitsstrategie mit dynamischem Schema implementiert.</li>
       </ul>
       <div class="exp-chips">
         <span class="exp-chip">Make</span><span class="exp-chip">Clay</span><span class="exp-chip">HubSpot</span><span class="exp-chip">GA4</span><span class="exp-chip">Webflow</span><span class="exp-chip">LinkedIn Ads</span><span class="exp-chip">GEO</span>
@@ -1064,15 +1356,15 @@
       </div>
     </div>
     <div class="exp-meta">
-      <div class="exp-date">Mar 2021 — Jul 2022</div>
-      <div class="exp-role">Digital Marketing<br/>SEO Expert</div>
-      <div class="exp-co">INKITIN PTY LTD · Chandigarh, India</div>
+      <div class="exp-date">Mär 2021 — Jul 2022</div>
+      <div class="exp-role">Digital Marketing<br/>SEO-Experte</div>
+      <div class="exp-co">INKITIN PTY LTD · Chandigarh, Indien</div>
       <ul class="exp-ul">
-        <li>Led digital marketing for local Australian businesses — local SEO, GMB, NAP, and backlinks.</li>
-        <li>Managed $50K AUD/month across Google Ads and Facebook Ads — improved reach and lead acquisition.</li>
-        <li>Implemented GTM and Facebook Pixel for advanced tracking and conversion attribution.</li>
-        <li>A/B tested landing pages and creatives — improved CVR while reducing CPA.</li>
-        <li>SEO audits using SEMrush, Brightlocal, Screaming Frog, and Google Search Console.</li>
+        <li>Digitales Marketing für australische Unternehmen geleitet — Local SEO, GMB, NAP und Backlinks.</li>
+        <li>$50K AUD/Monat über Google Ads und Facebook Ads verwaltet — Reichweite und Lead-Akquise verbessert.</li>
+        <li>GTM und Facebook Pixel für fortgeschrittenes Tracking und Conversion-Attribution implementiert.</li>
+        <li>Landing Pages und Creatives A/B-getestet — CVR verbessert bei reduziertem CPA.</li>
+        <li>SEO-Audits mit SEMrush, Brightlocal, Screaming Frog und Google Search Console durchgeführt.</li>
       </ul>
       <div class="exp-chips">
         <span class="exp-chip">Google Ads</span><span class="exp-chip">Facebook Ads</span><span class="exp-chip">Local SEO</span><span class="exp-chip">SEMrush</span><span class="exp-chip">GTM</span>
@@ -1085,13 +1377,13 @@
     <div class="exp-meta">
       <div class="exp-date">2017 — 2021</div>
       <div class="exp-role">Digital Marketing<br/>Freelancer</div>
-      <div class="exp-co">Self-employed · Worldwide</div>
+      <div class="exp-co">Selbstständig · Weltweit</div>
       <ul class="exp-ul">
-        <li>Full-scope SEO (on-page, off-page, technical) and social media optimisation for clients globally.</li>
-        <li>Multi-channel PPC across Google, Meta, Pinterest, and Snapchat — manual CPC bidding.</li>
-        <li>Built client websites in WordPress — mobile-first, SEO-optimized architecture.</li>
-        <li>Affiliate marketing and ad network monetization (AdSense, FB Instant Articles).</li>
-        <li>Custom tracking and audience segmentation using HTML, CSS, and JavaScript.</li>
+        <li>Umfassendes SEO (On-Page, Off-Page, technisch) und Social-Media-Optimierung für internationale Kunden.</li>
+        <li>Multichannel-PPC über Google, Meta, Pinterest und Snapchat — manuelles CPC-Bidding.</li>
+        <li>Kundenwebsites in WordPress erstellt — Mobile-First, SEO-optimierte Architektur.</li>
+        <li>Affiliate Marketing und Werbenetzwerk-Monetarisierung (AdSense, FB Instant Articles).</li>
+        <li>Benutzerdefiniertes Tracking und Zielgruppensegmentierung mit HTML, CSS und JavaScript.</li>
       </ul>
       <div class="exp-chips">
         <span class="exp-chip">HTML/CSS/JS</span><span class="exp-chip">WordPress</span><span class="exp-chip">PPC</span><span class="exp-chip">SEO</span><span class="exp-chip">AdSense</span>
@@ -1133,8 +1425,8 @@
 
 <!-- PROJECTS -->
 <section id="projects" class="sec sec-border">
-  <div class="section-eyebrow reveal">Built &amp; shipped</div>
-  <h2 class="reveal">Projects &amp; <span class="serif">Research</span></h2>
+  <div class="section-eyebrow reveal">Gebaut &amp; ausgeliefert</div>
+  <h2 class="reveal">Projekte &amp; <span class="serif">Forschung</span></h2>
   <div class="proj-grid reveal">
  
     <div class="proj-card">
@@ -1353,11 +1645,131 @@
   const bc = document.getElementById('barChart');
   if(bc) barObs.observe(bc);
 
-  // Case study tabs
+  // Case study tabs - old version (keeping for backward compatibility)
   function showCS(idx){
     document.querySelectorAll('.cs-tab').forEach((t,i)=>t.classList.toggle('active',i===idx));
     document.querySelectorAll('.cs-panel').forEach((p,i)=>p.classList.toggle('active',i===idx));
   }
+</script>
+
+<!-- ═══ Case Study > ═══ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+(function(){
+  /* Only init AOS if not already done by your site */
+  if(typeof AOS !== 'undefined' && !window._csAosInit){
+    AOS.init({once:true,easing:'ease-out-cubic'});
+    window._csAosInit = true;
+  }
+ 
+  var ABM = {
+    name:    ['Sarah','Marcus','Jennifer','Alex','Chris','Priya'],
+    company: ['Notion','Stripe','Figma','Linear','Vercel','Loom'],
+    industry:['SaaS','Fintech','Design Tools','DevTools','Cloud','Video'],
+    slug:    ['notion','stripe','figma','linear','vercel','loom']
+  };
+  var abmIdx=0, abmTimer, logTimer;
+ 
+  function cycleABM(){
+    abmIdx=(abmIdx+1)%ABM.name.length;
+    ['csName','csComp','csInd','csSlug'].forEach(function(id){
+      var el=document.getElementById(id);
+      if(el) el.classList.add('cs-fading');
+    });
+    setTimeout(function(){
+      var el;
+      if((el=document.getElementById('csName')))    el.textContent=ABM.name[abmIdx];
+      if((el=document.getElementById('csComp')))    el.textContent=ABM.company[abmIdx];
+      if((el=document.getElementById('csInd')))     el.textContent=ABM.industry[abmIdx];
+      if((el=document.getElementById('csSlug')))    el.textContent=ABM.slug[abmIdx];
+      ['csName','csComp','csInd','csSlug'].forEach(function(id){
+        var el=document.getElementById(id);
+        if(el) el.classList.remove('cs-fading');
+      });
+    },280);
+  }
+ 
+  function animateCite(){
+    var fill=document.getElementById('csCiteFill'),num=document.getElementById('csCiteNum');
+    if(!fill||!num) return;
+    fill.style.width='0%'; num.textContent='0%';
+    setTimeout(function(){
+      fill.style.width='34%';
+      var s=performance.now();
+      (function tick(ts){
+        var p=Math.min((ts-s)/1400,1);
+        num.textContent=Math.round(34*(p<1?1-Math.pow(2,-10*p):1))+'%';
+        if(p<1) requestAnimationFrame(tick); else num.textContent='34%';
+      })(performance.now());
+    },200);
+  }
+ 
+  function animatePerf(){
+    var cpl=document.getElementById('csCplNum'),sql=document.getElementById('csSqlNum');
+    if(!cpl||!sql) return;
+    var s=performance.now(),dur=1600;
+    (function tick(ts){
+      var p=Math.min((ts-s)/dur,1),e=1-Math.pow(2,-10*p);
+      if(cpl) cpl.textContent=Math.round(e*60)+'%';
+      if(sql) sql.textContent=(e*2.1).toFixed(1)+'x';
+      if(p<1) requestAnimationFrame(tick);
+      else{if(cpl)cpl.textContent='60%';if(sql)sql.textContent='2.1x';}
+    })(performance.now());
+  }
+ 
+  var LOGS=[
+    [{t:'g',b:'HIGH',m:'Clay scored 87 → routed to Lemlist'},{t:'o',b:'MID',m:'Clay scored 54 → sent to Slack SDR'},{t:'b',b:'ENRICH',m:'apollo.io → john@acme.com resolved'},{t:'r',b:'LOW',m:'Clay scored 21 → discarded'},{t:'g',b:'SEND',m:'Lemlist sequence started for John A.'},{t:'o',b:'SDR',m:'SDR accepted mid-value lead → Lemlist'}],
+    [{t:'b',b:'BUILD',m:'Webflow page built for Stripe Inc.'},{t:'o',b:'ENRICH',m:'Clay: 47 fields enriched for Notion'},{t:'g',b:'VISIT',m:'RB2B resolved: sarah@notion.so on page'},{t:'o',b:'ALERT',m:'Slack → AE: Sarah at Notion, 2m on page'},{t:'b',b:'RETRAIN',m:'ICP model updated — 12 new conversions'}],
+    [{t:'b',b:'AUDIT',m:'ChatGPT: client cited in 7/10 buyer prompts'},{t:'g',b:'CITED',m:'Perplexity now cites client in answer #3'},{t:'o',b:'SCHEMA',m:'FAQ schema deployed for 14 weak prompts'},{t:'g',b:'G2',m:'G2 profile updated — LLM crawled today'},{t:'b',b:'TRACK',m:'Weekly report: 34% citation rate achieved'}],
+    [{t:'b',b:'SYNC',m:'83 closed-won deals uploaded to Meta'},{t:'g',b:'TRAIN',m:'Google: lookalike audience refreshed'},{t:'o',b:'SCORE',m:'Clay: inbound lead scored 91 → fast-lane'},{t:'g',b:'CPL',m:'CPL this quarter: $48 vs $121 last Q'},{t:'b',b:'SQL',m:'SQLs from paid: 2.1x vs last quarter'}]
+  ];
+  var logIdx=0;
+ 
+  function addLog(idx){
+    var list=document.getElementById('csLogList');
+    if(!list) return;
+    var e=LOGS[idx][logIdx%LOGS[idx].length]; logIdx++;
+    list.querySelectorAll('.cs-lago').forEach(function(el,i){el.textContent=((i+1)*3)+'s ago';});
+    var row=document.createElement('div');
+    row.className='cs-log-row';
+    row.innerHTML='<span class="cs-ltag '+e.t+'">'+e.b+'</span><span class="cs-lmsg">'+e.m+'</span><span class="cs-lago">just now</span>';
+    list.insertBefore(row,list.firstChild);
+    while(list.children.length>3) list.removeChild(list.lastChild);
+  }
+ 
+  function startLog(idx){
+    clearInterval(logTimer); logIdx=0;
+    var list=document.getElementById('csLogList');
+    if(list) list.innerHTML='';
+    addLog(idx); addLog(idx);
+    logTimer=setInterval(function(){addLog(idx);},2800);
+  }
+ 
+  var TITLES=['Pipeline Flow · Intent Signal Automation','Dynamic ABM Page Automation','LLM / GEO Visibility Strategy','Full-Funnel Performance Marketing'];
+ 
+  document.querySelectorAll('.cs-tab').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var idx=+this.getAttribute('data-cstab');
+      document.querySelectorAll('.cs-tab').forEach(function(b){b.classList.remove('cs-active');});
+      document.querySelectorAll('[data-cspanel]').forEach(function(p){p.classList.remove('cs-active');});
+      document.querySelectorAll('[data-csvis]').forEach(function(p){p.classList.remove('cs-active');});
+      this.classList.add('cs-active');
+      var tp=document.querySelector('[data-cspanel="'+idx+'"]');
+      var vp=document.querySelector('[data-csvis="'+idx+'"]');
+      if(tp) tp.classList.add('cs-active');
+      if(vp) vp.classList.add('cs-active');
+      var t=document.getElementById('csVpTitle');
+      if(t) t.textContent=TITLES[idx];
+      startLog(idx);
+      clearInterval(abmTimer);
+      if(idx===1){abmTimer=setInterval(cycleABM,2400);}
+      if(idx===2){setTimeout(animateCite,200);}
+      if(idx===3){setTimeout(animatePerf,200);}
+    });
+  });
+ 
+  startLog(0);
+})();
 </script>
 </body>
 </html>
