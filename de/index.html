@@ -522,15 +522,16 @@
 
     /* TESTIMONIAL */
     .testimonial-wrap{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:6rem 3rem}
-    .testimonial-inner{max-width:900px;margin:0 auto;text-align:center}
-    .t-quote-mark{font-family:'Lora',serif;font-size:5rem;color:var(--accent);line-height:.7;margin-bottom:1.5rem;opacity:.3}
-    .t-quote{font-family:'Lora',serif;font-style:italic;font-size:1.2rem;line-height:1.75;color:var(--ink2);max-width:680px;margin:0 auto 2rem;font-weight:400}
-    .t-author{display:flex;align-items:center;justify-content:center;gap:1rem}
-    .t-avatar{width:52px;height:52px;border-radius:50%;background:var(--bg2);border:2px dashed var(--border);display:flex;align-items:center;justify-content:center;font-size:1.3rem;overflow:hidden;flex-shrink:0}
+    .testimonial-inner{max-width:860px;margin:0 auto;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:3rem clamp(1.2rem,4vw,3rem);box-shadow:var(--shadow);position:relative}
+    .testimonial-inner::before{content:'';position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:.45}
+    .t-quote-mark{font-family:'Lora',serif;font-size:4.4rem;color:var(--accent);line-height:1;opacity:.24;margin-bottom:1.2rem}
+    .t-quote{font-family:'Lora',serif;font-style:italic;font-size:clamp(1.02rem,1.8vw,1.22rem);line-height:1.9;color:var(--ink2);max-width:720px;margin:0 auto 2.2rem;font-weight:400}
+    .t-author{display:inline-flex;align-items:center;justify-content:center;gap:.9rem;background:var(--bg2);border:1px solid var(--border);border-radius:100px;padding:.6rem 1.05rem}
+    .t-avatar{width:56px;height:56px;border-radius:50%;background:var(--bg2);border:2px solid rgba(24,24,26,.14);display:flex;align-items:center;justify-content:center;font-size:1.3rem;overflow:hidden;flex-shrink:0}
     .t-avatar img{width:100%;height:100%;object-fit:cover}
     .t-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;text-align:left}
     .t-title{font-size:12px;color:var(--muted);text-align:left}
-    .t-placeholder-note{display:inline-block;margin-top:2rem;font-size:12px;color:var(--muted);background:rgba(200,56,32,.06);border:1px dashed rgba(200,56,32,.2);border-radius:6px;padding:.5rem 1rem}
+    .t-placeholder-note{display:block;margin-top:1rem;font-size:11px;color:var(--muted);opacity:.9}
 
     /* GITHUB */
     .github-card{background:var(--ink);border-radius:12px;padding:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
@@ -668,8 +669,10 @@
       .cs-tabs{gap:.4rem}
       .cs-tab{font-size:11px;padding:.5rem .9rem}
       .cs-title{font-size:1.15rem}
-      .t-quote{font-size:1rem}
-      .t-quote-mark{font-size:3.5rem}
+      .testimonial-inner{padding:2.2rem 1rem}
+      .t-quote{font-size:1rem;line-height:1.85}
+      .t-quote-mark{font-size:3.2rem}
+      .t-author{border-radius:18px;padding:.75rem .85rem}
       .fcta-photo{display:none}
       footer{flex-direction:column;gap:.5rem;text-align:center;padding:1.2rem}
       #stack > div:last-child{grid-template-columns:1fr 1fr}
@@ -752,7 +755,7 @@
     <div class="c-item"><img src="https://cdn.simpleicons.org/webflow/ffffff" onerror="this.style.display='none'"><span>Webflow</span></div>
     <div class="c-item"><img src="https://cdn.simpleicons.org/wordpress/ffffff" onerror="this.style.display='none'"><span>WordPress</span></div>
     <div class="c-item"><img src="https://cdn.simpleicons.org/hubspot/ffffff" onerror="this.style.display='none'"><span>HubSpot</span></div>
-    <div class="c-item"><img src="https://cdn.simpleicons.org/zapier/ffffff" onerror="this.style.display='none'"><span>Zapier</span></div>
+    <div class="c-item"><img src="https://cdn.simpleicons.org/n8n/ffffff" onerror="this.style.display='none'"><span>n8n</span></div>
     <div class="c-item"><img src="https://cdn.simpleicons.org/make/ffffff" onerror="this.style.display='none'"><span>Make</span></div>
     <div class="c-item"><img src="https://cdn.simpleicons.org/python/ffffff" onerror="this.style.display='none'"><span>Python</span></div>
     <div class="c-item"><img src="https://cdn.simpleicons.org/postgresql/ffffff" onerror="this.style.display='none'"><span>SQL</span></div>
@@ -778,7 +781,7 @@
     <div class="c-item"><img src="https://cdn.simpleicons.org/webflow/ffffff" onerror="this.style.display='none'"><span>Webflow</span></div>
     <div class="c-item"><img src="https://cdn.simpleicons.org/wordpress/ffffff" onerror="this.style.display='none'"><span>WordPress</span></div>
     <div class="c-item"><img src="https://cdn.simpleicons.org/hubspot/ffffff" onerror="this.style.display='none'"><span>HubSpot</span></div>
-    <div class="c-item"><img src="https://cdn.simpleicons.org/zapier/ffffff" onerror="this.style.display='none'"><span>Zapier</span></div>
+    <div class="c-item"><img src="https://cdn.simpleicons.org/n8n/ffffff" onerror="this.style.display='none'"><span>n8n</span></div>
     <div class="c-item"><img src="https://cdn.simpleicons.org/make/ffffff" onerror="this.style.display='none'"><span>Make</span></div>
     <div class="c-item"><img src="https://cdn.simpleicons.org/python/ffffff" onerror="this.style.display='none'"><span>Python</span></div>
     <div class="c-item"><img src="https://cdn.simpleicons.org/postgresql/ffffff" onerror="this.style.display='none'"><span>SQL</span></div>
@@ -803,7 +806,7 @@
   <h2 class="reveal">Was ich am <span class="serif">besten kann</span></h2>
   <div class="comp-grid">
     <div class="comp-card reveal d1"><div class="comp-icon">📈</div><div class="comp-title">Performance Marketing</div><p class="comp-desc">End-to-End Paid Media-Strategie, A/B-Testing und ROAS-Maximierung über Google, Meta und LinkedIn. 36x+ ROAS erreicht, $50K+ monatliche Budgets verwaltet.</p><div class="comp-tags"><span class="comp-tag">Google Ads</span><span class="comp-tag">Meta Ads</span><span class="comp-tag">LinkedIn Ads</span><span class="comp-tag">A/B Testing</span><span class="comp-tag">ROAS</span></div></div>
-    <div class="comp-card reveal d2"><div class="comp-icon">⚡</div><div class="comp-title">Marketing Automation</div><p class="comp-desc">Vollständige Automatisierungspipelines von der Lead-Akquise bis zum Abschluss — 80% weniger manuelle Arbeit durch Human-in-the-Loop-Systeme mit Qualitätskontrolle.</p><div class="comp-tags"><span class="comp-tag">Make</span><span class="comp-tag">Zapier</span><span class="comp-tag">Clay</span><span class="comp-tag">Apollo</span><span class="comp-tag">Lemlist</span><span class="comp-tag">HubSpot</span></div></div>
+    <div class="comp-card reveal d2"><div class="comp-icon">⚡</div><div class="comp-title">Marketing Automation</div><p class="comp-desc">Vollständige Automatisierungspipelines von der Lead-Akquise bis zum Abschluss — 80% weniger manuelle Arbeit durch Human-in-the-Loop-Systeme mit Qualitätskontrolle.</p><div class="comp-tags"><span class="comp-tag">Make</span><span class="comp-tag">n8n</span><span class="comp-tag">Clay</span><span class="comp-tag">Apollo</span><span class="comp-tag">Lemlist</span><span class="comp-tag">HubSpot</span></div></div>
     <div class="comp-card reveal d1"><div class="comp-icon">🔍</div><div class="comp-title">SEO &amp; GEO</div><p class="comp-desc">Technisches SEO, Multi-Channel-Attribution und LLM-Sichtbarkeitsstrategien. Früher Praktiker der Generative Engine Optimisation — bevor die meisten Teams darüber sprachen.</p><div class="comp-tags"><span class="comp-tag">GA4</span><span class="comp-tag">SEMrush</span><span class="comp-tag">GEO</span><span class="comp-tag">Schema</span><span class="comp-tag">Python</span><span class="comp-tag">SQL</span></div></div>
     <div class="comp-card reveal d2"><div class="comp-icon">💻</div><div class="comp-title">Web &amp; Technical Marketing</div><p class="comp-desc">Conversion-optimierte Landing Pages, Tracking-Implementierung und dynamische ABM-Seitengenerierung. Ich baue, tracke und optimiere — ohne Dev-Team.</p><div class="comp-tags"><span class="comp-tag">Webflow</span><span class="comp-tag">HTML/CSS/JS</span><span class="comp-tag">GTM</span><span class="comp-tag">WordPress</span><span class="comp-tag">FB Pixel</span></div></div>
   </div>
@@ -835,7 +838,7 @@
       <div style="font-size:1.4rem;margin-bottom:.8rem">⚡</div>
       <div style="font-family:'Syne',sans-serif;font-size:.85rem;font-weight:700;margin-bottom:.8rem;color:#1d6b48">Automation & CRM</div>
       <div style="display:flex;flex-direction:column;gap:.4rem;font-size:13px;color:var(--muted)">
-        <span>Make</span><span>Zapier</span><span>HubSpot</span><span>Pipedrive</span><span>Clay · Apollo · Lemlist</span>
+        <span>Make</span><span>n8n</span><span>HubSpot</span><span>Pipedrive</span><span>Clay · Apollo · Lemlist</span>
       </div>
     </div>
 
@@ -1448,6 +1451,7 @@
         <div class="proj-title">ABM Landing Page Generator</div>
         <p class="proj-desc">Personalisierte Landing Page pro Zielunternehmen — dieselbe ABM-Strategie, die ich im B2B-Marketing verwende, angewandt auf meine eigenen Bewerbungen. Jede Seite wird automatisch generiert, bereitgestellt und pro Recruiter getrackt.</p>
         <div class="proj-tags"><span class="proj-tag">n8n</span><span class="proj-tag">Claude API</span><span class="proj-tag">GitHub Pages</span><span class="proj-tag">Flask</span><span class="proj-tag">Screaming Frog</span></div>
+        <div style="font-size:12px;color:var(--muted);margin:.6rem 0">Katalog-Startseite: <a href="https://hire.akshundogr.com" target="_blank" style="color:var(--accent);text-decoration:none">hire.akshundogr.com</a></div>
         <div style="font-size:12px;color:var(--muted);margin:.6rem 0">Live-Beispiel: <a href="https://hire.akshundogra.com/ingestro" target="_blank" style="color:var(--accent);text-decoration:none">hire.akshundogra.com/ingestro</a></div>
         <a class="proj-link" href="https://github.com/akshundogra/hire" target="_blank">Auf GitHub ansehen →</a>
       </div>
@@ -1511,21 +1515,22 @@
   </div>
 </section>
 
-<!-- TESTIMONIAL 
+<!-- TESTIMONIAL -->
 <div class="testimonial-wrap">
   <div class="testimonial-inner reveal">
     <div class="t-quote-mark">"</div>
-    <p class="t-quote">Akshun has a rare combination of technical depth and marketing intuition. He doesn't just run campaigns — he builds systems that keep working after he sets them up. One of the most proactive people I've worked with.</p>
+    <p class="t-quote">Ich hatte das Vergnügen, im letzten Jahr eng mit Akshun zusammenzuarbeiten, einem Marketing-Automation-Spezialisten im B2B-Bereich. Während seiner Zeit bei Ingestro ist er zu einem zentralen Bestandteil unserer Abläufe und zu einem geschätzten Beitragenden über mehrere Abteilungen hinweg geworden. Obwohl er in einer studentischen Rolle gestartet ist, liefert er konstant auf einem Niveau, das weit über den Erwartungen liegt — er übernimmt Verantwortung für komplexe, funktionsübergreifende Initiativen und sorgt dafür, dass unsere Systeme unternehmensweit stabil laufen. Von der Betreuung unserer Webflow-Website und des Google Tag Managers bis hin zur SEO-Umsetzung und dem Aufbau skalierbarer Automationen über verschiedene Tools und Workflows hinweg bringt Akshun eine seltene Kombination aus technischer Tiefe und hands-on Umsetzung mit.<br/><br/>Was Akshun wirklich auszeichnet, ist nicht nur sein technisches Skillset, sondern wie wirkungsvoll er es in der Zusammenarbeit einsetzt. Er arbeitet nahtlos mit verschiedenen Teams, übersetzt Business-Anforderungen in praktikable, skalierbare Lösungen und geht jede Herausforderung zuverlässig und fokussiert an. Seine Einsatzbereitschaft und Neugier machen ihn zu jemandem, dem man kritische Systeme und sich entwickelnde Prozesse bedenkenlos anvertrauen kann. Jedes Team würde von seiner starken Marketing-Operations-Expertise und seinem teamorientierten Ansatz profitieren.</p>
     <div class="t-author">
-      <div class="t-avatar">👤</div>
+      <div class="t-avatar"><img src="https://media.licdn.com/dms/image/v2/C4D03AQG_b_GKM1C-ZA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1623264736313?e=1778716800&v=beta&t=pn3Kb9vSvLR6niy-IjORT71I9Up24WUNRGX4stFac54" alt="Or Baram"></div>
       <div>
-        <div class="t-name">✏️ Manager Name</div>
-        <div class="t-title">✏️ Title · Ingestro</div>
+        <div class="t-name">Or Baram</div>
+        <div class="t-title">Senior Growth Marketing Manager · Ingestro</div>
       </div>
     </div>
+    <span class="t-placeholder-note">Hinweis: Dieser Empfehlungstext wurde maschinell mit KI aus dem Englischen übersetzt.</span>
   </div>
 </div>
--->
+
 
 
 <!-- GITHUB -->
