@@ -117,7 +117,9 @@
     .sec-border{border-top:1px solid var(--border)}
 
     /* COMPETENCIES */
-    .comp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+    .comp-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.5rem}
+    .comp-grid .comp-card{grid-column:span 2}
+    .comp-grid .comp-card:nth-child(4),.comp-grid .comp-card:nth-child(5){grid-column:span 3}
     .comp-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:2rem 1.8rem;transition:box-shadow .25s,transform .2s;position:relative;overflow:hidden}
     .comp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
     .comp-card:nth-child(2)::before{background:#1e4d9e}
@@ -411,6 +413,16 @@
     .exp-ul li::before{content:'→';position:absolute;left:0;font-size:11px;top:2px}
     .exp-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.4rem}
     .exp-chip{font-size:11px;padding:.25rem .65rem;border-radius:4px;font-weight:500}
+
+    /* THEO */
+    .card-theo{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.05)}
+    .card-theo .exp-date{color:rgba(255,255,255,.35)}
+    .card-theo .exp-role{color:#fff}
+    .card-theo .exp-co{color:var(--neon)}
+    .card-theo .exp-ul li{color:rgba(255,255,255,.5)}
+    .card-theo .exp-ul li::before{color:var(--neon)}
+    .card-theo .exp-vis{background:#12151a}
+    .card-theo .exp-chip{background:rgba(184,255,87,.1);border:1px solid rgba(184,255,87,.3);color:var(--neon)}
 
     /* INGESTRO */
     .card-ingestro{background:var(--card);border-bottom:1px solid var(--border)}
@@ -719,7 +731,7 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <div class="hero-badge">🇩🇪 Looking for a full-time role in Germany</div>
+    <div class="hero-badge">🇩🇪 Looking for a full-time role in Germany (Blue Card holder)</div>
     <h1>Hi, I'm<br/><span class="serif">Akshun Dogra</span></h1>
     <div class="hero-roles">
       <span class="role-chip">Technical Marketing Manager</span>
@@ -810,10 +822,11 @@
   <div class="section-eyebrow reveal">Core expertise</div>
   <h2 class="reveal">What I <span class="serif">do best</span></h2>
   <div class="comp-grid">
-    <div class="comp-card reveal d1"><div class="comp-icon">📈</div><div class="comp-title">Performance Marketing</div><p class="comp-desc">End-to-end paid media strategy, A/B testing, and ROAS maximization across Google, Meta, and LinkedIn. Hit 36x+ ROAS, managed $50K+ monthly budgets.</p><div class="comp-tags"><span class="comp-tag">Google Ads</span><span class="comp-tag">Meta Ads</span><span class="comp-tag">LinkedIn Ads</span><span class="comp-tag">A/B Testing</span><span class="comp-tag">ROAS</span></div></div>
-    <div class="comp-card reveal d2"><div class="comp-icon">⚡</div><div class="comp-title">Marketing Automation</div><p class="comp-desc">Full automation pipelines from lead acquisition to close — reducing manual effort by 80% and building human-in-the-loop systems for quality control.</p><div class="comp-tags"><span class="comp-tag">Make</span><span class="comp-tag">n8n</span><span class="comp-tag">Clay</span><span class="comp-tag">Apollo</span><span class="comp-tag">Lemlist</span><span class="comp-tag">HubSpot</span></div></div>
+    <div class="comp-card reveal d1"><div class="comp-icon">🧩</div><div class="comp-title">GTM Engineering</div><p class="comp-desc">End-to-end go-to-market systems — from signal to CRM to revenue. I design agentic, human-in-the-loop automations with guardrails, using Claude Code / Codex-orchestrated workflows to move ops from manual to semi-autonomous — without a dev team.</p><div class="comp-tags"><span class="comp-tag">GTM Systems</span><span class="comp-tag">Agentic Workflows</span><span class="comp-tag">Claude Code / Codex</span><span class="comp-tag">HubSpot</span><span class="comp-tag">Make/n8n</span><span class="comp-tag">Human-in-the-Loop</span></div></div>
+    <div class="comp-card reveal d2"><div class="comp-icon">📈</div><div class="comp-title">Performance Marketing</div><p class="comp-desc">End-to-end paid media strategy, A/B testing, and ROAS maximization across Google, Meta, and LinkedIn. Hit 36x+ ROAS, managed $50K+ monthly budgets.</p><div class="comp-tags"><span class="comp-tag">Google Ads</span><span class="comp-tag">Meta Ads</span><span class="comp-tag">LinkedIn Ads</span><span class="comp-tag">A/B Testing</span><span class="comp-tag">ROAS</span></div></div>
     <div class="comp-card reveal d1"><div class="comp-icon">🔍</div><div class="comp-title">SEO &amp; GEO</div><p class="comp-desc">Technical SEO, multi-channel attribution, and LLM visibility strategies. Early practitioner of Generative Engine Optimisation — before most teams were talking about it.</p><div class="comp-tags"><span class="comp-tag">GA4</span><span class="comp-tag">SEMrush</span><span class="comp-tag">GEO</span><span class="comp-tag">Schema</span><span class="comp-tag">Python</span><span class="comp-tag">SQL</span></div></div>
-    <div class="comp-card reveal d2"><div class="comp-icon">💻</div><div class="comp-title">Web &amp; Technical Marketing</div><p class="comp-desc">Conversion-optimized landing pages, tracking implementation, and dynamic ABM page generation. I build, track, and optimize — without a dev team.</p><div class="comp-tags"><span class="comp-tag">Webflow</span><span class="comp-tag">HTML/CSS/JS</span><span class="comp-tag">GTM</span><span class="comp-tag">WordPress</span><span class="comp-tag">FB Pixel</span></div></div>
+    <div class="comp-card reveal d2"><div class="comp-icon">⚡</div><div class="comp-title">Marketing Automation</div><p class="comp-desc">Workflow-level automation for lead scoring, nurture, and internal ops — reducing manual effort by 80% with human-in-the-loop quality control.</p><div class="comp-tags"><span class="comp-tag">Make</span><span class="comp-tag">n8n</span><span class="comp-tag">Clay</span><span class="comp-tag">Apollo</span><span class="comp-tag">Lemlist</span><span class="comp-tag">HubSpot</span></div></div>
+    <div class="comp-card reveal d1"><div class="comp-icon">💻</div><div class="comp-title">Web &amp; Technical Marketing</div><p class="comp-desc">Conversion-optimized landing pages, tracking implementation, and dynamic ABM page generation. I build, track, and optimize — without a dev team.</p><div class="comp-tags"><span class="comp-tag">Webflow</span><span class="comp-tag">HTML/CSS/JS</span><span class="comp-tag">GTM</span><span class="comp-tag">WordPress</span><span class="comp-tag">FB Pixel</span></div></div>
   </div>
 </section>
 
@@ -900,10 +913,12 @@
     <p class="cs-eyebrow">Real work, real results</p>
     <h2 class="cs-h1">Case <em>Studies</em></h2>
     <div class="cs-tabs" id="csTabs">
-      <button class="cs-tab cs-active" data-cstab="0">01 · Intent Signal Automation</button>
-      <button class="cs-tab" data-cstab="1">02 · ABM Page Automation</button>
-      <button class="cs-tab" data-cstab="2">03 · LLM / GEO Visibility</button>
-      <button class="cs-tab" data-cstab="3">04 · Performance Marketing</button>
+      <button class="cs-tab cs-active" data-cstab="0">01 · Autonomous Marketing Team</button>
+      <button class="cs-tab" data-cstab="1">02 · Personal Chief-of-Staff Agent</button>
+      <button class="cs-tab" data-cstab="2">03 · Intent Signal Automation</button>
+      <button class="cs-tab" data-cstab="3">04 · ABM Page Automation</button>
+      <button class="cs-tab" data-cstab="4">05 · LLM / GEO Visibility</button>
+      <button class="cs-tab" data-cstab="5">06 · Performance Marketing</button>
     </div>
   </div>
  
@@ -913,6 +928,50 @@
     <div data-aos="fade-up" data-aos-duration="600" data-aos-delay="60">
  
       <div class="cs-tp cs-active" data-cspanel="0">
+        <div class="cs-tag cat-auto">🧩 GTM Engineering / Agentic Systems</div>
+        <h3 class="cs-h2">Building an Autonomous Marketing Team</h3>
+        <span class="cs-label">The Problem</span>
+        <p class="cs-prob">SEO, performance marketing, and content work operated in silos — cross-checking data and handing off findings between channels ate hours every week, and issues surfaced weeks late.</p>
+        <span class="cs-label">The Solution</span>
+        <ul class="cs-list">
+          <li>Architected an <strong>SEO agent</strong> monitoring Sistrix, GA4, and GSC for ranking and traffic signals</li>
+          <li>Built a <strong>performance marketing agent</strong> tracking Google Ads, Meta Ads, LinkedIn Ads, and the HubSpot pipeline for spend and lead-quality anomalies</li>
+          <li>Added a <strong>content agent</strong> generating and editing copy on demand when other agents flagged a content gap</li>
+          <li>Agents hand off findings to each other automatically, with <strong>human-in-the-loop review</strong> before any spend or send decision</li>
+        </ul>
+        <div class="cs-insight">
+          <span class="cs-insight-lbl">Key Insight</span>
+          <p class="cs-insight-txt">"A single automation script is a shortcut. A team of agents that talk to each other and know when to loop in a human — that's a system. That distinction is what makes it trustworthy at scale."</p>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-chip">Make</span><span class="cs-chip">n8n</span><span class="cs-chip">Clay</span>
+          <span class="cs-chip">Apollo</span><span class="cs-chip">HubSpot</span><span class="cs-chip">Sistrix</span><span class="cs-chip">GA4</span><span class="cs-chip">GSC</span>
+        </div>
+      </div>
+
+      <div class="cs-tp" data-cspanel="1">
+        <div class="cs-tag cat-web">🗂️ GTM Engineering / Productivity Systems</div>
+        <h3 class="cs-h2">My Personal Chief-of-Staff Agent</h3>
+        <span class="cs-label">The Problem</span>
+        <p class="cs-prob">Running multiple projects and agent systems in parallel meant open tasks and meeting prep constantly slipped between the cracks — context-switching was the real bottleneck, not the work itself.</p>
+        <span class="cs-label">The Solution</span>
+        <ul class="cs-list">
+          <li>Built <strong>daily and weekly agents</strong> that parse Slack and Teams messages plus every open task across active projects</li>
+          <li>Agents identify which open tasks they can already action <strong>autonomously</strong>, and draft an initial version before any meeting starts</li>
+          <li>Drafts land ready for review — walking into a meeting with a starting point instead of a blank page</li>
+          <li>Kept firmly <strong>semi-autonomous</strong>: agents draft, I decide and ship</li>
+        </ul>
+        <div class="cs-insight">
+          <span class="cs-insight-lbl">Key Insight</span>
+          <p class="cs-insight-txt">"The highest-leverage agent I built wasn't customer-facing at all — it was the one that gave me back my own time by prepping before I even opened my calendar."</p>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-chip">Slack</span><span class="cs-chip">Teams</span><span class="cs-chip">n8n</span>
+          <span class="cs-chip">Make</span><span class="cs-chip">Task Automation</span><span class="cs-chip">Agentic Workflows</span>
+        </div>
+      </div>
+
+      <div class="cs-tp" data-cspanel="2">
         <div class="cs-tag cat-auto">⚡ Marketing Automation</div>
         <h3 class="cs-h2">Turning Anonymous Website Visitors into Qualified Pipeline</h3>
         <span class="cs-label">The Problem</span>
@@ -935,7 +994,7 @@
         </div>
       </div>
 
-      <div class="cs-tp" data-cspanel="1">
+      <div class="cs-tp" data-cspanel="3">
         <div class="cs-tag cat-web">🌐 Web Dev + AI Automation</div>
         <h3 class="cs-h2">Personalized ABM Landing Pages at Scale with AI</h3>
         <span class="cs-label">The Problem</span>
@@ -957,7 +1016,7 @@
         </div>
       </div>
  
-      <div class="cs-tp" data-cspanel="2">
+      <div class="cs-tp" data-cspanel="4">
         <div class="cs-tag cat-seo">🔍 SEO + LLM Visibility</div>
         <h3 class="cs-h2">Making a Small SaaS Visible in the Age of AI Search</h3>
         <span class="cs-label">The Problem</span>
@@ -978,7 +1037,7 @@
         </div>
       </div>
  
-      <div class="cs-tp" data-cspanel="3">
+      <div class="cs-tp" data-cspanel="5">
         <div class="cs-tag cat-seo">📈 Performance Marketing</div>
         <h3 class="cs-h2">Building a Full-Funnel B2B Paid Media Engine</h3>
         <span class="cs-label">The Problem</span>
@@ -1019,6 +1078,50 @@
  
       <!-- VIS 0: Intent Signal Flow -->
       <div class="cs-tp cs-active cs-vbody" data-csvis="0">
+        <div class="cs-llm-mon">
+          <span class="cs-llm-mon-title">AGENT NETWORK · LIVE</span>
+          <div class="cs-llm-plats">
+            <div class="cs-llm-plat cited"><div class="cs-llm-icon">🔍</div><div class="cs-llm-name">SEO Agent</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Active</div></div>
+            <div class="cs-llm-plat cited"><div class="cs-llm-icon">📈</div><div class="cs-llm-name">Performance Agent</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Active</div></div>
+            <div class="cs-llm-plat cited"><div class="cs-llm-icon">✍️</div><div class="cs-llm-name">Content Agent</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Active</div></div>
+            <div class="cs-llm-plat"><div class="cs-llm-icon">🧑</div><div class="cs-llm-name">Human Review</div><div class="cs-llm-status no"><span class="cs-sdot off"></span>On Call</div></div>
+          </div>
+        </div>
+        <div class="cs-metrics">
+          <div class="cs-pm"><div class="cs-pm-num green">€22.7k</div><div class="cs-pm-lbl">Google Ads savings identified</div></div>
+          <div class="cs-pm"><div class="cs-pm-num blue">€10k</div><div class="cs-pm-lbl">Meta Ads savings identified</div></div>
+          <div class="cs-pm"><div class="cs-pm-num red">3</div><div class="cs-pm-lbl">Agents collaborating</div></div>
+        </div>
+        <div class="cs-log">
+          <span class="cs-log-lbl">ACTIVITY LOG</span>
+          <div class="cs-log-list">
+            <div class="cs-log-row"><span class="cs-ltag g">SEO</span><span class="cs-lmsg">Ranking drop flagged on 3 pages, passed to Content Agent</span><span class="cs-lago">2m</span></div>
+            <div class="cs-log-row"><span class="cs-ltag o">PERF</span><span class="cs-lmsg">Wasted spend detected in Google Ads — flagged for review</span><span class="cs-lago">14m</span></div>
+            <div class="cs-log-row"><span class="cs-ltag b">CONTENT</span><span class="cs-lmsg">Draft copy generated for flagged landing page</span><span class="cs-lago">1h</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-tp cs-vbody" data-csvis="1">
+        <div class="dash">
+          <div class="dash-hdr"><span class="dash-t">Daily Agent · Pre-Meeting Brief</span><span class="dash-bdg">Auto-Drafted</span></div>
+          <div class="dash-metrics">
+            <div class="dash-m"><div class="dm-v up">12</div><div class="dm-l">Tasks scanned</div></div>
+            <div class="dash-m"><div class="dm-v neu">5</div><div class="dm-l">Drafts prepared</div></div>
+            <div class="dash-m"><div class="dm-v up">0</div><div class="dm-l">Missed items</div></div>
+          </div>
+          <div class="chart-box">
+            <div class="chart-lbl">Slack / Teams scan → draft pipeline</div>
+            <div class="cs-log-list">
+              <div class="cs-log-row"><span class="cs-ltag g">DONE</span><span class="cs-lmsg">Weekly report draft ready before Monday standup</span><span class="cs-lago">7h</span></div>
+              <div class="cs-log-row"><span class="cs-ltag o">DRAFT</span><span class="cs-lmsg">Client follow-up email prepped from open task list</span><span class="cs-lago">3h</span></div>
+              <div class="cs-log-row"><span class="cs-ltag b">SCAN</span><span class="cs-lmsg">Open tasks cross-checked against calendar for next meeting</span><span class="cs-lago">45m</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-tp cs-vbody" data-csvis="2">
         <svg style="width:100%;overflow:visible;display:block;" viewBox="0 0 510 460" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <marker id="cs-ah"  markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0.5 L0,6.5 L6,3.5z" fill="rgba(26,22,18,0.2)"/></marker>
@@ -1144,7 +1247,7 @@
       </div>
  
       <!-- VIS 1: ABM -->
-      <div class="cs-tp cs-vbody" data-csvis="1">
+      <div class="cs-tp cs-vbody" data-csvis="3">
         <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9b8f82;margin-bottom:14px;font-family:'DM Sans',sans-serif;">Dynamic ABM Page Structure</div>
         <div class="cs-browser">
           <div class="cs-chrome">
@@ -1171,7 +1274,7 @@
       </div>
  
       <!-- VIS 2: LLM -->
-      <div class="cs-tp cs-vbody" data-csvis="2">
+      <div class="cs-tp cs-vbody" data-csvis="4">
         <div class="cs-llm-mon">
           <span class="cs-llm-mon-title">Live LLM Citation Monitor</span>
           <div class="cs-llm-plats">
@@ -1195,7 +1298,7 @@
       </div>
  
       <!-- VIS 3: Performance -->
-      <div class="cs-tp cs-vbody" data-csvis="3">
+      <div class="cs-tp cs-vbody" data-csvis="5">
         <span class="cs-perf-lbl">Full-Funnel Paid Media Architecture</span>
         <div class="cs-metrics">
           <div class="cs-pm"><div class="cs-pm-num red" id="csCplNum">0%</div><div class="cs-pm-lbl">CPL reduction</div></div>
@@ -1278,10 +1381,75 @@
     <p class="exp-intro">6+ years across startups, agencies, and freelance — each role told in its own visual language.</p>
   </div>
 
+  <!-- THEO -->
+  <div class="exp-card card-theo">
+    <div class="exp-meta">
+      <div class="exp-date">Jun 2026 — Present</div>
+      <div class="exp-role">GTM Engineer</div>
+      <div class="exp-co">Theo · Germany</div>
+      <ul class="exp-ul">
+        <li>Architected a multi-agent GTM system connecting SEO, performance marketing, content, and daily/weekly coworker agents — collaborating with human-in-the-loop review.</li>
+        <li>Built the signal-to-action pipeline across Sistrix, GA4, GSC, Google/Meta/LinkedIn Ads, and HubSpot — surfacing findings that saved €22.7k on Google Ads and €10k on Meta Ads over 2–3 months.</li>
+        <li>Designed an intent-scoring layer that routed high-priority findings to automated fixes or Slack/Teams alerts, keeping low-priority noise out of the team's way.</li>
+        <li>Owned the full GTM engineering stack — tracking, automation, attribution, and CRM pipeline — end-to-end, without a dev team.</li>
+      </ul>
+      <div class="exp-chips">
+        <span class="exp-chip">GTM Engineering</span><span class="exp-chip">Agentic Workflows</span><span class="exp-chip">HubSpot</span><span class="exp-chip">Make/n8n</span><span class="exp-chip">Sistrix</span><span class="exp-chip">Human-in-the-Loop</span>
+      </div>
+    </div>
+    <div class="exp-vis">
+      <div class="wf" style="width:100%;padding:2rem">
+        <!-- Flow 1 -->
+        <div style="font-size:9px;color:rgba(255,255,255,.28);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem">Aggregation → Enrichment<span style="flex:1;height:1px;background:rgba(255,255,255,.07)"></span></div>
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:1.4rem;flex-wrap:nowrap">
+          <div class="wf-node"><div class="wf-box">📊</div><div class="wf-lbl">Sistrix / GA4 / GSC</div></div>
+          <div class="wf-arr" style="color:rgba(184,255,87,.5)">→</div>
+          <div class="wf-node"><div class="wf-box"><img src="https://cdn.simpleicons.org/make/ffffff" onerror="this.outerHTML='⚙️'"></div><div class="wf-lbl">Make / n8n</div></div>
+          <div class="wf-arr" style="color:rgba(184,255,87,.5)">→</div>
+          <div class="wf-node"><div class="wf-box"><img src="https://cdn.simpleicons.org/hubspot/ffffff" onerror="this.outerHTML='🧭'"></div><div class="wf-lbl">HubSpot</div></div>
+        </div>
+        <!-- Flow 2 -->
+        <div style="font-size:9px;color:rgba(255,255,255,.28);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem">Activation → Infrastructure<span style="flex:1;height:1px;background:rgba(255,255,255,.07)"></span></div>
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem;flex-wrap:nowrap">
+          <div class="wf-node"><div class="wf-box">📢</div><div class="wf-lbl">Google / Meta / LinkedIn Ads</div></div>
+          <div class="wf-arr" style="color:rgba(184,255,87,.5)">→</div>
+          <div class="wf-node"><div class="wf-box"><img src="https://cdn.simpleicons.org/make/ffffff" onerror="this.outerHTML='⚙️'"></div><div class="wf-lbl">Make</div></div>
+          <div class="wf-arr" style="color:rgba(184,255,87,.5)">→</div>
+          <div class="wf-node"><div class="wf-box">🤖</div><div class="wf-lbl">Agent Scoring</div></div>
+        </div>
+        <!-- Branching -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;text-align:center;margin-bottom:1rem">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:.3rem">
+            <span style="font-size:8px;font-weight:700;color:var(--neon);background:rgba(184,255,87,.1);border:1px solid rgba(184,255,87,.2);border-radius:3px;padding:.15rem .4rem;letter-spacing:.04em">HIGH</span>
+            <div style="color:rgba(184,255,87,.5);font-size:.75rem">↓</div>
+            <div class="wf-mini-box">⚡</div>
+            <div class="wf-lbl" style="max-width:70px">Auto-fix / Alert</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:.3rem">
+            <span style="font-size:8px;font-weight:700;color:#fbbf24;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.2);border-radius:3px;padding:.15rem .4rem;letter-spacing:.04em">MID</span>
+            <div style="color:rgba(251,191,36,.5);font-size:.75rem">↓</div>
+            <div class="wf-mini-box">👀</div>
+            <div class="wf-lbl" style="max-width:70px">Review Queue</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:.3rem">
+            <span style="font-size:8px;font-weight:700;color:#ff8070;background:rgba(200,56,32,.1);border:1px solid rgba(200,56,32,.2);border-radius:3px;padding:.15rem .4rem;letter-spacing:.04em">LOW</span>
+            <div style="color:rgba(200,56,32,.5);font-size:.75rem">↓</div>
+            <div class="wf-mini-box">🗒️</div>
+            <div class="wf-lbl" style="max-width:70px">Logged Only</div>
+          </div>
+        </div>
+        <div style="margin-top:1.2rem;background:rgba(184,255,87,.07);border:1px solid rgba(184,255,87,.15);border-radius:6px;padding:.8rem 1rem;display:flex;justify-content:space-between;align-items:center">
+          <span style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--neon)">€32.7k</span>
+          <span style="font-size:10px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.05em">Ad spend savings identified · 2mo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- INGESTRO -->
   <div class="exp-card card-ingestro">
     <div class="exp-meta">
-      <div class="exp-date">Jun 2023 — Present</div>
+      <div class="exp-date">Jun 2023 — May 2026</div>
       <div class="exp-role">Online Marketing<br/>Working Student</div>
       <div class="exp-co">Ingestro (fmr. nuvo) · Nürnberg, Germany</div>
       <ul class="exp-ul">
@@ -1752,8 +1920,8 @@
     logTimer=setInterval(function(){addLog(idx);},2800);
   }
  
-  var TITLES=['Pipeline Flow · Intent Signal Automation','Dynamic ABM Page Automation','LLM / GEO Visibility Strategy','Full-Funnel Performance Marketing'];
- 
+  var TITLES=['Agent Network · Autonomous Marketing Team','Daily Agent · Pre-Meeting Brief','Pipeline Flow · Intent Signal Automation','Dynamic ABM Page Automation','LLM / GEO Visibility Strategy','Full-Funnel Performance Marketing'];
+
   document.querySelectorAll('.cs-tab').forEach(function(btn){
     btn.addEventListener('click',function(){
       var idx=+this.getAttribute('data-cstab');
@@ -1769,12 +1937,12 @@
       if(t) t.textContent=TITLES[idx];
       startLog(idx);
       clearInterval(abmTimer);
-      if(idx===1){abmTimer=setInterval(cycleABM,2400);}
-      if(idx===2){setTimeout(animateCite,200);}
-      if(idx===3){setTimeout(animatePerf,200);}
+      if(idx===3){abmTimer=setInterval(cycleABM,2400);}
+      if(idx===4){setTimeout(animateCite,200);}
+      if(idx===5){setTimeout(animatePerf,200);}
     });
   });
- 
+
   startLog(0);
 })();
 </script>
