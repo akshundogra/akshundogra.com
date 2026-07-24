@@ -16,6 +16,8 @@
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Lora:ital,wght@1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
   <style>
     :root{
       --bg:#f4efe5;--bg2:#ece6d8;--ink:#18181a;--ink2:#3a3a3c;
@@ -115,7 +117,9 @@
     .sec-border{border-top:1px solid var(--border)}
 
     /* COMPETENCIES */
-    .comp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+    .comp-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1.5rem}
+    .comp-grid .comp-card{grid-column:span 2}
+    .comp-grid .comp-card:nth-child(4),.comp-grid .comp-card:nth-child(5){grid-column:span 3}
     .comp-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:2rem 1.8rem;transition:box-shadow .25s,transform .2s;position:relative;overflow:hidden}
     .comp-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
     .comp-card:nth-child(2)::before{background:#1e4d9e}
@@ -159,7 +163,8 @@
     .s-num .hi{color:var(--neon)}
     .s-lbl{font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.04em}
 
-    /* ── CASE STUDIES ── */
+    /* CASE STUDIES */
+    /* ALL selectors scoped to .cs-section — zero global bleed */
     .cs-section {
       font-family:'DM Sans',sans-serif;
       color:#1a1612;
@@ -319,6 +324,8 @@
     @media(max-width:860px){.cs-section .cs-layout{grid-template-columns:1fr;}.cs-section .cs-visual{position:static;}}
     @media(max-width:560px){.cs-section .cs-top,.cs-section .cs-layout{padding:0 20px;}.cs-section .cs-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;}}
 
+
+
     /* FLOW DIAGRAMS */
     .flow-wrap{padding:1.5rem}
     .flow-section-label{font-size:9px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem;padding:.3rem .6rem;background:var(--bg2);border-radius:4px;display:inline-block}
@@ -406,6 +413,16 @@
     .exp-ul li::before{content:'→';position:absolute;left:0;font-size:11px;top:2px}
     .exp-chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.4rem}
     .exp-chip{font-size:11px;padding:.25rem .65rem;border-radius:4px;font-weight:500}
+
+    /* THEO */
+    .card-theo{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.05)}
+    .card-theo .exp-date{color:rgba(255,255,255,.35)}
+    .card-theo .exp-role{color:#fff}
+    .card-theo .exp-co{color:var(--neon)}
+    .card-theo .exp-ul li{color:rgba(255,255,255,.5)}
+    .card-theo .exp-ul li::before{color:var(--neon)}
+    .card-theo .exp-vis{background:#12151a}
+    .card-theo .exp-chip{background:rgba(184,255,87,.1);border:1px solid rgba(184,255,87,.3);color:var(--neon)}
 
     /* INGESTRO */
     .card-ingestro{background:var(--card);border-bottom:1px solid var(--border)}
@@ -531,7 +548,7 @@
     .t-avatar img{width:100%;height:100%;object-fit:cover}
     .t-name{font-family:'Syne',sans-serif;font-size:.95rem;font-weight:700;text-align:left}
     .t-title{font-size:12px;color:var(--muted);text-align:left}
-    .t-placeholder-note{display:block;margin-top:1rem;font-size:11px;color:var(--muted);opacity:.9}
+    .t-placeholder-note{display:inline-block;margin-top:2rem;font-size:12px;color:var(--muted);background:rgba(200,56,32,.06);border:1px dashed rgba(200,56,32,.2);border-radius:6px;padding:.5rem 1rem}
 
     /* GITHUB */
     .github-card{background:var(--ink);border-radius:12px;padding:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
@@ -701,30 +718,30 @@
   <ul class="nav-links">
     <li><a href="#competencies">Kompetenzen</a></li>
     <li><a href="#case-studies">Fallstudien</a></li>
-    <li><a href="#experience">Berufserfahrung</a></li>
+    <li><a href="#experience">Erfahrung</a></li>
     <li><a href="#projects">Projekte</a></li>
     <li><a href="#education">Ausbildung</a></li>
   </ul>
   <div class="nav-right">
-    <a class="lang-switcher" href="/" title="Switch to English">🇬🇧 EN</a>
-    <a class="nav-cta" href="mailto:businesskashun@gmail.com">Kontakt</a>
+    <a class="lang-switcher" href="../" title="Switch to English">🇬🇧 EN</a>
+    <a class="nav-cta" href="mailto:businessakshun@gmail.com">Lass uns sprechen</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <div class="hero-badge">🇩🇪 Auf der Suche nach einer Vollzeitstelle in Deutschland</div>
-    <h1>Hallo, ich bin<br/><span class="serif">Akshun Dogra</span></h1>
+    <div class="hero-badge">🇩🇪 Auf der Suche nach einer Vollzeitstelle in Germany (Blue Card Inhaber)</div>
+    <h1>Hi, ich bin<br/><span class="serif">Akshun Dogra</span></h1>
     <div class="hero-roles">
       <span class="role-chip">Technical Marketing Manager</span>
       <span class="role-chip">Performance Marketer</span>
       <span class="role-chip">Growth &amp; Automation Specialist</span>
     </div>
-    <p class="hero-sub">Halb Marketer, halb Engineer. Ich entwickle Systeme, die Daten in Umsatz verwandeln —<strong>36x ROAS, 400% organisches Wachstum, und es geht weiter</strong>.</p>
+    <p class="hero-sub">Teils Marketer, teils Ingenieur. Ich entwickle Systeme, die Daten in Umsatz verwandeln — <strong>36x ROAS, 400 % organisches Wachstum und steigend</strong>.</p>
     <div class="hero-actions">
-      <a href="#competencies" class="btn-primary">Meine Skills</a>
-      <a href="#experience" class="btn-sec">Berufserfahrung →</a>
+      <a href="#competencies" class="btn-primary">Meine Skills ansehen</a>
+      <a href="#experience" class="btn-sec">Arbeiten ansehen →</a>
     </div>
   </div>
   <div class="hero-right">
@@ -735,7 +752,7 @@
       </div>
     </div>
     <div class="flag-row">
-      <div class="flag-chip">🇮🇳 Geboren in Indien</div>
+      <div class="flag-chip">🇮🇳 In Indien geboren</div>
       <div class="flag-chip">🇩🇪 Wohnhaft in Deutschland</div>
       <div class="flag-chip">🇪🇸 Auslandssemester in Spanien</div>
     </div>
@@ -744,7 +761,7 @@
 
 <!-- TOOLS CAROUSEL -->
 <div class="carousel-wrap">
-  <div class="carousel-label">Tools &amp; platforms I work with</div>
+  <div class="carousel-label">Tools &amp; Plattformen, mit denen ich arbeite</div>
   <div class="carousel-track">
     <div class="c-item"><img src="https://cdn.simpleicons.org/googleads/ffffff" onerror="this.style.display='none'"><span>Google Ads</span></div>
     <div class="c-item"><img src="https://cdn.simpleicons.org/meta/ffffff" onerror="this.style.display='none'"><span>Meta Ads</span></div>
@@ -802,13 +819,14 @@
 
 <!-- COMPETENCIES -->
 <section id="competencies" class="sec sec-border">
-  <div class="section-eyebrow reveal">Kernkompetenz</div>
+  <div class="section-eyebrow reveal">Kernkompetenzen</div>
   <h2 class="reveal">Was ich am <span class="serif">besten kann</span></h2>
   <div class="comp-grid">
-    <div class="comp-card reveal d1"><div class="comp-icon">📈</div><div class="comp-title">Performance Marketing</div><p class="comp-desc">End-to-End Paid Media-Strategie, A/B-Testing und ROAS-Maximierung über Google, Meta und LinkedIn. 36x+ ROAS erreicht, $50K+ monatliche Budgets verwaltet.</p><div class="comp-tags"><span class="comp-tag">Google Ads</span><span class="comp-tag">Meta Ads</span><span class="comp-tag">LinkedIn Ads</span><span class="comp-tag">A/B Testing</span><span class="comp-tag">ROAS</span></div></div>
-    <div class="comp-card reveal d2"><div class="comp-icon">⚡</div><div class="comp-title">Marketing Automation</div><p class="comp-desc">Vollständige Automatisierungspipelines von der Lead-Akquise bis zum Abschluss — 80% weniger manuelle Arbeit durch Human-in-the-Loop-Systeme mit Qualitätskontrolle.</p><div class="comp-tags"><span class="comp-tag">Make</span><span class="comp-tag">n8n</span><span class="comp-tag">Clay</span><span class="comp-tag">Apollo</span><span class="comp-tag">Lemlist</span><span class="comp-tag">HubSpot</span></div></div>
-    <div class="comp-card reveal d1"><div class="comp-icon">🔍</div><div class="comp-title">SEO &amp; GEO</div><p class="comp-desc">Technisches SEO, Multi-Channel-Attribution und LLM-Sichtbarkeitsstrategien. Früher Praktiker der Generative Engine Optimisation — bevor die meisten Teams darüber sprachen.</p><div class="comp-tags"><span class="comp-tag">GA4</span><span class="comp-tag">SEMrush</span><span class="comp-tag">GEO</span><span class="comp-tag">Schema</span><span class="comp-tag">Python</span><span class="comp-tag">SQL</span></div></div>
-    <div class="comp-card reveal d2"><div class="comp-icon">💻</div><div class="comp-title">Web &amp; Technical Marketing</div><p class="comp-desc">Conversion-optimierte Landing Pages, Tracking-Implementierung und dynamische ABM-Seitengenerierung. Ich baue, tracke und optimiere — ohne Dev-Team.</p><div class="comp-tags"><span class="comp-tag">Webflow</span><span class="comp-tag">HTML/CSS/JS</span><span class="comp-tag">GTM</span><span class="comp-tag">WordPress</span><span class="comp-tag">FB Pixel</span></div></div>
+    <div class="comp-card reveal d1"><div class="comp-icon">🧩</div><div class="comp-title">GTM Engineering</div><p class="comp-desc">End-to-End Go-to-Market Systeme — vom Signal über das CRM bis zum Umsatz. Ich entwickle agentische Automatisierungen mit Human-in-the-Loop Guardrails und Claude Code / Codex Orchestrierung, um Prozesse ohne Entwicklerteam von manuell auf halbautonom umzustellen.</p><div class="comp-tags"><span class="comp-tag">GTM Systems</span><span class="comp-tag">Agentic Workflows</span><span class="comp-tag">Claude Code / Codex</span><span class="comp-tag">HubSpot</span><span class="comp-tag">Make/n8n</span><span class="comp-tag">Human-in-the-Loop</span></div></div>
+    <div class="comp-card reveal d2"><div class="comp-icon">📈</div><div class="comp-title">Performance Marketing</div><p class="comp-desc">End-to-End Paid-Media-Strategie, A/B-Testing und ROAS-Maximierung auf Google Ads, Meta Ads und LinkedIn Ads. Über 36x ROAS erzielt und monatliche Budgets von über 50.000 € verwaltet.</p><div class="comp-tags"><span class="comp-tag">Google Ads</span><span class="comp-tag">Meta Ads</span><span class="comp-tag">LinkedIn Ads</span><span class="comp-tag">A/B Testing</span><span class="comp-tag">ROAS</span></div></div>
+    <div class="comp-card reveal d1"><div class="comp-icon">🔍</div><div class="comp-title">SEO &amp; GEO</div><p class="comp-desc">Technisches SEO, Multi-Channel-Attribution und LLM-Sichtbarkeitsstrategien. Früher Anwender von Generative Engine Optimization — noch bevor die meisten Teams darüber sprachen.</p><div class="comp-tags"><span class="comp-tag">GA4</span><span class="comp-tag">SEMrush</span><span class="comp-tag">GEO</span><span class="comp-tag">Schema</span><span class="comp-tag">Python</span><span class="comp-tag">SQL</span></div></div>
+    <div class="comp-card reveal d2"><div class="comp-icon">⚡</div><div class="comp-title">Marketing Automation</div><p class="comp-desc">Workflow-Automatisierung für Lead-Bewertung, Nurturing und interne Abläufe — reduzierte den manuellen Aufwand um 80 % mit Human-in-the-Loop Qualitätskontrolle.</p><div class="comp-tags"><span class="comp-tag">Make</span><span class="comp-tag">n8n</span><span class="comp-tag">Clay</span><span class="comp-tag">Apollo</span><span class="comp-tag">Lemlist</span><span class="comp-tag">HubSpot</span></div></div>
+    <div class="comp-card reveal d1"><div class="comp-icon">💻</div><div class="comp-title">Web &amp; Technical Marketing</div><p class="comp-desc">Conversion-optimierte Landingpages, Tracking-Implementierung und dynamische ABM-Page-Generierung. Ich baue, tracke und optimiere — ganz ohne Entwicklerteam.</p><div class="comp-tags"><span class="comp-tag">Webflow</span><span class="comp-tag">HTML/CSS/JS</span><span class="comp-tag">GTM</span><span class="comp-tag">WordPress</span><span class="comp-tag">FB Pixel</span></div></div>
   </div>
 </section>
 
@@ -856,8 +874,8 @@
 
 <!-- CTA STRIP -->
 <div class="cta-strip">
-  <p>Aktuell auf der Suche nach einer <span class="serif">Vollzeitrolle in Deutschland</span> — Marketing, Growth oder Automation.</p>
-  <a href="mailto:businessakshun@gmail.com" class="btn-white">Kontakt →</a>
+  <p>Derzeit auf der Suche nach einer <span class="serif">Vollzeitstelle in Deutschland</span> — Marketing, Growth oder Automatisierung.</p>
+  <a href="mailto:businessakshun@gmail.com" class="btn-white">Lass uns sprechen →</a>
 </div>
 
 <!-- ABOUT -->
@@ -867,24 +885,24 @@
       <div class="section-eyebrow">Die Person</div>
       <h2>Mehr als eine<br/><span class="serif">Berufsbezeichnung</span></h2>
       <div class="about-text">
-        <p>Mein Name, <em>Akshun</em>, bedeutet <strong>"unzerstörbar"</strong> auf Sanskrit. Das ist keine Marketing-Phrase — es prägt, wie ich mich durch die Welt bewege. Ich gebe bei Kampagnen, Zielen oder persönlichen Herausforderungen nicht auf, wie zum Beispiel eine neue Sprache von Grund auf in einem fremden Land zu lernen.</p>
-        <p>Ich bin in Indien aufgewachsen, habe meine Karriere im digitalen Marketing mit 19 von Null aufgebaut und dann einen echten Sprung gewagt: Umzug nach Nürnberg für einen M.Sc. an der FAU. Ein Erasmus-Semester in Madrid fügte ein drittes Land meiner Geschichte hinzu.</p>
-        <p>Abseits von Dashboards und Automatisierungs-Skripten dokumentiere ich die ehrliche Realität, ein <em>indischer Expat in Deutschland</em> zu sein — auf YouTube. Keine Filter. Nur echte Geschichten über eine Reise, über die die meisten nicht sprechen.</p>
+        <p>Mein Name, <em>Akshun</em>, bedeutet <strong>„unzerstörbar“</strong> auf Sanskrit. Das ist kein Marketing-Spruch — es prägt, wie ich Dinge angehe. Ich gebe nicht bei Kampagnen, Zielen oder persönlichen Herausforderungen auf, wie z.B. eine neue Sprache in einem fremden Land von Grund auf zu lernen.</p>
+        <p>Ich bin in Indien aufgewachsen, habe meine Karriere im digitalen Marketing ab 19 Jahren aus dem Nichts aufgebaut und bin dann nach Nürnberg gezogen für meinen M.Sc. an der FAU Erlangen-Nürnberg. Ein Erasmus-Semester in Madrid brachte ein drittes Land in meine Geschichte.</p>
+        <p>Außerhalb von Dashboards und Automatisierungs-Skripten dokumentiere ich die ehrliche Realität eines <em>indischen Expats in Deutschland</em> auf YouTube. Ohne Filter. Echte Geschichten über eine Reise, über die nicht oft gesprochen wird.</p>
       </div>
     </div>
     <div class="j-cards reveal">
-      <div class="j-card"><div class="j-flag">🇮🇳</div><div><div class="j-title">Indien — Wo alles begann</div><div class="j-desc">Mit 19 als Freelancer gestartet. Arbeitete mit punjabischen Musikkünstlern, australischen Unternehmen und Tech-Kunden, bevor ich überhaupt das Land verließ.</div><span class="j-yr">2016 – 2022</span></div></div>
-      <div class="j-card"><div class="j-flag">🇩🇪</div><div><div class="j-title">Deutschland — Der große Sprung</div><div class="j-desc">Umzug nach Nürnberg für M.Sc. an der FAU. Deutsch auf C1 gelernt, die Ausländerbehörde gemeistert und einem KI-Startup als Werkstudent beigetreten.</div><span class="j-yr">2022 – Heute</span></div></div>
-      <div class="j-card"><div class="j-flag">🇪🇸</div><div><div class="j-title">Spanien — Das Bonuskapitel</div><div class="j-desc">Erasmus an der UPM Madrid. Spanisch gelernt, neue Perspektiven gewonnen und bestätigt, dass das Essen in Madrid wirklich unglaublich ist.</div><span class="j-yr">Sep 2024 – Jan 2025</span></div></div>
+      <div class="j-card"><div class="j-flag">🇮🇳</div><div><div class="j-title">Indien — Wo alles begann</div><div class="j-desc">Mit 19 als Freelancer gestartet. Arbeit mit indischen Künstlern, australischen Unternehmen und Tech-Kunden, bevor ich das Land verließ.</div><span class="j-yr">2016 – 2022</span></div></div>
+      <div class="j-card"><div class="j-flag">🇩🇪</div><div><div class="j-title">Deutschland — Der große Schritt</div><div class="j-desc">Umzug nach Nürnberg für das M.Sc.-Studium an der FAU. Deutsch auf C1 gelernt, Ausländerbehörde gemeistert und als Werkstudent in einem KI-Startup gestartet.</div><span class="j-yr">2022 – Present</span></div></div>
+      <div class="j-card"><div class="j-flag">🇪🇸</div><div><div class="j-title">Spanien — Das Bonus-Kapitel</div><div class="j-desc">Erasmus an der UPM Madrid. Spanisch gelernt, neue Perspektiven gewonnen und festgestellt, dass das Essen in Madrid wirklich fantastisch ist.</div><span class="j-yr">Sep 2024 – Jan 2025</span></div></div>
     </div>
   </div>
 </section>
 
 <!-- STATS -->
 <div class="stats-strip">
-  <div class="s-cell"><div class="s-num"><span class="hi">36</span>x+</div><div class="s-lbl">Maximaler ROAS erreicht</div></div>
+  <div class="s-cell"><div class="s-num"><span class="hi">36</span>x+</div><div class="s-lbl">Spitzen-ROAS erzielt</div></div>
   <div class="s-cell"><div class="s-num"><span class="hi">400</span>%</div><div class="s-lbl">Organisches Traffic-Wachstum</div></div>
-  <div class="s-cell"><div class="s-num"><span class="hi">−20</span>%</div><div class="s-lbl">CPC-Reduktion</div></div>
+  <div class="s-cell"><div class="s-num"><span class="hi">−20</span>%</div><div class="s-lbl">CPC-Reduzierung</div></div>
   <div class="s-cell"><div class="s-num"><span class="hi">6</span>+</div><div class="s-lbl">Jahre im Marketing</div></div>
 </div>
 
@@ -895,10 +913,12 @@
     <p class="cs-eyebrow">Echte Arbeit, echte Ergebnisse</p>
     <h2 class="cs-h1">Fall<em>studien</em></h2>
     <div class="cs-tabs" id="csTabs">
-      <button class="cs-tab cs-active" data-cstab="0">01 · Intent Signal Automation</button>
-      <button class="cs-tab" data-cstab="1">02 · ABM Page Automation</button>
-      <button class="cs-tab" data-cstab="2">03 · LLM / GEO Sichtbarkeit</button>
-      <button class="cs-tab" data-cstab="3">04 · Performance Marketing</button>
+      <button class="cs-tab cs-active" data-cstab="0">01 · Autonomes Marketing-Team</button>
+      <button class="cs-tab" data-cstab="1">02 · Persönlicher Chief-of-Staff Agent</button>
+      <button class="cs-tab" data-cstab="2">03 · Intent-Signal-Automatisierung</button>
+      <button class="cs-tab" data-cstab="3">04 · ABM-Page-Automatisierung</button>
+      <button class="cs-tab" data-cstab="4">05 · LLM / GEO Sichtbarkeit</button>
+      <button class="cs-tab" data-cstab="5">06 · Performance Marketing</button>
     </div>
   </div>
  
@@ -908,21 +928,65 @@
     <div data-aos="fade-up" data-aos-duration="600" data-aos-delay="60">
  
       <div class="cs-tp cs-active" data-cspanel="0">
-        <div class="cs-tag cat-auto">⚡ Marketing Automation</div>
-        <h3 class="cs-h2">Turning Anonymous Website Visitors into Qualified Pipeline</h3>
+        <div class="cs-tag cat-auto">🧩 GTM Engineering / Agentische Systeme</div>
+        <h3 class="cs-h2">Aufbau eines autonomen Marketing-Teams</h3>
         <span class="cs-label">Das Problem</span>
-        <p class="cs-prob">Besucher kommen auf MOFU/BOFU-Seiten — Preise, Lösungen, Fallstudien — und verschwinden spurlos. Keine Kontaktdaten, kein Formular ausgefüllt, kein Signal zum Handeln. High-Intent-Prospects verschwanden lautlos.</p>
+        <p class="cs-prob">SEO, Performance Marketing und Content-Erstellung arbeiteten in Silos — der Datenabgleich und die Übergabe von Erkenntnissen zwischen den Kanälen raubten wöchentlich Stunden, und Probleme fielen oft erst Wochen später auf.</p>
         <span class="cs-label">Die Lösung</span>
         <ul class="cs-list">
-          <li>Verwendung von <strong>RB2B + Apollo</strong> zur De-Anonymisierung von Website-Besuchern und Extraktion von Kontaktdaten</li>
-          <li>Daten per <strong>API-Webhook über Make</strong> an Clay für ICP-Scoring gesendet</li>
-          <li>Clay segmentierte Leads: High Value → direkt zu Lemlist Outreach, Low Value → verworfen</li>
-          <li>Mid-Value-Leads lösten eine <strong>Slack-Bestätigung</strong> aus — SDR prüft und akzeptiert/lehnt manuell ab</li>
-          <li>Entscheidung zurück an Clay → Lemlist oder verworfen, Human-in-the-Loop geschlossen</li>
+          <li>Architektur eines <strong>SEO-Agents</strong> entwickelt, der Sistrix, GA4 und GSC kontinuierlich auf Ranking- und Traffic-Signale überwacht</li>
+          <li>Aufbau eines <strong>Performance-Marketing-Agents</strong>, der Google Ads, Meta Ads, LinkedIn Ads und die HubSpot-Pipeline auf Budget- und Lead-Qualitäts-Anomalien prüft</li>
+          <li>Ergänzung durch einen <strong>Content-Agent</strong>, der bei von anderen Agenten identifizierten Content-Lücken automatisch Texte generiert und überarbeitet</li>
+          <li>Die Agenten übergeben ihre Erkenntnisse automatisch untereinander, mit <strong>Human-in-the-Loop Review</strong> vor allen Freigaben oder Budgets</li>
         </ul>
         <div class="cs-insight">
-          <span class="cs-insight-lbl">Wichtigste Erkenntnis</span>
-          <p class="cs-insight-txt">„KI kann halluzinieren und schlechte Entscheidungen im großen Maßstab treffen. Einen menschlichen Checkpoint für Sonderfälle einzubauen ist keine Schwäche — es hält das System vertrauenswürdig und verhindert, dass SDRs gute Leads verbrennen."</p>
+          <span class="cs-insight-lbl">Zentrale Erkenntnis</span>
+          <p class="cs-insight-txt">„Ein einzelnes Automatisierungs-Skript ist eine Abkürzung. Ein Team von Agenten, die miteinander kommunizieren und wissen, wann sie einen Menschen einbinden müssen — das ist ein System. Dieser Unterschied schafft Vertrauen im großen Maßstab.“</p>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-chip">Make</span><span class="cs-chip">n8n</span><span class="cs-chip">Clay</span>
+          <span class="cs-chip">Apollo</span><span class="cs-chip">HubSpot</span><span class="cs-chip">Sistrix</span><span class="cs-chip">GA4</span><span class="cs-chip">GSC</span>
+        </div>
+      </div>
+
+      <div class="cs-tp" data-cspanel="1">
+        <div class="cs-tag cat-web">🗂️ GTM Engineering / Produktivitätssysteme</div>
+        <h3 class="cs-h2">Mein persönlicher Chief-of-Staff Agent</h3>
+        <span class="cs-label">Das Problem</span>
+        <p class="cs-prob">Das parallele Verwalten mehrerer Projekte und Agenten-Systeme führte dazu, dass offene Aufgaben und Meeting-Vorbereitungen leicht durchs Raster fielen — das ständige Kontext-Switching war der eigentliche Engpass, nicht die Arbeit selbst.</p>
+        <span class="cs-label">Die Lösung</span>
+        <ul class="cs-list">
+          <li>Entwicklung von <strong>täglichen und wöchentlichen Agenten</strong>, die Slack- und Teams-Nachrichten sowie alle offenen Aufgaben projektübergreifend analysieren</li>
+          <li>Agenten identifizieren, welche Aufgaben sie bereits <strong>autonom</strong> bearbeiten können, und erstellen vor jedem Meeting einen ersten Entwurf</li>
+          <li>Entwürfe stehen direkt zur Überprüfung bereit — man geht mit einer Grundlage statt mit einem leeren Blatt in jedes Meeting</li>
+          <li>Konsequent <strong>halbautonom</strong> gehalten: Agenten entwerfen, ich entscheide und veröffentliche</li>
+        </ul>
+        <div class="cs-insight">
+          <span class="cs-insight-lbl">Zentrale Erkenntnis</span>
+          <p class="cs-insight-txt">„Der effektivste Agent, den ich gebaut habe, war gar nicht kundenorientiert — es war derjenige, der mir Zeit zurückgab, indem er alles vorbereitete, bevor ich überhaupt meinen Kalender öffnete.“</p>
+        </div>
+        <div class="cs-tags">
+          <span class="cs-chip">Slack</span><span class="cs-chip">Teams</span><span class="cs-chip">n8n</span>
+          <span class="cs-chip">Make</span><span class="cs-chip">Task Automation</span><span class="cs-chip">Agentic Workflows</span>
+        </div>
+      </div>
+
+      <div class="cs-tp" data-cspanel="2">
+        <div class="cs-tag cat-auto">⚡ Marketing-Automatisierung</div>
+        <h3 class="cs-h2">Anonyme Website-Besucher in qualifizierte Pipelines verwandeln</h3>
+        <span class="cs-label">Das Problem</span>
+        <p class="cs-prob">Besucher auf MOFU/BOFU-Seiten (Preise, Lösungen, Case Studies) verließen die Website spurlos — keine Kontaktdaten, kein Formular. Kaufbereite Interessenten verschwanden unbemerkt.</p>
+        <span class="cs-label">Die Lösung</span>
+        <ul class="cs-list">
+          <li>Einsatz von <strong>RB2B + Apollo</strong>, um anonyme Besucher zu identifizieren und Kontaktdaten zu ermitteln</li>
+          <li>Datenübertragung via <strong>API-Webhook durch Make</strong> an Clay für das ICP-Bewertung</li>
+          <li>Segmentierung in Clay: High Value → direkt in die Lemlist-Outreach-Sequenz, Low Value → verworfen</li>
+          <li>Mid-Value Leads lösten eine <strong>Slack-Bestätigung</strong> aus — SDRs prüften und akzeptierten/lehnten manuell ab</li>
+          <li>Entscheidung zurück an Clay → Lemlist oder verworfen, um den Human-in-the-Loop zu schließen</li>
+        </ul>
+        <div class="cs-insight">
+          <span class="cs-insight-lbl">Zentrale Erkenntnis</span>
+          <p class="cs-insight-txt">„KI kann halluzinieren und falsche Entscheidungen treffen. Ein menschlicher Kontrollpunkt für Grenzfälle ist keine Schwäche — er sorgt dafür, dass das System verlässlich bleibt und SDRs keine guten Leads verbrennen.“</p>
         </div>
         <div class="cs-tags">
           <span class="cs-chip">RB2B</span><span class="cs-chip">Apollo</span><span class="cs-chip">Make</span>
@@ -930,71 +994,71 @@
         </div>
       </div>
 
-      <div class="cs-tp" data-cspanel="1">
-        <div class="cs-tag cat-web">🌐 Web Dev + KI-Automatisierung</div>
-        <h3 class="cs-h2">Personalisierte ABM Landing Pages im großen Maßstab mit KI</h3>
+      <div class="cs-tp" data-cspanel="3">
+        <div class="cs-tag cat-web">🌐 Web-Entwicklung + KI-Automatisierung</div>
+        <h3 class="cs-h2">Personalisierte ABM Landingpages im großen Maßstab mit KI</h3>
         <span class="cs-label">Das Problem</span>
-        <p class="cs-prob">Kalte ABM-Ziele und „Jetzt nicht"-Leads lagen stagnierend im CRM. Manuelle Personalisierung dauerte zu lange — individuellen Content pro Account zu erstellen war für ein kleines Team nicht skalierbar.</p>
+        <p class="cs-prob">Inaktive ABM-Zielkontakte und stagnierende Leads im CRM. Manuelle Personalisierung dauerte zu lange — individuelle Inhalte pro Account waren für ein kleines Team nicht skalierbar.</p>
         <span class="cs-label">Die Lösung</span>
         <ul class="cs-list">
-          <li>Kalte/stagnierende Leads aus dem CRM gezogen → <strong>Make → Clay</strong> zur Anreicherung</li>
-          <li>Clay + ChatGPT generierten personalisierten Content pro Account (Firmenlogo, individuelle Nachricht, personalisierter Hero, branchenspezifischer Text)</li>
-          <li>Ein <strong>dynamisches Webflow-Template</strong> gebaut — 60% statisch, 40% automatisch befüllte Felder</li>
-          <li>SDRs fügten individuelle Sandbox-Demos oder Videos hinzu (via Tools wie NanoBanana)</li>
-          <li>Seiten verteilt über Outreach-Kampagnen, LinkedIn Thought Leadership (CEO/CTO) und unternehmensbasiertes Remarketing</li>
+          <li>Export inaktiver Leads aus dem CRM → <strong>Make → Clay</strong> zur Anreicherung</li>
+          <li>Clay + ChatGPT generierten personalisierte Inhalte pro Account (Firmenlogo, individuelle Nachricht, angepasster Hero-Text, branchenspezifische Copy)</li>
+          <li>Erstellung eines <strong>dynamischen Webflow-Templates</strong> — 60 % statisch, 40 % automatisch befüllte Felder</li>
+          <li>SDRs fügten individuelle Demo-Videos oder Sandboxen hinzu</li>
+          <li>Verteilung über Outreach-Kampagnen, LinkedIn Thought Leadership (CEO/CTO) und account-basiertes Remarketing</li>
         </ul>
         <div class="cs-insight">
-          <span class="cs-insight-lbl">Wichtigste Erkenntnis</span>
-          <p class="cs-insight-txt">„ABM bedeutete früher wochenlange manuelle Arbeit pro Account. Mit der richtigen Pipeline kann man in Minuten wirklich personalisierte Erlebnisse schaffen — ohne Qualitätseinbußen."</p>
+          <span class="cs-insight-lbl">Zentrale Erkenntnis</span>
+          <p class="cs-insight-txt">„ABM bedeutete früher wochenlange manuelle Arbeit pro Account. Mit der richtigen Pipeline erstellt man echte personalisierte Erlebnisse in Minuten — ohne Qualitätsverlust.“</p>
         </div>
         <div class="cs-tags">
           <span class="cs-chip">Webflow</span><span class="cs-chip">Make</span><span class="cs-chip">Clay</span><span class="cs-chip">ChatGPT</span><span class="cs-chip">CRM</span><span class="cs-chip">LinkedIn</span><span class="cs-chip">ABM</span>
         </div>
       </div>
  
-      <div class="cs-tp" data-cspanel="2">
-        <div class="cs-tag cat-seo">🔍 SEO + LLM-Sichtbarkeit</div>
+      <div class="cs-tp" data-cspanel="4">
+        <div class="cs-tag cat-seo">🔍 SEO + LLM Sichtbarkeit</div>
         <h3 class="cs-h2">Ein kleines SaaS im Zeitalter der KI-Suche sichtbar machen</h3>
         <span class="cs-label">Das Problem</span>
-        <p class="cs-prob">Ein kleines SaaS mit begrenzter Domain-Autorität — unsichtbar bei LLM-basierter Suche (ChatGPT, Perplexity, Bing AI). Traditionelles SEO reichte nicht. Eine GEO-First-Strategie war nötig, bevor Wettbewerber aufholten.</p>
+        <p class="cs-prob">Ein kleines SaaS-Unternehmen mit geringer Domain-Autorität war in KI-Suchmaschinen (ChatGPT, Perplexity, Bing AI) unsichtbar. Traditionelles SEO reichte nicht aus. Es brauchte eine GEO-first Strategie.</p>
         <span class="cs-label">Die Lösung</span>
         <ul class="cs-list">
-          <li>Einen <strong>dynamischen Schema-Generator</strong> pro Seite gebaut — strukturiert für Googles 2MB Crawl-Limit und LLM-Lesbarkeit</li>
-          <li><strong>Peec AI + Bing Webmaster</strong> verwendet, um zu tracken, welche Prompts rankten — On-Page-Fixes, FAQs und Schema für schwache Prompts</li>
-          <li>Relevante <strong>LinkedIn- und Reddit-Communities</strong> identifiziert — Fragen beantwortet, um LLM-Zitations-Signale aufzubauen</li>
-          <li><strong>G2- und Crunchbase-Profile</strong> als vertrauenswürdige LLM-Referenzquellen optimiert (hochautoritative Third-Party-Signale)</li>
+          <li>Entwicklung eines <strong>dynamischen Schema-Generators</strong> pro Seite — optimiert für Googles 2MB Crawl-Limit und LLM-Lesbarkeit</li>
+          <li>Nutzung von <strong>Peec AI + Bing Webmaster</strong>, um gerankte Prompts zu tracken — On-Page-Fixes, FAQs und Schemas für schwache Prompts</li>
+          <li>Identifikation relevanter <strong>LinkedIn- und Reddit-Communitys</strong> — Beantwortung von Fragen zur Generierung von LLM-Zitierungssignalen</li>
+          <li>Optimierung von <strong>G2- und Crunchbase-Profilen</strong> als vertrauenswürdige LLM-Referenzquellen</li>
         </ul>
         <div class="cs-insight">
-          <span class="cs-insight-lbl">Wichtigste Erkenntnis</span>
-          <p class="cs-insight-txt">„LLMs zitieren strukturierten, meinungsstarken, community-validierten Content. Ihr G2-Profil und eine Reddit-Antwort können Ihren Blogpost in ChatGPT übertreffen — wenn Sie sie als Teil Ihrer SEO-Strategie behandeln."</p>
+          <span class="cs-insight-lbl">Zentrale Erkenntnis</span>
+          <p class="cs-insight-txt">„LLMs zitieren strukturierte, meinungsstarke und von Communitys validierte Inhalte. Ein G2-Profil oder eine Reddit-Antwort kann einen Blogbeitrag in ChatGPT übertreffen — wenn man sie als Teil der SEO-Strategie versteht.“</p>
         </div>
         <div class="cs-tags">
           <span class="cs-chip">GEO</span><span class="cs-chip">Schema</span><span class="cs-chip">Pack AI</span><span class="cs-chip">Bing Webmaster</span><span class="cs-chip">Reddit</span><span class="cs-chip">G2</span><span class="cs-chip">Crunchbase</span>
         </div>
       </div>
  
-      <div class="cs-tp" data-cspanel="3">
+      <div class="cs-tp" data-cspanel="5">
         <div class="cs-tag cat-seo">📈 Performance Marketing</div>
         <h3 class="cs-h2">Aufbau einer Full-Funnel B2B Paid Media Engine</h3>
         <span class="cs-label">Das Problem</span>
-        <p class="cs-prob">Paid Media war völlig unstrukturiert — Google-Ausgaben verstreut über generische Keywords mit nahezu null Pipeline, LinkedIn sporadisch getestet ohne ICP-Targeting, und kein KPI-Framework, das Ausgaben mit Demos oder Umsatz verknüpfte.</p>
-        <span class="cs-label">LinkedIn — Nachfrage-Kreation</span>
+        <p class="cs-prob">Paid Media war unstrukturiert — Google-Budgets auf generische Keywords verteilt ohne Pipeline, LinkedIn unregelmäßig ohne ICP-Targeting getestet, und kein KPI-Framework zur Verknüpfung von Ausgaben mit Demos oder Umsatz.</p>
+        <span class="cs-label">LinkedIn — Nachfragegenerierung</span>
         <ul class="cs-list">
-          <li><strong>Founder-led Thought Leadership</strong> direkt an kuratierte ICP-Listen gepusht — 6x Branchen-Benchmark CTR erreicht</li>
-          <li>Custom Company- und Persona-Listen erstellt, um natives Targeting zu ersetzen — <strong>35% CTR-Steigerung</strong></li>
-          <li>Gated Content und Lead Gen Forms eliminiert — schwache Qualität, keine Pipeline</li>
-          <li>Zu <strong>1:1 ABM-Kampagnen</strong> für über 50 benannte Accounts weiterentwickelt</li>
+          <li>Förderung von <strong>gründergeführtem Thought Leadership</strong> direkt an kuratierte ICP-Listen — 6x höherer CTR als der Branchenbenchmark</li>
+          <li>Aufbau eigener Firmen- und Persona-Listen anstelle von nativem Targeting — <strong>35 % CTR-Steigerung</strong></li>
+          <li>Gated Content und Lead-Gen-Formulare eingestellt — schwache Qualität, keine Pipeline</li>
+          <li>Weiterentwicklung zu <strong>1:1 ABM-Kampagnen</strong> für mehr als 50 Ziel-Accounts</li>
         </ul>
-        <span class="cs-label">Google Ads — Nachfrage-Capture</span>
+        <span class="cs-label">Google Ads — Nachfrageabschöpfung</span>
         <ul class="cs-list">
-          <li>Von breiten Keyword-Clustern zu <strong>nur Competitor-Search</strong> geschwenkt — Nutzer bereits im Kaufmodus</li>
-          <li>Generische Kampagnen auf Exact-Match mit strikten Ausgabenlimits und Kill-Rules reduziert</li>
-          <li><strong>Display Retargeting</strong> als zweite Conversion-Ebene hinzugefügt</li>
-          <li>Kill-Kriterien vor Launch etabliert — underperformende Kanäle schnell beendet</li>
+          <li>Wechsel von breiten Keywords zu <strong>reiner Konkurrenz-Suche</strong> — Nutzer bereits in Kaufabsicht</li>
+          <li>Reduzierung generischer Kampagnen auf Exact-Match mit strikten Spend-Limits und Kill-Rules</li>
+          <li>Hinzufügen von <strong>Display-Retargeting</strong> als zweite Conversion-Ebene</li>
+          <li>Festlegung von Abbruchkriterien vor dem Start — schnelles Beenden unterperformender Kanäle</li>
         </ul>
         <div class="cs-insight">
-          <span class="cs-insight-lbl">Wichtigste Erkenntnis</span>
-          <p class="cs-insight-txt">„Paid Media in B2B ist kein Volume-Play. LinkedIn kreiert qualifizierte Nachfrage innerhalb des exakten ICP, Google Search erntet sie, und Retargeting konvertiert sie. Jeder Euro muss zur Pipeline verlinkt sein."</p>
+          <span class="cs-insight-lbl">Zentrale Erkenntnis</span>
+          <p class="cs-insight-txt">„Paid Media im B2B ist kein Mengenspiel. LinkedIn schafft qualifizierte Nachfrage in der Zielgruppe, Google Search fängt sie ab, und Retargeting konvertiert sie. Jeder Euro muss mit der Pipeline verknüpft sein.“</p>
         </div>
         <div class="cs-tags">
           <span class="cs-chip">LinkedIn Ads</span><span class="cs-chip">Google Ads</span><span class="cs-chip">ABM</span><span class="cs-chip">ICP Targeting</span><span class="cs-chip">Demand Generation</span><span class="cs-chip">Retargeting</span>
@@ -1014,6 +1078,50 @@
  
       <!-- VIS 0: Intent Signal Flow -->
       <div class="cs-tp cs-active cs-vbody" data-csvis="0">
+        <div class="cs-llm-mon">
+          <span class="cs-llm-mon-title">AGENTEN-NETZWERK · LIVE</span>
+          <div class="cs-llm-plats">
+            <div class="cs-llm-plat cited"><div class="cs-llm-icon">🔍</div><div class="cs-llm-name">SEO Agent</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Aktiv</div></div>
+            <div class="cs-llm-plat cited"><div class="cs-llm-icon">📈</div><div class="cs-llm-name">Performance Agent</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Aktiv</div></div>
+            <div class="cs-llm-plat cited"><div class="cs-llm-icon">✍️</div><div class="cs-llm-name">Content Agent</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Aktiv</div></div>
+            <div class="cs-llm-plat"><div class="cs-llm-icon">🧑</div><div class="cs-llm-name">Human Review</div><div class="cs-llm-status no"><span class="cs-sdot off"></span>Bereit</div></div>
+          </div>
+        </div>
+        <div class="cs-metrics">
+          <div class="cs-pm"><div class="cs-pm-num green">€22.7k</div><div class="cs-pm-lbl">Google Ads Ersparnis identifiziert</div></div>
+          <div class="cs-pm"><div class="cs-pm-num blue">€10k</div><div class="cs-pm-lbl">Meta Ads Ersparnis identifiziert</div></div>
+          <div class="cs-pm"><div class="cs-pm-num red">3</div><div class="cs-pm-lbl">Agenten kooperieren</div></div>
+        </div>
+        <div class="cs-log">
+          <span class="cs-log-lbl">AKTIVITÄTSPROTOKOLL</span>
+          <div class="cs-log-list">
+            <div class="cs-log-row"><span class="cs-ltag g">SEO</span><span class="cs-lmsg">Ranking-Abfall auf 3 Seiten erkannt, an Content Agent übergeben</span><span class="cs-lago">2m</span></div>
+            <div class="cs-log-row"><span class="cs-ltag o">PERF</span><span class="cs-lmsg">Verschwendete Ausgaben in Google Ads erkannt — zur Überprüfung markiert</span><span class="cs-lago">14m</span></div>
+            <div class="cs-log-row"><span class="cs-ltag b">CONTENT</span><span class="cs-lmsg">Textentwurf für markierte Landingpage generiert</span><span class="cs-lago">1h</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-tp cs-vbody" data-csvis="1">
+        <div class="dash">
+          <div class="dash-hdr"><span class="dash-t">Täglicher Agent · Briefing vor Meeting</span><span class="dash-bdg">Automatisch entworfen</span></div>
+          <div class="dash-metrics">
+            <div class="dash-m"><div class="dm-v up">12</div><div class="dm-l">Aufgaben gescannt</div></div>
+            <div class="dash-m"><div class="dm-v neu">5</div><div class="dm-l">Entwürfe vorbereitet</div></div>
+            <div class="dash-m"><div class="dm-v up">0</div><div class="dm-l">Elemente verpasst</div></div>
+          </div>
+          <div class="chart-box">
+            <div class="chart-lbl">Slack / Teams Scan → Entwurfs-Pipeline</div>
+            <div class="cs-log-list">
+              <div class="cs-log-row"><span class="cs-ltag g">DONE</span><span class="cs-lmsg">Wochenbericht-Entwurf bereit vor dem Standup</span><span class="cs-lago">7h</span></div>
+              <div class="cs-log-row"><span class="cs-ltag o">DRAFT</span><span class="cs-lmsg">Kunden-Follow-up E-Mail aus Aufgabenliste vorbereitet</span><span class="cs-lago">3h</span></div>
+              <div class="cs-log-row"><span class="cs-ltag b">SCAN</span><span class="cs-lmsg">Offene Aufgaben mit Kalender für nächstes Meeting abgeglichen</span><span class="cs-lago">45m</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-tp cs-vbody" data-csvis="2">
         <svg style="width:100%;overflow:visible;display:block;" viewBox="0 0 510 460" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <marker id="cs-ah"  markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0.5 L0,6.5 L6,3.5z" fill="rgba(26,22,18,0.2)"/></marker>
@@ -1038,9 +1146,9 @@
           <rect x="37" y="28" width="36" height="36" rx="9" fill="#e8f5e1"/>
           <text x="55" y="52" text-anchor="middle" font-size="20">🌐</text>
           <text x="55" y="76" text-anchor="middle" class="cs-n-lbl" font-size="12">RB2B</text>
-          <text x="55" y="90" text-anchor="middle" class="cs-n-sub" font-size="10">Visitor detected</text>
+          <text x="55" y="90" text-anchor="middle" class="cs-n-sub" font-size="10">Besucher erkannt</text>
           <circle cx="36" cy="107" r="3.5" fill="#2d8a4e"/>
-          <text x="44" y="110.5" class="cs-n-sub" font-size="9.5">Detecting</text>
+          <text x="44" y="110.5" class="cs-n-sub" font-size="9.5">Erkennung</text>
           <line x1="110" y1="70" x2="128" y2="70" fill="none" stroke="rgba(26,22,18,0.18)" stroke-width="1.5" marker-end="url(#cs-ah)"/>
           <circle class="cs-dot" r="3.5" fill="#2d8a4e"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0s"><mpath href="#cs-pm1"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="1.8s" repeatCount="indefinite" begin="0s"/></circle>
 
@@ -1049,9 +1157,9 @@
           <rect x="165" y="28" width="36" height="36" rx="9" fill="#fff3e0"/>
           <text x="183" y="52" text-anchor="middle" font-size="20">🔭</text>
           <text x="183" y="76" text-anchor="middle" class="cs-n-lbl" font-size="12">Apollo</text>
-          <text x="183" y="90" text-anchor="middle" class="cs-n-sub" font-size="10">Contact enrichment</text>
+          <text x="183" y="90" text-anchor="middle" class="cs-n-sub" font-size="10">Datenanreicherung</text>
           <circle cx="164" cy="107" r="3.5" fill="#d4631a"/>
-          <text x="172" y="110.5" class="cs-n-sub" font-size="9.5">Enriching</text>
+          <text x="172" y="110.5" class="cs-n-sub" font-size="9.5">Anreichern</text>
           <line x1="238" y1="70" x2="256" y2="70" fill="none" stroke="rgba(26,22,18,0.18)" stroke-width="1.5" marker-end="url(#cs-ah)"/>
           <circle class="cs-dot" r="3.5" fill="#d4631a"><animateMotion dur="1.8s" repeatCount="indefinite" begin="0.6s"><mpath href="#cs-pm2"/></animateMotion><animate attributeName="opacity" values="0;1;1;0" dur="1.8s" repeatCount="indefinite" begin="0.6s"/></circle>
 
@@ -1060,7 +1168,7 @@
           <rect x="293" y="28" width="36" height="36" rx="9" fill="#e8f0ff"/>
           <text x="311" y="52" text-anchor="middle" font-size="20">⚙️</text>
           <text x="311" y="76" text-anchor="middle" class="cs-n-lbl" font-size="12">Make</text>
-          <text x="311" y="90" text-anchor="middle" class="cs-n-sub" font-size="10">Webhook trigger</text>
+          <text x="311" y="90" text-anchor="middle" class="cs-n-sub" font-size="10">Webhook Auslöser</text>
           <circle cx="292" cy="107" r="3.5" fill="#2563b8"/>
           <text x="300" y="110.5" class="cs-n-sub" font-size="9.5">Routing</text>
           <line x1="366" y1="70" x2="384" y2="70" fill="none" stroke="rgba(26,22,18,0.18)" stroke-width="1.5" marker-end="url(#cs-ah)"/>
@@ -1071,18 +1179,18 @@
           <rect x="429" y="28" width="36" height="36" rx="9" fill="#fce8e8"/>
           <text x="447" y="52" text-anchor="middle" font-size="20">🧠</text>
           <text x="447" y="76" text-anchor="middle" class="cs-n-lbl" font-size="12">Clay ICP</text>
-          <text x="447" y="90" text-anchor="middle" class="cs-n-sub" font-size="10">Lead scoring</text>
+          <text x="447" y="90" text-anchor="middle" class="cs-n-sub" font-size="10">Lead-Bewertung</text>
           <circle cx="428" cy="107" r="3.5" fill="#c0392b"><animate attributeName="opacity" values="1;.3;1" dur="1.4s" repeatCount="indefinite"/></circle>
-          <text x="436" y="110.5" class="cs-n-sub" font-size="9.5">Scoring</text>
+          <text x="436" y="110.5" class="cs-n-sub" font-size="9.5">Bewertung</text>
 
           <!-- Score badges -->
           <text x="0" y="164" class="cs-svg-lbl" font-size="8.5">ICP SCORING &amp; ROUTING</text>
           <rect x="0"   y="182" width="134" height="36" rx="8" fill="#e8f5e1" stroke="#b6d9a0" stroke-width="1.5"/>
-          <text x="67"  y="204" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11.5" font-weight="600" fill="#2d8a4e">HIGH VALUE</text>
+          <text x="67"  y="204" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11.5" font-weight="600" fill="#2d8a4e">HOHER WERT</text>
           <rect x="140" y="182" width="132" height="36" rx="8" fill="#fff3e0" stroke="#ffc57a" stroke-width="1.5"/>
-          <text x="206" y="204" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11.5" font-weight="600" fill="#d4631a">MID VALUE</text>
+          <text x="206" y="204" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11.5" font-weight="600" fill="#d4631a">MITTLERER WERT</text>
           <rect x="376" y="182" width="134" height="36" rx="8" fill="#fce8e8" stroke="#f0a0a0" stroke-width="1.5"/>
-          <text x="443" y="204" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11.5" font-weight="600" fill="#c0392b">LOW VALUE</text>
+          <text x="443" y="204" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11.5" font-weight="600" fill="#c0392b">NIEDRIGER WERT</text>
 
           <!-- Branch curves -->
           <path d="M447,120 C447,158 67,158 67,182"  fill="none" stroke="#2d8a4e" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#cs-ahg)"/>
@@ -1105,7 +1213,7 @@
           <rect x="49" y="280" width="36" height="36" rx="9" fill="#e8f5e1"/>
           <text x="67" y="304" text-anchor="middle" font-size="20">📧</text>
           <text x="67" y="328" text-anchor="middle" class="cs-n-lbl" font-size="12">Lemlist</text>
-          <text x="67" y="342" text-anchor="middle" class="cs-n-sub" font-size="10">Email sequence</text>
+          <text x="67" y="342" text-anchor="middle" class="cs-n-sub" font-size="10">E-Mail-Sequenz</text>
           <circle cx="48" cy="359" r="3.5" fill="#2d8a4e"><animate attributeName="opacity" values="1;.3;1" dur="1.3s" repeatCount="indefinite"/></circle>
           <text x="56" y="362.5" class="cs-n-sub" font-size="9.5">Sending</text>
 
@@ -1113,34 +1221,34 @@
           <rect x="188" y="280" width="36" height="36" rx="9" fill="#fff3e0"/>
           <text x="206" y="304" text-anchor="middle" font-size="20">💬</text>
           <text x="206" y="328" text-anchor="middle" class="cs-n-lbl" font-size="12">Slack SDR</text>
-          <text x="206" y="342" text-anchor="middle" class="cs-n-sub" font-size="10">SDR review queue</text>
+          <text x="206" y="342" text-anchor="middle" class="cs-n-sub" font-size="10">SDR-Prüfung</text>
           <circle cx="187" cy="359" r="3.5" fill="#d4631a"/>
           <text x="195" y="362.5" class="cs-n-sub" font-size="9.5">Waiting</text>
 
           <rect x="276" y="288" width="96" height="72" rx="11" fill="rgba(255,255,255,0.85)" stroke="rgba(26,22,18,0.09)" stroke-width="1"/>
           <text x="324" y="315" text-anchor="middle" font-size="22">🤝</text>
-          <text x="324" y="333" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="500" fill="#3d352c">Human</text>
-          <text x="324" y="347" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="500" fill="#3d352c">checkpoint</text>
+          <text x="324" y="333" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="500" fill="#3d352c">Menschlicher</text>
+          <text x="324" y="347" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="11" font-weight="500" fill="#3d352c">Kontrollpunkt</text>
 
           <rect x="376" y="272" width="134" height="100" rx="12" class="cs-n-rect" style="opacity:.5"/>
           <rect x="425" y="280" width="36" height="36" rx="9" fill="#f2eeee"/>
           <text x="443" y="304" text-anchor="middle" font-size="20">🗑️</text>
           <text x="443" y="328" text-anchor="middle" class="cs-n-lbl" font-size="12" style="fill:#9b8f82">Discard</text>
-          <text x="443" y="342" text-anchor="middle" class="cs-n-sub" font-size="10">Low value filtered</text>
+          <text x="443" y="342" text-anchor="middle" class="cs-n-sub" font-size="10">Geringer Wert gefiltert</text>
           <circle cx="424" cy="359" r="3.5" fill="#ccc"/>
           <text x="432" y="362.5" class="cs-n-sub" font-size="9.5">Filtered</text>
 
           <!-- Result footer -->
           <rect x="0" y="402" width="510" height="50" rx="11" fill="rgba(255,255,255,0.72)" stroke="rgba(26,22,18,0.08)" stroke-width="1"/>
-          <text x="18" y="423" font-family="DM Sans,sans-serif" font-size="12" fill="#3d352c" font-weight="600">Result:</text>
-          <text x="72" y="423" font-family="DM Sans,sans-serif" font-size="11.5" fill="#3d352c" font-weight="400">3.2x more qualified pipeline from existing traffic</text>
-          <text x="18" y="441" font-family="DM Sans,sans-serif" font-size="11" fill="#9b8f82" font-weight="300">Zero extra ad spend · Human-in-the-loop keeps lead quality high</text>
+          <text x="18" y="423" font-family="DM Sans,sans-serif" font-size="12" fill="#3d352c" font-weight="600">Ergebnis:</text>
+          <text x="72" y="423" font-family="DM Sans,sans-serif" font-size="11.5" fill="#3d352c" font-weight="400">3.2x mehr qualifizierte Pipeline aus bestehendem Traffic</text>
+          <text x="18" y="441" font-family="DM Sans,sans-serif" font-size="11" fill="#9b8f82" font-weight="300">Keine zusätzlichen Werbeausgaben · Human-in-the-Loop sichert Lead-Qualität</text>
         </svg>
       </div>
  
       <!-- VIS 1: ABM -->
-      <div class="cs-tp cs-vbody" data-csvis="1">
-        <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9b8f82;margin-bottom:14px;font-family:'DM Sans',sans-serif;">Dynamic ABM Page Structure</div>
+      <div class="cs-tp cs-vbody" data-csvis="3">
+        <div style="font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#9b8f82;margin-bottom:14px;font-family:'DM Sans',sans-serif;">Dynamische ABM-Seitenstruktur</div>
         <div class="cs-browser">
           <div class="cs-chrome">
             <div class="cs-bdots"><div class="cs-bdot r"></div><div class="cs-bdot y"></div><div class="cs-bdot g"></div></div>
@@ -1148,8 +1256,8 @@
           </div>
           <div class="cs-bpage">
             <div class="cs-plogo"></div>
-            <p class="cs-phero">Hi <span class="cs-var" id="csName">Sarah</span>,&nbsp;we built this for&nbsp;<span class="cs-var" id="csComp">Notion</span></p>
-            <p class="cs-psub">Custom hero image &middot; <span class="cs-var-sm" id="csInd">SaaS</span>&nbsp;use case</p>
+            <p class="cs-phero">Hallo <span class="cs-var" id="csName">Sarah</span>,&nbsp;das haben wir für&nbsp;<span class="cs-var" id="csComp">Notion</span> gebaut</p>
+            <p class="cs-psub">Individuelles Hero-Bild &middot; <span class="cs-var-sm" id="csInd">SaaS</span> Use-Case</p>
             <div class="cs-pb-rows">
               <div class="cs-pb-row"><div class="cs-pb w40"></div><div class="cs-pb dyn w30"></div><div class="cs-pb w20"></div></div>
               <div class="cs-pb-row"><div class="cs-pb dyn w25"></div><div class="cs-pb w45"></div><div class="cs-pb dyn w20"></div></div>
@@ -1157,63 +1265,63 @@
               <div class="cs-pb-row"><div class="cs-pb dyn w35"></div><div class="cs-pb w40"></div><div class="cs-pb w15"></div></div>
             </div>
             <div class="cs-pleg">
-              <div class="cs-leg"><div class="cs-leg-dot st"></div><span>Static (60%)</span></div>
-              <div class="cs-leg"><div class="cs-leg-dot dy"></div><span>Dynamic / AI-generated (40%)</span></div>
+              <div class="cs-leg"><div class="cs-leg-dot st"></div><span>Statisch (60%)</span></div>
+              <div class="cs-leg"><div class="cs-leg-dot dy"></div><span>Dynamisch / KI-generiert (40%)</span></div>
             </div>
           </div>
         </div>
-        <div class="cs-abm-dist">🔗 Distributed via: outreach campaigns &middot; LinkedIn (CEO/CTO) &middot; company-based remarketing</div>
+        <div class="cs-abm-dist">🔗 Verteilt über: Outreach-Kampagnen &middot; LinkedIn (CEO/CTO) &middot; Account-basiertes Remarketing</div>
       </div>
  
       <!-- VIS 2: LLM -->
-      <div class="cs-tp cs-vbody" data-csvis="2">
+      <div class="cs-tp cs-vbody" data-csvis="4">
         <div class="cs-llm-mon">
-          <span class="cs-llm-mon-title">Live LLM Citation Monitor</span>
+          <span class="cs-llm-mon-title">Live LLM-Zitierungs-Monitor</span>
           <div class="cs-llm-plats">
-            <div class="cs-llm-plat cited"><div class="cs-llm-icon">🤖</div><div class="cs-llm-name">ChatGPT</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Cited</div></div>
-            <div class="cs-llm-plat cited"><div class="cs-llm-icon">🔍</div><div class="cs-llm-name">Perplexity</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Cited</div></div>
-            <div class="cs-llm-plat"><div class="cs-llm-icon">💎</div><div class="cs-llm-name">Gemini</div><div class="cs-llm-status no"><span class="cs-sdot off"></span>Partial</div></div>
-            <div class="cs-llm-plat cited"><div class="cs-llm-icon">🟠</div><div class="cs-llm-name">Claude</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Cited</div></div>
+            <div class="cs-llm-plat cited"><div class="cs-llm-icon">🤖</div><div class="cs-llm-name">ChatGPT</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Zitiert</div></div>
+            <div class="cs-llm-plat cited"><div class="cs-llm-icon">🔍</div><div class="cs-llm-name">Perplexity</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Zitiert</div></div>
+            <div class="cs-llm-plat"><div class="cs-llm-icon">💎</div><div class="cs-llm-name">Gemini</div><div class="cs-llm-status no"><span class="cs-sdot off"></span>Teilweise</div></div>
+            <div class="cs-llm-plat cited"><div class="cs-llm-icon">🟠</div><div class="cs-llm-name">Claude</div><div class="cs-llm-status yes"><span class="cs-sdot on"></span>Zitiert</div></div>
           </div>
         </div>
         <div class="cs-cite-wrap">
-          <div class="cs-cite-hd"><span class="cs-cite-lbl">Citation rate · 90-day result</span><span class="cs-cite-num" id="csCiteNum">0%</span></div>
+          <div class="cs-cite-hd"><span class="cs-cite-lbl">Zitierungsrate · 90-Tage-Ergebnis</span><span class="cs-cite-num" id="csCiteNum">0%</span></div>
           <div class="cs-cite-track"><div class="cs-cite-fill" id="csCiteFill"></div></div>
-          <div class="cs-cite-labs"><span>0% (Day 0)</span><span>34% (Day 90)</span></div>
+          <div class="cs-cite-labs"><span>0% (Tag 0)</span><span>34% (Tag 90)</span></div>
         </div>
         <div class="cs-pillars">
-          <div class="cs-pillar schema"><div class="cs-p-icon">📐</div><div class="cs-p-name">Dynamic Schema</div><div class="cs-p-desc">Per-page schema optimised for the 2MB LLM crawl limit. FAQ schema injected per weak prompt signal.</div></div>
-          <div class="cs-pillar"><div class="cs-p-icon">🔍</div><div class="cs-p-name">Prompt Tracking</div><div class="cs-p-desc">Pack AI + Bing Webmaster to find ranking gaps. On-page fixes deployed per weak prompt.</div></div>
-          <div class="cs-pillar"><div class="cs-p-icon">💬</div><div class="cs-p-name">Community Signals</div><div class="cs-p-desc">LinkedIn + Reddit answers on relevant buyer queries — LLMs treat these as citation sources.</div></div>
-          <div class="cs-pillar"><div class="cs-p-icon">⭐</div><div class="cs-p-name">Authority Profiles</div><div class="cs-p-desc">G2 + Crunchbase optimised as trusted third-party LLM reference sources.</div></div>
+          <div class="cs-pillar schema"><div class="cs-p-icon">📐</div><div class="cs-p-name">Dynamisches Schema</div><div class="cs-p-desc">Pro Seite optimiert für das 2MB LLM Crawl-Limit. FAQ-Schema für schwache Prompt-Signale injiziert.</div></div>
+          <div class="cs-pillar"><div class="cs-p-icon">🔍</div><div class="cs-p-name">Prompt-Tracking</div><div class="cs-p-desc">Peec AI + Bing Webmaster zur Erkennung von Lücken. On-Page-Fixes für schwache Prompts.</div></div>
+          <div class="cs-pillar"><div class="cs-p-icon">💬</div><div class="cs-p-name">Community-Signale</div><div class="cs-p-desc">Antworten auf LinkedIn + Reddit zu relevanten Anfragen — von LLMs als Zitierquellen genutzt.</div></div>
+          <div class="cs-pillar"><div class="cs-p-icon">⭐</div><div class="cs-p-name">Autoritäts-Profile</div><div class="cs-p-desc">G2 + Crunchbase als vertrauenswürdige LLM-Referenzquellen optimiert.</div></div>
         </div>
       </div>
  
       <!-- VIS 3: Performance -->
-      <div class="cs-tp cs-vbody" data-csvis="3">
-        <span class="cs-perf-lbl">Full-Funnel Paid Media Architecture</span>
+      <div class="cs-tp cs-vbody" data-csvis="5">
+        <span class="cs-perf-lbl">Full-Funnel Paid Media Architektur</span>
         <div class="cs-metrics">
-          <div class="cs-pm"><div class="cs-pm-num red" id="csCplNum">0%</div><div class="cs-pm-lbl">CPL reduction</div></div>
-          <div class="cs-pm"><div class="cs-pm-num blue" id="csSqlNum">0x</div><div class="cs-pm-lbl">SQL increase</div></div>
-          <div class="cs-pm"><div class="cs-pm-num green">6x</div><div class="cs-pm-lbl">LinkedIn CTR vs benchmark</div></div>
+          <div class="cs-pm"><div class="cs-pm-num red" id="csCplNum">0%</div><div class="cs-pm-lbl">CPL-Reduzierung</div></div>
+          <div class="cs-pm"><div class="cs-pm-num blue" id="csSqlNum">0x</div><div class="cs-pm-lbl">SQL-Steigerung</div></div>
+          <div class="cs-pm"><div class="cs-pm-num green">6x</div><div class="cs-pm-lbl">LinkedIn CTR vs. Benchmark</div></div>
         </div>
         <div class="cs-fc">
-          <div class="cs-fc-head"><div class="cs-flogo li">in</div><div class="cs-fc-name">LinkedIn · Demand Creation</div></div>
+          <div class="cs-fc-head"><div class="cs-flogo li">in</div><div class="cs-fc-name">LinkedIn · Nachfragegenerierung</div></div>
           <div class="cs-fc-tags"><span class="cs-fc-tag">Thought Leadership</span><span class="cs-fc-tag">ICP Lists</span><span class="cs-fc-tag">ABM 1:1</span></div>
-          <div class="cs-fc-meta">6x industry CTR benchmark achieved</div>
+          <div class="cs-fc-meta">6x Branchen-CTR-Benchmark erzielt</div>
         </div>
         <div class="cs-farrow">↓</div>
         <div class="cs-fc">
-          <div class="cs-fc-head"><div class="cs-flogo gg">G</div><div class="cs-fc-name">Google Ads · Demand Capture</div></div>
+          <div class="cs-fc-head"><div class="cs-flogo gg">G</div><div class="cs-fc-name">Google Ads · Nachfrageabschöpfung</div></div>
           <div class="cs-fc-tags"><span class="cs-fc-tag">Competitor Search</span><span class="cs-fc-tag">Exact Match</span><span class="cs-fc-tag">Display Retargeting</span></div>
-          <div class="cs-fc-meta">Primary demo driver · Lowest CPA across all channels</div>
+          <div class="cs-fc-meta">Haupttreiber für Demos · Niedrigster CPA über alle Kanäle</div>
         </div>
         <div class="cs-farrow">↓</div>
         <div class="cs-fc booked">
-          <div class="cs-fc-head"><div class="cs-flogo tg">🎯</div><div class="cs-fc-name red">Demo Booked</div></div>
-          <div class="cs-fc-meta" style="font-size:13px;color:#3d352c;">Qualified pipeline · Linked to revenue</div>
+          <div class="cs-fc-head"><div class="cs-flogo tg">🎯</div><div class="cs-fc-name red">Demo gebucht</div></div>
+          <div class="cs-fc-meta" style="font-size:13px;color:#3d352c;">Qualifizierte Pipeline · Mit Umsatz verknüpft</div>
         </div>
-        <div class="cs-killed"><strong>Killed fast:</strong> Generic search &middot; Gated content &middot; Auto-targeting &middot; Lead Gen Forms</div>
+        <div class="cs-killed"><strong>Schnell beendet:</strong> Generische Suche &middot; Gated Content &middot; Auto-Targeting &middot; Lead Gen Formulare</div>
       </div>
  
       <div class="cs-log">
@@ -1234,12 +1342,12 @@
     <div class="reveal">
       <div class="yt-eye">Jenseits des 9-to-5</div>
       <h2>Leben in Deutschland,<br/><span class="serif">ungefiltert</span></h2>
-      <p class="yt-text">Ich mache YouTube-Videos über die <strong>reale Erfahrung des Umzugs von Indien nach Deutschland</strong> — der Visums-Stress, die Sprachbarrieren, die kulturellen Zusammenstöße und die kleinen Siege, über die niemand spricht.<br/><br/>Es begann als Verarbeitung meiner eigenen Reise. Es wurde zu einer Community.</p>
+      <p class="yt-text">Ich mache YouTube-Videos über die <strong>echte Erfahrung des Umzugs von Indien nach Deutschland</strong> — den Visum-Stress, die Sprachbarrieren, die kulturellen Unterschiede und die kleinen Siege, über die niemand spricht.<br/><br/>Es begann als Verarbeitung meiner eigenen Reise. Es entwickelte sich zu einer Community.</p>
       <a class="btn-yt" href="https://www.youtube.com/@akshundogra" target="_blank">▶ Auf YouTube ansehen</a>
     </div>
     <div class="reveal">
       <div class="yt-card">
-        <div class="yt-tag" style="padding:.9rem 1.2rem .3rem;display:block;font-size:10px">Featured Video</div>
+        <div class="yt-tag" style="padding:.9rem 1.2rem .3rem;display:block;font-size:10px">Ausgewähltes Video</div>
         <div style="position:relative;width:100%;aspect-ratio:16/9;max-height:220px;overflow:hidden">
           <iframe src="https://www.youtube.com/embed/7xzibzpsITM" title="Cultural Shock" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:none;display:block"></iframe>
         </div>
@@ -1270,21 +1378,86 @@
   <div class="exp-header reveal">
     <div class="section-eyebrow">Karriere</div>
     <h2>Berufs<span class="serif">erfahrung</span></h2>
-    <p class="exp-intro">6+ Jahre in Startups, Agenturen und Freelance — jede Rolle in ihrer eigenen visuellen Sprache erzählt.</p>
+    <p class="exp-intro">6+ Jahre in Startups, Agenturen und Freelancing — jede Rolle in ihrer eigenen visuellen Sprache erzählt.</p>
+  </div>
+
+  <!-- THEO -->
+  <div class="exp-card card-theo">
+    <div class="exp-meta">
+      <div class="exp-date">Jun 2026 — Heute</div>
+      <div class="exp-role">GTM Engineer</div>
+      <div class="exp-co">Theo · Deutschland</div>
+      <ul class="exp-ul">
+        <li>Architektur eines Multi-Agenten-GTM-Systems, das SEO, Performance Marketing, Content und tägliche/wöchentliche Mitarbeiter-Agenten verbindet — in Zusammenarbeit mit Human-in-the-Loop Reviews.</li>
+        <li>Entwicklung der Signal-to-Action-Pipeline über Sistrix, GA4, GSC, Google/Meta/LinkedIn Ads und HubSpot — Aufdeckung von Erkenntnissen, die in 2–3 Monaten 22.700 € bei Google Ads und 10.000 € bei Meta Ads einsparten.</li>
+        <li>Design einer Intent-Scoring-Schicht, die hochpriorisierte Erkenntnisse an automatisierte Fixes oder Slack/Teams-Alerts leitet, um die Aufmerksamkeit des Teams zu schützen.</li>
+        <li>Verantwortung für den gesamten GTM-Engineering-Stack — Tracking, Automatisierung, Attribution und CRM-Pipeline — End-to-End ohne Entwicklerteam.</li>
+      </ul>
+      <div class="exp-chips">
+        <span class="exp-chip">GTM Engineering</span><span class="exp-chip">Agentic Workflows</span><span class="exp-chip">HubSpot</span><span class="exp-chip">Make/n8n</span><span class="exp-chip">Sistrix</span><span class="exp-chip">Human-in-the-Loop</span>
+      </div>
+    </div>
+    <div class="exp-vis">
+      <div class="wf" style="width:100%;padding:2rem">
+        <!-- Flow 1 -->
+        <div style="font-size:9px;color:rgba(255,255,255,.28);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem">Aggregation → Anreicherung<span style="flex:1;height:1px;background:rgba(255,255,255,.07)"></span></div>
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:1.4rem;flex-wrap:nowrap">
+          <div class="wf-node"><div class="wf-box">📊</div><div class="wf-lbl">Sistrix / GA4 / GSC</div></div>
+          <div class="wf-arr" style="color:rgba(184,255,87,.5)">→</div>
+          <div class="wf-node"><div class="wf-box"><img src="https://cdn.simpleicons.org/make/ffffff" onerror="this.outerHTML='⚙️'"></div><div class="wf-lbl">Make / n8n</div></div>
+          <div class="wf-arr" style="color:rgba(184,255,87,.5)">→</div>
+          <div class="wf-node"><div class="wf-box"><img src="https://cdn.simpleicons.org/hubspot/ffffff" onerror="this.outerHTML='🧭'"></div><div class="wf-lbl">HubSpot</div></div>
+        </div>
+        <!-- Flow 2 -->
+        <div style="font-size:9px;color:rgba(255,255,255,.28);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem">Aktivierung → Infrastruktur<span style="flex:1;height:1px;background:rgba(255,255,255,.07)"></span></div>
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem;flex-wrap:nowrap">
+          <div class="wf-node"><div class="wf-box">📢</div><div class="wf-lbl">Google / Meta / LinkedIn Ads</div></div>
+          <div class="wf-arr" style="color:rgba(184,255,87,.5)">→</div>
+          <div class="wf-node"><div class="wf-box"><img src="https://cdn.simpleicons.org/make/ffffff" onerror="this.outerHTML='⚙️'"></div><div class="wf-lbl">Make</div></div>
+          <div class="wf-arr" style="color:rgba(184,255,87,.5)">→</div>
+          <div class="wf-node"><div class="wf-box">🤖</div><div class="wf-lbl">Agent Bewertung</div></div>
+        </div>
+        <!-- Branching -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;text-align:center;margin-bottom:1rem">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:.3rem">
+            <span style="font-size:8px;font-weight:700;color:var(--neon);background:rgba(184,255,87,.1);border:1px solid rgba(184,255,87,.2);border-radius:3px;padding:.15rem .4rem;letter-spacing:.04em">HIGH</span>
+            <div style="color:rgba(184,255,87,.5);font-size:.75rem">↓</div>
+            <div class="wf-mini-box">⚡</div>
+            <div class="wf-lbl" style="max-width:70px">Auto-Fix / Alert</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:.3rem">
+            <span style="font-size:8px;font-weight:700;color:#fbbf24;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.2);border-radius:3px;padding:.15rem .4rem;letter-spacing:.04em">MID</span>
+            <div style="color:rgba(251,191,36,.5);font-size:.75rem">↓</div>
+            <div class="wf-mini-box">👀</div>
+            <div class="wf-lbl" style="max-width:70px">Prüfung</div>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:.3rem">
+            <span style="font-size:8px;font-weight:700;color:#ff8070;background:rgba(200,56,32,.1);border:1px solid rgba(200,56,32,.2);border-radius:3px;padding:.15rem .4rem;letter-spacing:.04em">LOW</span>
+            <div style="color:rgba(200,56,32,.5);font-size:.75rem">↓</div>
+            <div class="wf-mini-box">🗒️</div>
+            <div class="wf-lbl" style="max-width:70px">Geloggt</div>
+          </div>
+        </div>
+        <div style="margin-top:1.2rem;background:rgba(184,255,87,.07);border:1px solid rgba(184,255,87,.15);border-radius:6px;padding:.8rem 1rem;display:flex;justify-content:space-between;align-items:center">
+          <span style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--neon)">€32.7k</span>
+          <span style="font-size:10px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.05em">Werbebudget-Ersparnis identifiziert · 2 Monate</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- INGESTRO -->
   <div class="exp-card card-ingestro">
     <div class="exp-meta">
-      <div class="exp-date">Jun 2023 — Heute</div>
+      <div class="exp-date">Jun 2023 — May 2026</div>
       <div class="exp-role">Online Marketing<br/>Werkstudent</div>
       <div class="exp-co">Ingestro (ehem. nuvo) · Nürnberg, Deutschland</div>
       <ul class="exp-ul">
-        <li>B2B-Marketing über SEO, Google Ads, LinkedIn Ads, E-Mail und Social geleitet — konstantes Inbound-Wachstum.</li>
-        <li>Paid Media skaliert; organischen Traffic um 400% gesteigert, CTR um 30% erhöht, CPC um 20% durch A/B-Tests gesenkt.</li>
-        <li>Kompletten Automatisierungsstack aufgebaut (RB2B, Apollo, Make, Clay, Lemlist, Slack) — 80% weniger manueller SDR-Aufwand.</li>
-        <li>Fortgeschrittenes Kohortentracking + benutzerdefinierte GA4-Analytics verbesserte ROI-Messung um 50%.</li>
-        <li>Unternehmenswebsite in Webflow gebaut; GEO/LLM-Sichtbarkeitsstrategie mit dynamischem Schema implementiert.</li>
+        <li>Leitung des B2B-Marketings über SEO, Google Ads, LinkedIn Ads, E-Mail und Social Media — kontinuierliches Inbound-Wachstum.</li>
+        <li>Skalierung von Paid Media; organischer Traffic um 400 % gesteigert, CTR um 30 % erhöht, CPC um 20 % durch A/B-Tests gesenkt.</li>
+        <li>Aufbau des gesamten Automatisierungs-Stacks (RB2B, Apollo, Make, Clay, Lemlist, Slack) — 80 % Reduzierung des manuellen SDR-Aufwands.</li>
+        <li>Fortgeschrittenes Kohorten-Tracking + benutzerdefinierte GA4-Analytics verbesserten die Messgeschwindigkeit des ROI um 50 %.</li>
+        <li>Erstellung der Unternehmens-Website in Webflow; Implementierung einer GEO/LLM-Sichtbarkeitsstrategie mit dynamischem Schema.</li>
       </ul>
       <div class="exp-chips">
         <span class="exp-chip">Make</span><span class="exp-chip">Clay</span><span class="exp-chip">HubSpot</span><span class="exp-chip">GA4</span><span class="exp-chip">Webflow</span><span class="exp-chip">LinkedIn Ads</span><span class="exp-chip">GEO</span>
@@ -1293,7 +1466,7 @@
     <div class="exp-vis">
       <div class="wf" style="width:100%;padding:2rem">
         <!-- Flow 1 -->
-        <div style="font-size:9px;color:rgba(255,255,255,.28);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem">Flow 1 · Website Pipeline<span style="flex:1;height:1px;background:rgba(255,255,255,.07)"></span></div>
+        <div style="font-size:9px;color:rgba(255,255,255,.28);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem">Flow 1 · Website-Pipeline<span style="flex:1;height:1px;background:rgba(255,255,255,.07)"></span></div>
         <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:1.4rem;flex-wrap:nowrap">
           <div class="wf-node"><div class="wf-box"><img src="https://cdn.simpleicons.org/webflow/ffffff" onerror="this.outerHTML='🌐'"></div><div class="wf-lbl">Webflow</div></div>
           <div class="wf-arr" style="color:rgba(184,255,87,.5)">→</div>
@@ -1302,7 +1475,7 @@
           <div class="wf-node"><div class="wf-box"><img src="https://cdn.simpleicons.org/pipedrive/ffffff" onerror="this.outerHTML='📊'"></div><div class="wf-lbl">Pipedrive CRM</div></div>
         </div>
         <!-- Flow 2 -->
-        <div style="font-size:9px;color:rgba(255,255,255,.28);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem">Flow 2 · Intent Outreach<span style="flex:1;height:1px;background:rgba(255,255,255,.07)"></span></div>
+        <div style="font-size:9px;color:rgba(255,255,255,.28);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem">Flow 2 · Intent-Outreach<span style="flex:1;height:1px;background:rgba(255,255,255,.07)"></span></div>
         <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem;flex-wrap:nowrap">
           <div class="wf-node"><div class="wf-box">🔍</div><div class="wf-lbl">RB2B / Apollo</div></div>
           <div class="wf-arr" style="color:rgba(184,255,87,.5)">→</div>
@@ -1330,7 +1503,7 @@
         </div>
         <div style="background:rgba(184,255,87,.07);border:1px solid rgba(184,255,87,.15);border-radius:6px;padding:.8rem 1rem;display:flex;justify-content:space-between;align-items:center">
           <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--neon)">−80%</div>
-          <div style="font-size:10px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.05em;text-align:right">manual SDR<br>effort saved</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.05em;text-align:right">manueller SDR<br>Aufwand gespart</div>
         </div>
       </div>
     </div>
@@ -1340,14 +1513,14 @@
   <div class="exp-card card-inkitin">
     <div class="exp-vis">
       <div class="dash">
-        <div class="dash-hdr"><div class="dash-t">Campaign Performance · Australia 🇦🇺</div><div class="dash-bdg">$50K AUD / mo</div></div>
+        <div class="dash-hdr"><div class="dash-t">Kampagnen-Performance · Australien 🇦🇺</div><div class="dash-bdg">$50K AUD / mo</div></div>
         <div class="dash-metrics">
-          <div class="dash-m"><div class="dm-v up">+30%</div><div class="dm-l">CTR Increase</div></div>
-          <div class="dash-m"><div class="dm-v dn">−20%</div><div class="dm-l">CPC Reduction</div></div>
-          <div class="dash-m"><div class="dm-v neu">$50K</div><div class="dm-l">Monthly Budget</div></div>
+          <div class="dash-m"><div class="dm-v up">+30%</div><div class="dm-l">CTR-Steigerung</div></div>
+          <div class="dash-m"><div class="dm-v dn">−20%</div><div class="dm-l">CPC-Senkung</div></div>
+          <div class="dash-m"><div class="dm-v neu">$50K</div><div class="dm-l">Monatsbudget</div></div>
         </div>
         <div class="chart-box">
-          <div class="chart-lbl">Channel performance index</div>
+          <div class="chart-lbl">Kanal-Performance-Index</div>
           <div class="bars" id="barChart">
             <div class="bar bg" style="height:0" data-h="72%"><div class="bar-tt">Google</div></div>
             <div class="bar bm" style="height:0" data-h="58%"><div class="bar-tt">Meta</div></div>
@@ -1359,15 +1532,15 @@
       </div>
     </div>
     <div class="exp-meta">
-      <div class="exp-date">Mär 2021 — Jul 2022</div>
-      <div class="exp-role">Digital Marketing<br/>SEO-Experte</div>
+      <div class="exp-date">Mar 2021 — Jul 2022</div>
+      <div class="exp-role">Digital Marketing<br/>SEO Expert</div>
       <div class="exp-co">INKITIN PTY LTD · Chandigarh, Indien</div>
       <ul class="exp-ul">
-        <li>Digitales Marketing für australische Unternehmen geleitet — Local SEO, GMB, NAP und Backlinks.</li>
-        <li>$50K AUD/Monat über Google Ads und Facebook Ads verwaltet — Reichweite und Lead-Akquise verbessert.</li>
-        <li>GTM und Facebook Pixel für fortgeschrittenes Tracking und Conversion-Attribution implementiert.</li>
-        <li>Landing Pages und Creatives A/B-getestet — CVR verbessert bei reduziertem CPA.</li>
-        <li>SEO-Audits mit SEMrush, Brightlocal, Screaming Frog und Google Search Console durchgeführt.</li>
+        <li>Leitung des digitalen Marketings für australische Unternehmen — Lokales SEO, GMB, NAP und Backlinks.</li>
+        <li>Verwaltung von 50.000 AUD/Monat über Google Ads und Facebook Ads — Steigerung von Reichweite und Lead-Gewinnung.</li>
+        <li>Implementierung von GTM und Facebook Pixel für fortgeschrittenes Tracking und Conversion-Attribution.</li>
+        <li>A/B-Testing von Landingpages und Creatives — Verbesserung der CVR bei gleichzeitiger Senkung des CPA.</li>
+        <li>SEO-Audits mit SEMrush, Brightlocal, Screaming Frog und Google Search Console.</li>
       </ul>
       <div class="exp-chips">
         <span class="exp-chip">Google Ads</span><span class="exp-chip">Facebook Ads</span><span class="exp-chip">Local SEO</span><span class="exp-chip">SEMrush</span><span class="exp-chip">GTM</span>
@@ -1380,13 +1553,13 @@
     <div class="exp-meta">
       <div class="exp-date">2017 — 2021</div>
       <div class="exp-role">Digital Marketing<br/>Freelancer</div>
-      <div class="exp-co">Selbstständig · Weltweit</div>
+      <div class="exp-co">Freiberuflich · Weltweit</div>
       <ul class="exp-ul">
-        <li>Umfassendes SEO (On-Page, Off-Page, technisch) und Social-Media-Optimierung für internationale Kunden.</li>
-        <li>Multichannel-PPC über Google, Meta, Pinterest und Snapchat — manuelles CPC-Bidding.</li>
-        <li>Kundenwebsites in WordPress erstellt — Mobile-First, SEO-optimierte Architektur.</li>
-        <li>Affiliate Marketing und Werbenetzwerk-Monetarisierung (AdSense, FB Instant Articles).</li>
-        <li>Benutzerdefiniertes Tracking und Zielgruppensegmentierung mit HTML, CSS und JavaScript.</li>
+        <li>Ganzheitliches SEO (On-Page, Off-Page, Technisch) und Social Media Optimierung für globale Kunden.</li>
+        <li>Multi-Channel PPC auf Google, Meta, Pinterest und Snapchat — manuelles CPC-Bidding.</li>
+        <li>Erstellung von Kunden-Websites in WordPress — mobile-first, SEO-optimierte Architektur.</li>
+        <li>Affiliate-Marketing und Werbenetzwerk-Monetarisierung (AdSense, FB Instant Articles).</li>
+        <li>Benutzerdefiniertes Tracking und Zielgruppen-Segmentierung mit HTML, CSS und JavaScript.</li>
       </ul>
       <div class="exp-chips">
         <span class="exp-chip">HTML/CSS/JS</span><span class="exp-chip">WordPress</span><span class="exp-chip">PPC</span><span class="exp-chip">SEO</span><span class="exp-chip">AdSense</span>
@@ -1428,32 +1601,32 @@
 
 <!-- PROJECTS -->
 <section id="projects" class="sec sec-border">
-  <div class="section-eyebrow reveal">Gebaut &amp; ausgeliefert</div>
+  <div class="section-eyebrow reveal">Gebaut &amp; Veröffentlicht</div>
   <h2 class="reveal">Projekte &amp; <span class="serif">Forschung</span></h2>
   <div class="proj-grid reveal">
  
     <div class="proj-card">
       <div class="proj-header" style="background:linear-gradient(135deg,#f0e6ff,#d4b8ff)">🤖</div>
       <div class="proj-body">
-        <div style="display:inline-flex;align-items:center;gap:.4rem;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);color:#7c3aed;padding:.2rem .6rem;border-radius:100px;margin-bottom:.7rem">🎯 Für meine eigene Jobsuche entwickelt</div>
-        <div class="proj-title">Automatisierungs-Pipeline für Bewerbungen</div>
-        <p class="proj-desc">End-to-End n8n-Automatisierung, die maßgeschneiderte Lebensläufe und Anschreiben in ~60 Sekunden generiert. Wendet dieselbe ATS- und Performance-Marketing-Denkweise an, die ich beruflich nutze — auf meine eigenen Bewerbungen.</p>
+        <div style="display:inline-flex;align-items:center;gap:.4rem;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);color:#7c3aed;padding:.2rem .6rem;border-radius:100px;margin-bottom:.7rem">🎯 Gebaut für meine eigene Jobsuche</div>
+        <div class="proj-title">Job Application Automation Pipeline</div>
+        <p class="proj-desc">End-to-End n8n-Automatisierung, die maßgeschneiderte Lebensläufe und Anschreiben in ~60 Sekunden generiert. Wendet dasselbe ATS- und Performance-Marketing-Denken, das ich beruflich nutze, auf meine eigenen Bewerbungen an.</p>
         <div class="proj-tags"><span class="proj-tag">n8n</span><span class="proj-tag">Claude API</span><span class="proj-tag">Python</span><span class="proj-tag">Flask</span><span class="proj-tag">LibreOffice</span></div>
-        <div style="font-size:12px;color:var(--muted);margin:.6rem 0">ATS-Bewertung · PDF-Metadaten-Bereinigung · Zweisprachig EN/DE · Keine Halluzinations-Anpassung</div>
-        <a class="proj-link" href="https://github.com/akshundogra/job-application-automation" target="_blank">Auf GitHub ansehen →</a>
+        <div style="font-size:12px;color:var(--muted);margin:.6rem 0">ATS-Scoring · PDF-Metadaten-Bereinigung · Zweisprachig EN/DE · Keine Halluzinationen</div>
+        <a class="proj-link" href="https://github.com/akshundogra/job-application-automation" target="_blank">View on GitHub →</a>
       </div>
     </div>
  
     <div class="proj-card">
       <div class="proj-header" style="background:linear-gradient(135deg,#e6fff0,#b8f0d4)">🎯</div>
       <div class="proj-body">
-        <div style="display:inline-flex;align-items:center;gap:.4rem;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(45,106,79,.1);border:1px solid rgba(45,106,79,.2);color:#2d6a4f;padding:.2rem .6rem;border-radius:100px;margin-bottom:.7rem">🎯 ABM auf Jobsuche angewandt</div>
+        <div style="display:inline-flex;align-items:center;gap:.4rem;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(45,106,79,.1);border:1px solid rgba(45,106,79,.2);color:#2d6a4f;padding:.2rem .6rem;border-radius:100px;margin-bottom:.7rem">🎯 ABM angewendet auf die Jobsuche</div>
         <div class="proj-title">ABM Landing Page Generator</div>
-        <p class="proj-desc">Personalisierte Landing Page pro Zielunternehmen — dieselbe ABM-Strategie, die ich im B2B-Marketing verwende, angewandt auf meine eigenen Bewerbungen. Jede Seite wird automatisch generiert, bereitgestellt und pro Recruiter getrackt.</p>
+        <p class="proj-desc">Personalisierte Landingpage pro Zielunternehmen — dieselbe ABM-Strategie, die ich im B2B-Marketing nutze, angewendet auf meine eigenen Bewerbungen. Jede Seite wird automatisch generiert, gehostet und getrackt.</p>
         <div class="proj-tags"><span class="proj-tag">n8n</span><span class="proj-tag">Claude API</span><span class="proj-tag">GitHub Pages</span><span class="proj-tag">Flask</span><span class="proj-tag">Screaming Frog</span></div>
-        <div style="font-size:12px;color:var(--muted);margin:.6rem 0">Katalog-Startseite: <a href="https://hire.akshundogra.com" target="_blank" style="color:var(--accent);text-decoration:none">hire.akshundogra.com</a></div>
-        <div style="font-size:12px;color:var(--muted);margin:.6rem 0">Live-Beispiel: <a href="https://hire.akshundogra.com/ingestro" target="_blank" style="color:var(--accent);text-decoration:none">hire.akshundogra.com/ingestro</a></div>
-        <a class="proj-link" href="https://github.com/akshundogra/hire" target="_blank">Auf GitHub ansehen →</a>
+        <div style="font-size:12px;color:var(--muted);margin:.6rem 0">Catalog homepage: <a href="https://hire.akshundogra.com" target="_blank" style="color:var(--accent);text-decoration:none">hire.akshundogra.com</a></div>
+        <div style="font-size:12px;color:var(--muted);margin:.6rem 0">Live example: <a href="https://hire.akshundogra.com/ingestro" target="_blank" style="color:var(--accent);text-decoration:none">hire.akshundogra.com/ingestro</a></div>
+        <a class="proj-link" href="https://github.com/akshundogra/hire" target="_blank">View on GitHub →</a>
       </div>
     </div>
  
@@ -1461,7 +1634,7 @@
       <div class="proj-header ph-blue">🧠</div>
       <div class="proj-body">
         <div class="proj-title">Hate Speech Detection in Football Social Media</div>
-        <p class="proj-desc">BERT-based NLP system to detect and classify offensive language in football fan comments. Collected, cleaned, and annotated a diverse dataset. Achieved high model accuracy contributing to responsible AI frameworks.</p>
+        <p class="proj-desc">BERT-basiertes NLP-System zur Erkennung und Klassifizierung beleidigender Sprache in Fußballfan-Kommentaren. Datenerhebung, Bereinigung und Annotierung. Hohe Modellgenauigkeit im Rahmen von Responsible AI.</p>
         <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">BERT</span><span class="proj-tag">NLP</span><span class="proj-tag">Deep Learning</span><span class="proj-tag">GitHub</span></div>
         <a class="proj-link" href="https://github.com/prizyou/NLP4B_Football" target="_blank">View on GitHub →</a>
       </div>
@@ -1470,18 +1643,18 @@
       <div class="proj-header ph-green">⚙️</div>
       <div class="proj-body">
         <div class="proj-title">Process Mining &amp; Analytics Using Celonis</div>
-        <p class="proj-desc">Led a process mining project for a mixer manufacturing company to enhance operational efficiency. Identified bottlenecks and performance gaps; delivered actionable insights to drive measurable workflow improvements.</p>
+        <p class="proj-desc">Leitung eines Process-Mining-Projekts für einen Mischerhersteller zur Steigerung der betrieblichen Effizienz. Identifizierung von Engpässen; Bereitstellung messbarer Optimierungen.</p>
         <div class="proj-tags"><span class="proj-tag">Celonis</span><span class="proj-tag">Python</span><span class="proj-tag">Process Mining</span><span class="proj-tag">Data Analytics</span></div>
-        <span style="font-size:12px;color:var(--muted)">University project · FAU Nürnberg</span>
+        <span style="font-size:12px;color:var(--muted)">Uni-Projekt · FAU Erlangen-Nürnberg</span>
       </div>
     </div>
     <div class="proj-card">
       <div class="proj-header ph-orange">📷</div>
       <div class="proj-body">
         <div class="proj-title">Smart Security Camera System (OpenCV + Raspberry Pi)</div>
-        <p class="proj-desc">Raspberry Pi-powered camera running OpenCV with LBPH Classifier for object detection. Sends automated email alerts with detected object images and streams live video over the internet.</p>
+        <p class="proj-desc">Raspberry Pi Kamera mit OpenCV und LBPH-Klassifikator für Objekt-Erkennung. Automatische E-Mail-Benachrichtigungen mit Bildern und Live-Video-Streaming.</p>
         <div class="proj-tags"><span class="proj-tag">Python</span><span class="proj-tag">Raspberry Pi</span><span class="proj-tag">OpenCV</span><span class="proj-tag">Computer Vision</span></div>
-        <span style="font-size:12px;color:var(--muted)">Bachelor's thesis project</span>
+        <span style="font-size:12px;color:var(--muted)">Bachelorarbeit-Projekt</span>
       </div>
     </div>
   </div>
@@ -1489,16 +1662,16 @@
 
 <!-- CERTIFICATIONS -->
 <section id="certifications" class="sec sec-border" style="padding-top:0">
-  <div class="section-eyebrow reveal">Verifizierte Zertifikate</div>
+  <div class="section-eyebrow reveal">Verifizierte Qualifikationen</div>
   <h2 class="reveal">Zertifi<span class="serif">zierungen</span></h2>
   <div class="cert-grid reveal">
     <div class="cert-card">
       <div class="cert-badge badge-ibm"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" style="width:24px;filter:brightness(0) invert(1)"></div>
-      <div><div class="cert-name">Big Data Engineer — Mastery Award</div><div class="cert-issuer">IBM</div><div class="cert-year">2018</div><a class="cert-link" href="https://www.youracclaim.com/badges/a178ca0e-37ca-46fe-a6f8-a71163b38247/public_url" target="_blank">View credential ↗</a></div>
+      <div><div class="cert-name">Big Data Engineer — Mastery Award</div><div class="cert-issuer">IBM</div><div class="cert-year">2018</div><a class="cert-link" href="https://www.youracclaim.com/badges/a178ca0e-37ca-46fe-a6f8-a71163b38247/public_url" target="_blank">Zertifikat ansehen ↗</a></div>
     </div>
     <div class="cert-card">
       <div class="cert-badge badge-ibm"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" style="width:24px;filter:brightness(0) invert(1)"></div>
-      <div><div class="cert-name">Business Intelligence Analyst — Explorer Award</div><div class="cert-issuer">IBM</div><div class="cert-year">2018</div><a class="cert-link" href="https://www.youracclaim.com/badges/4f940317-d7e7-41ad-909d-0d260930e501/public_url" target="_blank">View credential ↗</a></div>
+      <div><div class="cert-name">Business Intelligence Analyst — Explorer Award</div><div class="cert-issuer">IBM</div><div class="cert-year">2018</div><a class="cert-link" href="https://www.youracclaim.com/badges/4f940317-d7e7-41ad-909d-0d260930e501/public_url" target="_blank">Zertifikat ansehen ↗</a></div>
     </div>
     <div class="cert-card">
       <div class="cert-badge badge-ibm"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" style="width:24px;filter:brightness(0) invert(1)"></div>
@@ -1506,36 +1679,34 @@
     </div>
     <div class="cert-card">
       <div class="cert-badge badge-google"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" style="width:28px"></div>
-      <div><div class="cert-name">Fundamentals of Digital Marketing</div><div class="cert-issuer">Google</div><div class="cert-year">2021 · ID: 4778EW497</div><a class="cert-link" href="https://learndigital.withgoogle.com/digitalunlocked/validate-certificate-code" target="_blank">View credential ↗</a></div>
+      <div><div class="cert-name">Fundamentals of Digital Marketing</div><div class="cert-issuer">Google</div><div class="cert-year">2021 · ID: 4778EW497</div><a class="cert-link" href="https://learndigital.withgoogle.com/digitalunlocked/validate-certificate-code" target="_blank">Zertifikat ansehen ↗</a></div>
     </div>
     <div class="cert-card">
       <div class="cert-badge badge-google"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" style="width:28px"></div>
-      <div><div class="cert-name">Advanced Google Analytics</div><div class="cert-issuer">Google</div><div class="cert-year">2022</div><a class="cert-link" href="https://analytics.google.com/analytics/academy/certificate/Yqp9dVSfR9qkFZgycWagsQ" target="_blank">View credential ↗</a></div>
+      <div><div class="cert-name">Advanced Google Analytics</div><div class="cert-issuer">Google</div><div class="cert-year">2022</div><a class="cert-link" href="https://analytics.google.com/analytics/academy/certificate/Yqp9dVSfR9qkFZgycWagsQ" target="_blank">Zertifikat ansehen ↗</a></div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIAL -->
+<!-- TESTIMONIAL--> 
 <div class="testimonial-wrap">
   <div class="testimonial-inner reveal">
-    <div class="t-quote-mark">"</div>
-    <p class="t-quote">Ich hatte das Vergnügen, im letzten Jahr eng mit Akshun zusammenzuarbeiten, einem Marketing-Automation-Spezialisten im B2B-Bereich. Während seiner Zeit bei Ingestro ist er zu einem zentralen Bestandteil unserer Abläufe und zu einem geschätzten Beitragenden über mehrere Abteilungen hinweg geworden. Obwohl er in einer studentischen Rolle gestartet ist, liefert er konstant auf einem Niveau, das weit über den Erwartungen liegt — er übernimmt Verantwortung für komplexe, funktionsübergreifende Initiativen und sorgt dafür, dass unsere Systeme unternehmensweit stabil laufen. Von der Betreuung unserer Webflow-Website und des Google Tag Managers bis hin zur SEO-Umsetzung und dem Aufbau skalierbarer Automationen über verschiedene Tools und Workflows hinweg bringt Akshun eine seltene Kombination aus technischer Tiefe und hands-on Umsetzung mit.<br/><br/>Was Akshun wirklich auszeichnet, ist nicht nur sein technisches Skillset, sondern wie wirkungsvoll er es in der Zusammenarbeit einsetzt. Er arbeitet nahtlos mit verschiedenen Teams, übersetzt Business-Anforderungen in praktikable, skalierbare Lösungen und geht jede Herausforderung zuverlässig und fokussiert an. Seine Einsatzbereitschaft und Neugier machen ihn zu jemandem, dem man kritische Systeme und sich entwickelnde Prozesse bedenkenlos anvertrauen kann. Jedes Team würde von seiner starken Marketing-Operations-Expertise und seinem teamorientierten Ansatz profitieren.</p>
+    <div class="t-quote-mark"></div>
+    <p class="t-quote">„Ich hatte das Vergnügen, im vergangenen Jahr eng mit Akshun als Spezialist für Marketing-Automatisierung im B2B-Bereich zusammenzuarbeiten. Während seiner Zeit bei Ingestro ist er zu einem integralen Bestandteil unserer Abläufe und zu einem geschätzten Mitgestalter abteilungsübergreifend geworden. Obwohl er in einer Werkstudentenrolle tätig war, erbrachte er konstant Leistungen weit über den Erwartungen — er übernahm die Verantwortung für komplexe, funktionsübergreifende Initiativen und stellte sicher, dass unsere Systeme unternehmensweit reibungslos laufen. Von der Verwaltung unserer Webflow-Website und des Google Tag Managers über die Steuerung von SEO-Maßnahmen bis hin zum Aufbau skalierbarer Automatisierungen vereint Akshun eine seltene Kombination aus technischer Tiefe und praktischer Umsetzung.<br/><br/>Was Akshun wirklich auszeichnet, sind nicht nur seine technischen Fähigkeiten, sondern wie effektiv er sie in einem kollaborativen Umfeld einsetzt. Er arbeitet nahtlos teamübergreifend, übersetzt geschäftliche Anforderungen in praktische, skalierbare Lösungen und geht jede Herausforderung mit Zuverlässigkeit und Fokus an. Seine Hingabe und Neugier machen ihn zu jemandem, dem man kritische Systeme und sich entwickelnde Prozesse gleichermaßen anvertrauen kann. Jedes Team würde von seiner starken Marketing-Operations-Expertise und seinem durchdachten, teamorientierten Ansatz profitieren.“</p>
     <div class="t-author">
-      <div class="t-avatar"><img src="https://media.licdn.com/dms/image/v2/C4D03AQG_b_GKM1C-ZA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1623264736313?e=1778716800&v=beta&t=pn3Kb9vSvLR6niy-IjORT71I9Up24WUNRGX4stFac54" alt="Or Baram"></div>
+      <div class="t-avatar"><img src="https://media.licdn.com/dms/image/v2/C4D03AQG_b_GKM1C-ZA/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1623264736313?e=1778716800&v=beta&t=pn3Kb9vSvLR6niy-IjORT71I9Up24WUNRGX4stFac54" alt="Or Baram" ></div>
       <div>
         <div class="t-name">Or Baram</div>
         <div class="t-title">Senior Growth Marketing Manager · Ingestro</div>
       </div>
     </div>
-    <span class="t-placeholder-note">Hinweis: Dieser Empfehlungstext wurde maschinell mit KI aus dem Englischen übersetzt.</span>
   </div>
 </div>
 
 
-
 <!-- GITHUB -->
 <section class="sec sec-border">
-  <div class="section-eyebrow reveal">Open source &amp; building in public</div>
+  <div class="section-eyebrow reveal">Open Source &amp; Building in Public</div>
   <h2 class="reveal">On <span class="serif">GitHub</span></h2>
   <div class="github-card reveal">
     <div class="gh-left">
@@ -1543,10 +1714,10 @@
         <div class="gh-icon">⬡</div>
         <div class="gh-handle">github.com/akshundogra</div>
       </div>
-      <div class="gh-title">Actively building<br/>in public</div>
-      <p class="gh-desc">From NLP research to marketing automation scripts — I push code when I build something worth sharing. Trying to make it a habit.</p>
-      <div class="gh-status"><div class="gh-status-dot"></div>Active · growing</div><br/><br/>
-      <a class="gh-link" href="https://github.com/akshundogra" target="_blank">⬡ View GitHub Profile →</a>
+      <div class="gh-title">Aktiv in der<br/>Öffentlichkeit entwickeln</div>
+      <p class="gh-desc">Von NLP-Forschung bis zu Marketing-Skripten — ich veröffentliche Code, wenn ich etwas Teilenswertes baue. Versuche, es zur Gewohnheit zu machen.</p>
+      <div class="gh-status"><div class="gh-status-dot"></div>Aktiv · Wachsend</div><br/><br/>
+      <a class="gh-link" href="https://github.com/akshundogra" target="_blank">⬡ GitHub-Profil ansehen →</a>
     </div>
     <div class="gh-right">
       <div class="gh-repo">
@@ -1571,33 +1742,33 @@
 <div class="resume-cta">
   <div class="resume-inner reveal">
     <div class="section-eyebrow">Vollständiger Lebenslauf</div>
-    <h2>Das <span class="serif">komplette Bild?</span></h2>
-    <p class="resume-sub">Alle Erfahrungen, Skills, Ausbildung und Zertifikate in einem Dokument.</p>
+    <h2>Das komplette <span class="serif">Bild sehen?</span></h2>
+    <p class="resume-sub">Alle Erfahrungen, Fähigkeiten, Ausbildungen und Zertifizierungen in einem Dokument.</p>
     <div class="resume-doc">
       <div class="doc-icon">📄</div>
-      <div><div class="doc-name">Akshun Dogra — Lebenslauf.pdf</div><div class="doc-meta">Performance Marketing · Automation · Analytics · 6+ Jahre</div></div>
+      <div><div class="doc-name">Akshun Dogra — CV.pdf</div><div class="doc-meta">Performance Marketing · Automatisierung · Analytics · 6+ Jahre</div></div>
     </div>
 
-    <a href="../Akshun-DE.pdf" download class="btn-primary" rel="nofollow">⬇ Lebenslauf herunterladen</a>
+    <a href="../Akshun-DE.pdf" download class="btn-primary" rel="nofollow">⬇ Lebenslauf herunterladen (PDF)</a>
   </div>
 </div>
 
 <!-- EDUCATION -->
 <section id="education" class="sec sec-border">
   <div class="section-eyebrow reveal">Akademischer Hintergrund</div>
-  <h2 class="reveal">Ausbildung &amp; <span class="serif">Training</span></h2>
+  <h2 class="reveal">Ausbildung &amp; <span class="serif">Qualifikation</span></h2>
   <div class="edu-grid reveal">
-    <div class="edu-card"><div class="edu-icon">🎓</div><div class="edu-deg">M.Sc. International Information Systems (Wirtschaftsinformatik)</div><div class="edu-sch">Friedrich-Alexander-Universität Erlangen-Nürnberg</div><div class="edu-dt">Sep 2022 – Mär 2026 · Nürnberg, Deutschland</div><div class="edu-bdg">Abgeschlossen</div></div>
-    <div class="edu-card"><div class="edu-icon">✈️</div><div class="edu-deg">Erasmus Auslandssemester (Master)</div><div class="edu-sch">Universidad Politécnica de Madrid</div><div class="edu-dt">Sep 2024 – Jan 2025 · Madrid, Spanien</div><div class="edu-bdg">Erasmus+</div></div>
+    <div class="edu-card"><div class="edu-icon">🎓</div><div class="edu-deg">M.Sc. International Information Systems (Wirtschaftsinformatik)</div><div class="edu-sch">Friedrich Alexander University Erlangen-Nürnberg</div><div class="edu-dt">Sep 2022 – Dez 2025 · Nürnberg, Deutschland</div><div class="edu-bdg">Aktuell</div></div>
+    <div class="edu-card"><div class="edu-icon">✈️</div><div class="edu-deg">Erasmus Semester Abroad (Masters)</div><div class="edu-sch">Universidad Politécnica de Madrid</div><div class="edu-dt">Sep 2024 – Jan 2025 · Madrid, Spanien</div><div class="edu-bdg">Erasmus+</div></div>
     <div class="edu-card"><div class="edu-icon">💻</div><div class="edu-deg">B.E. Computer Science &amp; Engineering — IBM Big Data Analytics</div><div class="edu-sch">Chandigarh University</div><div class="edu-dt">Jul 2016 – Jun 2020 · Punjab, Indien</div><div class="edu-bdg">Honours</div></div>
   </div>
   <div class="reveal">
     <div class="section-eyebrow" style="margin-bottom:1.2rem">Sprachen</div>
     <div class="lang-row">
       <div class="lang-pill"><span class="lf">🇮🇳</span><span class="ln2">Hindi</span><span class="ll">Muttersprache</span></div>
-      <div class="lang-pill"><span class="lf">🇬🇧</span><span class="ln2">Englisch</span><span class="ll">C1 Fortgeschritten</span></div>
-      <div class="lang-pill"><span class="lf">🇩🇪</span><span class="ln2">Deutsch</span><span class="ll">C1 Fortgeschritten</span></div>
-      <div class="lang-pill"><span class="lf">🇪🇸</span><span class="ln2">Spanisch</span><span class="ll">A1 Anfänger</span></div>
+      <div class="lang-pill"><span class="lf">🇬🇧</span><span class="ln2">English</span><span class="ll">C1 Fließend / Verhandlungssicher</span></div>
+      <div class="lang-pill"><span class="lf">🇩🇪</span><span class="ln2">German</span><span class="ll">C1 Fließend / Verhandlungssicher</span></div>
+      <div class="lang-pill"><span class="lf">🇪🇸</span><span class="ln2">Spanish</span><span class="ll">A1 Anfänger</span></div>
     </div>
   </div>
 </section>
@@ -1608,7 +1779,7 @@
     <div class="reveal">
       <div class="fcta-eye">Kontakt aufnehmen</div>
       <h2>Lass uns etwas<br/><span class="serif">Echtes bauen</span></h2>
-      <p class="fcta-text">Ob Sie einen Performance Marketer einstellen, einen Marketing-Automatisierungs-Spezialisten brauchen oder einfach über das Expat-Leben in Deutschland plaudern wollen — mein Posteingang ist offen.</p>
+      <p class="fcta-text">Egal, ob Sie einen Performance Marketer suchen, einen Spezialisten für Marketing-Automatisierung brauchen oder sich einfach über das Expat-Leben in Deutschland austauschen möchten — mein Posteingang ist offen.</p>
       <a href="mailto:businessakshun@gmail.com" class="fcta-email">businessakshun@gmail.com</a>
       <div class="fcta-links">
         <a class="fcta-link" href="https://www.linkedin.com/in/akshundogra" target="_blank">💼 LinkedIn</a>
@@ -1628,7 +1799,7 @@
 
 <footer>
   <div>©2026 Akshun Dogra · <a href="https://akshundogra.com">akshundogra.com</a></div>
-  <div>Gemacht mit Neugier, Koffein & KI · Nürnberg 🇩🇪</div>
+  <div>Mit Neugier, Kaffee & KI gemacht · Nürnberg 🇩🇪</div>
 </footer>
 
 <script>
@@ -1650,13 +1821,12 @@
   const bc = document.getElementById('barChart');
   if(bc) barObs.observe(bc);
 
-  // Case study tabs - old version (keeping for backward compatibility)
+  // Case study tabs
   function showCS(idx){
     document.querySelectorAll('.cs-tab').forEach((t,i)=>t.classList.toggle('active',i===idx));
     document.querySelectorAll('.cs-panel').forEach((p,i)=>p.classList.toggle('active',i===idx));
   }
 </script>
-
 <!-- ═══ Case Study > ═══ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
@@ -1723,10 +1893,10 @@
   }
  
   var LOGS=[
-    [{t:'g',b:'HIGH',m:'Clay scored 87 → routed to Lemlist'},{t:'o',b:'MID',m:'Clay scored 54 → sent to Slack SDR'},{t:'b',b:'ENRICH',m:'apollo.io → john@acme.com resolved'},{t:'r',b:'LOW',m:'Clay scored 21 → discarded'},{t:'g',b:'SEND',m:'Lemlist sequence started for John A.'},{t:'o',b:'SDR',m:'SDR accepted mid-value lead → Lemlist'}],
-    [{t:'b',b:'BUILD',m:'Webflow page built for Stripe Inc.'},{t:'o',b:'ENRICH',m:'Clay: 47 fields enriched for Notion'},{t:'g',b:'VISIT',m:'RB2B resolved: sarah@notion.so on page'},{t:'o',b:'ALERT',m:'Slack → AE: Sarah at Notion, 2m on page'},{t:'b',b:'RETRAIN',m:'ICP model updated — 12 new conversions'}],
-    [{t:'b',b:'AUDIT',m:'ChatGPT: client cited in 7/10 buyer prompts'},{t:'g',b:'CITED',m:'Perplexity now cites client in answer #3'},{t:'o',b:'SCHEMA',m:'FAQ schema deployed for 14 weak prompts'},{t:'g',b:'G2',m:'G2 profile updated — LLM crawled today'},{t:'b',b:'TRACK',m:'Weekly report: 34% citation rate achieved'}],
-    [{t:'b',b:'SYNC',m:'83 closed-won deals uploaded to Meta'},{t:'g',b:'TRAIN',m:'Google: lookalike audience refreshed'},{t:'o',b:'SCORE',m:'Clay: inbound lead scored 91 → fast-lane'},{t:'g',b:'CPL',m:'CPL this quarter: $48 vs $121 last Q'},{t:'b',b:'SQL',m:'SQLs from paid: 2.1x vs last quarter'}]
+    [{t:'g',b:'HIGH',m:'Clay Score 87 → zu Lemlist geroutet'},{t:'o',b:'MID',m:'Clay Score 54 → zu Slack SDR'},{t:'b',b:'ENRICH',m:'apollo.io → john@acme.com aufgelöst'},{t:'r',b:'LOW',m:'Clay Score 21 → verworfen'},{t:'g',b:'SEND',m:'Lemlist-Sequenz gestartet'},{t:'o',b:'SDR',m:'SDR hat Lead akzeptiert → Lemlist'}],
+    [{t:'b',b:'BUILD',m:'Webflow-Seite für Stripe Inc. erstellt'},{t:'o',b:'ENRICH',m:'Clay: 47 Felder für Notion angereichert'},{t:'g',b:'VISIT',m:'RB2B aufgelöst: sarah@notion.so auf Seite'},{t:'o',b:'ALERT',m:'Slack → AE: Sarah bei Notion, 2m auf Seite'},{t:'b',b:'RETRAIN',m:'ICP-Modell aktualisiert — 12 neue Conversions'}],
+    [{t:'b',b:'AUDIT',m:'ChatGPT: Kunde in 7/10 Buyer-Prompts zitiert'},{t:'g',b:'CITED',m:'Perplexity zitiert Kunde in Antwort #3'},{t:'o',b:'SCHEMA',m:'FAQ-Schema für 14 schwache Prompts erstellt'},{t:'g',b:'G2',m:'G2-Profil aktualisiert — LLM heute gecrawlt'},{t:'b',b:'TRACK',m:'Wochenbericht: 34 % Zitierungsrate erreicht'}],
+    [{t:'b',b:'SYNC',m:'83 Deals (Closed-Won) zu Meta hochgeladen'},{t:'g',b:'TRAIN',m:'Google: Lookalike-Audience aktualisiert'},{t:'o',b:'SCORE',m:'Clay: Inbound-Lead Score 91 → Fast-Lane'},{t:'g',b:'CPL',m:'CPL in diesem Quartal: 48 € vs. 121 € im Vorquartal'},{t:'b',b:'SQL',m:'SQLs aus Paid: 2.1x vs. Vorquartal'}]
   ];
   var logIdx=0;
  
@@ -1750,8 +1920,8 @@
     logTimer=setInterval(function(){addLog(idx);},2800);
   }
  
-  var TITLES=['Pipeline Flow · Intent Signal Automation','Dynamic ABM Page Automation','LLM / GEO Visibility Strategy','Full-Funnel Performance Marketing'];
- 
+  var TITLES=['Agenten-Netzwerk · Autonomes Marketing-Team','Täglicher Agent · Briefing vor Meeting','Pipeline-Flow · Intent-Signal-Automatisierung','Dynamische ABM-Page-Automatisierung','LLM / GEO Sichtbarkeits-Strategie','Full-Funnel Performance Marketing'];
+
   document.querySelectorAll('.cs-tab').forEach(function(btn){
     btn.addEventListener('click',function(){
       var idx=+this.getAttribute('data-cstab');
@@ -1767,12 +1937,12 @@
       if(t) t.textContent=TITLES[idx];
       startLog(idx);
       clearInterval(abmTimer);
-      if(idx===1){abmTimer=setInterval(cycleABM,2400);}
-      if(idx===2){setTimeout(animateCite,200);}
-      if(idx===3){setTimeout(animatePerf,200);}
+      if(idx===3){abmTimer=setInterval(cycleABM,2400);}
+      if(idx===4){setTimeout(animateCite,200);}
+      if(idx===5){setTimeout(animatePerf,200);}
     });
   });
- 
+
   startLog(0);
 })();
 </script>
