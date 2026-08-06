@@ -1,4 +1,6 @@
 User-agent: *
+Allow: /
 Disallow: /Akshun-EN.pdf
 Disallow: /Akshun-DE.pdf
 
+Sitemap: https://akshundogra.com/sitemap.xml
